@@ -13,7 +13,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies" element={<Movies />} /> {/* Asigură-te că apare o singură dată */}
           <Route path="/auth" element={<Auth />} />
           <Route path="/search" element={<SearchPage />} /> {/* Ruta pentru SearchPage */}
         </Routes>
