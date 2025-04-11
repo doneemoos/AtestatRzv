@@ -9,15 +9,14 @@ const Search = ({ onSearch }) => {
     const delayDebounce = setTimeout(() => {
       if (query.trim() === "") {
         onSearch(movies); // Trimite toate filmele dacă nu există query
-        return;
+      } else {
+        const filteredResults = movies.filter((movie) =>
+          movie.title.toLowerCase().includes(query.toLowerCase()) || // Filtrare după titlu
+          (movie.description && movie.description.toLowerCase().includes(query.toLowerCase())) || // Filtrare după descriere
+          (movie.category && movie.category.toLowerCase().includes(query.toLowerCase())) // Filtrare după categorie
+        );
+        onSearch(filteredResults); // Trimite rezultatele filtrate
       }
-
-      // Filtrare filme pe baza query-ului
-      const filteredResults = movies.filter((movie) =>
-        movie.title.toLowerCase().includes(query.toLowerCase()) ||
-        (movie.description && movie.description.toLowerCase().includes(query.toLowerCase()))
-      );
-      onSearch(filteredResults); // Trimite rezultatele filtrate către Movies.jsx
     }, 300);
 
     return () => clearTimeout(delayDebounce);
@@ -57,6 +56,14 @@ const SearchPage = () => {
             </span>
           </Link>
         ))}
+        {results.map((movie) => {
+          console.log(movie.title); // Verifică dacă filmele sunt afișate de două ori
+          return (
+            <div key={movie.id}>
+              {/* Conținutul filmului */}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
