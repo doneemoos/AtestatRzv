@@ -35,7 +35,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[oklch(10.1%_0.149_302.717)] w-full px-8 py-2">
+    <nav className="bg-[oklch(6.1%_0.149_302.717)] w-full px-8 py-2 min-h-[10vh] border-b-2 border-white">
       {/* Layout pentru ecrane medii și mari */}
       <div className="hidden md:grid md:grid-cols-3 md:items-center">
         {/* Coloana stângă: Logo și video */}
@@ -52,6 +52,7 @@ const Navbar = () => {
           </video>
           <Link
             to="/"
+            style={{ fontFamily: "'Cinzel Decorative', serif" }}
             className="text-white text-2xl font-bold ml-2"
             onMouseEnter={handleDesktopHoverEnter}
             onMouseLeave={handleDesktopHoverLeave}
@@ -64,17 +65,26 @@ const Navbar = () => {
         <div className="flex items-center justify-center">
           <ul className="flex gap-8 items-center">
             <li>
-              <Link className="text-white hover:underline" to="/Movies">
+              <Link
+                className="text-white hover:underline text-[20px]"
+                to="/Movies"
+              >
                 Movies
               </Link>
             </li>
             <li>
-              <Link className="text-white hover:underline" to="/Movies">
+              <Link
+                className="text-white hover:underline text-[20px]"
+                to="/Movies"
+              >
                 TvShows
               </Link>
             </li>
             <li>
-              <Link className="text-white hover:underline" to="/Movies">
+              <Link
+                className="text-white hover:underline text-[20px]"
+                to="/Movies"
+              >
                 Top100
               </Link>
             </li>
@@ -107,6 +117,7 @@ const Navbar = () => {
           </video>
           <Link
             to="/"
+            style={{ fontFamily: "'Cinzel Decorative', serif" }}
             className="text-white text-2xl font-bold ml-2"
             onMouseEnter={handleMobileHoverEnter}
             onMouseLeave={handleMobileHoverLeave}
@@ -116,17 +127,26 @@ const Navbar = () => {
         </div>
         <ul className="flex gap-8 items-center">
           <li>
-            <Link className="text-white hover:underline" to="/Movies">
+            <Link
+              className="text-white hover:underline text-[20px]"
+              to="/Movies"
+            >
               Movies
             </Link>
           </li>
           <li>
-            <Link className="text-white hover:underline" to="/Movies">
+            <Link
+              className="text-white hover:underline text-[20px]"
+              to="/Movies"
+            >
               TvShows
             </Link>
           </li>
           <li>
-            <Link className="text-white hover:underline" to="/Movies">
+            <Link
+              className="text-white hover:underline text-[20px]"
+              to="/Movies"
+            >
               Top100
             </Link>
           </li>
