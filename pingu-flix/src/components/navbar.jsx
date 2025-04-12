@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
+
+
 const Navbar = () => {
   // Referințe pentru video (desktop și mobile)
   const videoRefDesktop = useRef(null);
@@ -35,14 +37,20 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[oklch(6.1%_0.149_302.717)] w-full px-8 py-2 min-h-[10vh] border-b-2 border-white">
+    <nav  className="relative w-full px-8 py-2 min-h-[10vh] border-b-2 border-white z-[1]"
+    style={{
+      backgroundImage:
+        "linear-gradient(90deg, rgb(25, 0, 33) 1%, rgb(9, 0, 46) 100%)",
+      filter:
+        'progid:DXImageTransform.Microsoft.gradient( startColorstr="#360049", endColorstr="#170073", GradientType=1 )',
+    }}>
       {/* Layout pentru ecrane medii și mari */}
       <div className="hidden md:grid md:grid-cols-3 md:items-center">
         {/* Coloana stângă: Logo și video */}
         <div className="flex items-center justify-start">
           <video
             ref={videoRefDesktop}
-            className="LogoVideo h-[100px]"
+            className="LogoVideo h-[85px]"
             muted
             playsInline
           >
