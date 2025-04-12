@@ -1,8 +1,6 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
-
-
 const Navbar = () => {
   // Referințe pentru video (desktop și mobile)
   const videoRefDesktop = useRef(null);
@@ -18,7 +16,7 @@ const Navbar = () => {
   const handleDesktopHoverLeave = () => {
     if (videoRefDesktop.current) {
       videoRefDesktop.current.pause();
-      videoRefDesktop.current.currentTime = 0; // resetează la început
+      videoRefDesktop.current.currentTime = 0;
     }
   };
 
@@ -37,40 +35,145 @@ const Navbar = () => {
   };
 
   return (
-    <nav  className="relative w-full px-8 py-2 min-h-[10vh] border-b-2 border-white z-[1]"
-    style={{
-      backgroundImage:
-        "linear-gradient(90deg, rgb(25, 0, 33) 1%, rgb(9, 0, 46) 100%)",
-      filter:
-        'progid:DXImageTransform.Microsoft.gradient( startColorstr="#360049", endColorstr="#170073", GradientType=1 )',
-    }}>
-      {/* Layout pentru ecrane medii și mari */}
-      <div className="hidden md:grid md:grid-cols-3 md:items-center">
-        {/* Coloana stângă: Logo și video */}
-        <div className="flex items-center justify-start">
-          <video
-            ref={videoRefDesktop}
-            className="LogoVideo h-[85px]"
-            muted
-            playsInline
-          >
-            <source src="/LogoPinguF.mov" type='video/mp4; codecs="hvcl"' />
-            <source src="/LogoPinguF.webm" type="video/webm" />
-            Your browser does not support the video tag.
-          </video>
-          <Link
-            to="/"
-            style={{ fontFamily: "'Cinzel Decorative', serif" }}
-            className="text-white text-2xl font-bold ml-2"
-            onMouseEnter={handleDesktopHoverEnter}
-            onMouseLeave={handleDesktopHoverLeave}
-          >
-            PinguFlix
-          </Link>
+    <>
+      {/* Bloc de stiluri pentru proprietatea @property și animația butonului "Sign Up" */}
+      <style>{`
+        @property --middle-color {
+          syntax: '<color>';
+          initial-value: rgba(146, 29, 255, 0.66);
+          inherits: false;
+        }
+        .signUpButton {
+          background: linear-gradient(
+            330deg,
+            rgba(13, 42, 71, 1) 0%,
+            var(--middle-color) 50%,
+            rgba(13, 42, 71, 1) 98%
+          );
+          transition: --middle-color 1s ease;
+        }
+        .signUpButton:hover {
+          --middle-color: rgba(13, 42, 71, 0.66);
+        }
+      `}</style>
+
+      <nav
+        className="relative w-full px-8 py-2 min-h-[10vh] border-b-2 border-white z-[1]"
+        style={{
+          backgroundImage:
+            "linear-gradient(90deg, rgb(25, 0, 33) 1%, rgb(9, 0, 46) 100%)",
+          filter:
+            'progid:DXImageTransform.Microsoft.gradient( startColorstr="#360049", endColorstr="#170073", GradientType=1 )',
+        }}
+      >
+        {/* Layout pentru ecrane medii și mari */}
+        <div className="hidden md:grid md:grid-cols-3 md:items-center">
+          {/* Coloana stângă: Logo și video */}
+          <div className="flex items-center justify-start">
+            <video
+              ref={videoRefDesktop}
+              className="LogoVideo h-[85px]"
+              muted
+              playsInline
+            >
+              <source src="/LogoPinguF.mov" type='video/mp4; codecs="hvcl"' />
+              <source src="/LogoPinguF.webm" type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
+            <Link
+              to="/"
+              style={{ fontFamily: "'Cinzel Decorative', serif" }}
+              className="text-white text-2xl font-bold ml-2"
+              onMouseEnter={handleDesktopHoverEnter}
+              onMouseLeave={handleDesktopHoverLeave}
+            >
+              PinguFlix
+            </Link>
+          </div>
+
+          {/* Coloana centrală: Linkurile de navigație */}
+          <div className="flex items-center justify-center">
+            <ul className="flex gap-8 items-center">
+              <li>
+                <Link
+                  className="text-white hover:underline text-[20px]"
+                  to="/Movies"
+                >
+                  Movies
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-white hover:underline text-[20px]"
+                  to="/Movies"
+                >
+                  TvShows
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-white hover:underline text-[20px]"
+                  to="/Movies"
+                >
+                  Top100
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Coloana dreaptă: Butoanele pentru Log In și Sign Up */}
+          <div className="flex items-center justify-end">
+            <Link
+              className="text-white hover:underline text-[23px]"
+              to="/Auth"
+            >
+              Log In
+            </Link>
+            {/* Separator vertical */}
+            <div className="border-l-[1px] border-white h-6 mx-3" />
+            {/* Buton "Sign Up" care folosește clasa signUpButton pentru a anima gradientul */}
+            <Link
+              to="/Auth"
+              className="
+                inline-flex
+                items-center
+                justify-center
+                px-4 py-2
+                text-white
+                text-[20px]
+                rounded-[0.8rem]
+                shadow-md
+                signUpButton
+              "
+            >
+              Sign Up
+            </Link>
+          </div>
         </div>
 
-        {/* Coloana centrală: Linkurile de navigație */}
-        <div className="flex items-center justify-center">
+        {/* Layout pentru ecrane mici / mobile */}
+        <div className="md:hidden flex flex-col items-center space-y-2">
+          <div className="flex items-center justify-center">
+            <video
+              ref={videoRefMobile}
+              className="LogoVideo h-[100px]"
+              muted
+              playsInline
+            >
+              <source src="/LogoPinguF.mov" type='video/mp4; codecs="hvcl"' />
+              <source src="/LogoPinguF.webm" type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
+            <Link
+              to="/"
+              style={{ fontFamily: "'Cinzel Decorative', serif" }}
+              className="text-white text-2xl font-bold ml-2"
+              onMouseEnter={handleMobileHoverEnter}
+              onMouseLeave={handleMobileHoverLeave}
+            >
+              PinguFlix
+            </Link>
+          </div>
           <ul className="flex gap-8 items-center">
             <li>
               <Link
@@ -97,78 +200,36 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-        </div>
-
-        {/* Coloana dreaptă: Butoanele pentru Log In și Sign Up */}
-        <div className="flex items-center justify-end">
-          <Link className="text-white hover:underline mr-4" to="/Auth">
-            Log In
-          </Link>
-          <Link className="text-white hover:underline" to="/Auth">
-            Sign Up
-          </Link>
-        </div>
-      </div>
-
-      {/* Layout pentru ecrane mici / mobile */}
-      <div className="md:hidden flex flex-col items-center space-y-2">
-        <div className="flex items-center justify-center">
-          <video
-            ref={videoRefMobile}
-            className="LogoVideo h-[100px]"
-            muted
-            playsInline
-          >
-            <source src="/LogoPinguF.mov" type='video/mp4; codecs="hvcl"' />
-            <source src="/LogoPinguF.webm" type="video/webm" />
-            Your browser does not support the video tag.
-          </video>
-          <Link
-            to="/"
-            style={{ fontFamily: "'Cinzel Decorative', serif" }}
-            className="text-white text-2xl font-bold ml-2"
-            onMouseEnter={handleMobileHoverEnter}
-            onMouseLeave={handleMobileHoverLeave}
-          >
-            PinguFlix
-          </Link>
-        </div>
-        <ul className="flex gap-8 items-center">
-          <li>
+          <div className="flex items-center">
             <Link
-              className="text-white hover:underline text-[20px]"
-              to="/Movies"
+              className="text-white hover:underline text-[23px]"
+              to="/Auth"
             >
-              Movies
+              Log In
             </Link>
-          </li>
-          <li>
+            {/* Separator vertical */}
+            <div className="border-l-[1px] border-white h-6 mx-3" />
+            {/* Buton "Sign Up" pentru mobile */}
             <Link
-              className="text-white hover:underline text-[20px]"
-              to="/Movies"
+              to="/Auth"
+              className="
+                inline-flex
+                items-center
+                justify-center
+                px-4 py-2
+                text-white
+                text-[20px]
+                rounded-[1rem]
+                shadow-md
+                signUpButton
+              "
             >
-              TvShows
+              Sign Up
             </Link>
-          </li>
-          <li>
-            <Link
-              className="text-white hover:underline text-[20px]"
-              to="/Movies"
-            >
-              Top100
-            </Link>
-          </li>
-        </ul>
-        <div className="flex items-center">
-          <Link className="text-white hover:underline mr-4" to="/Auth">
-            Log In
-          </Link>
-          <Link className="text-white hover:underline" to="/Auth">
-            Sign Up
-          </Link>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 
