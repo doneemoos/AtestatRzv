@@ -53,7 +53,7 @@ const Navbar = () => {
           transition: --middle-color 1s ease;
         }
         .signUpButton:hover {
-          --middle-color: rgba(13, 42, 71, 0.66);
+          --middle-color: rgba(34, 120, 207, 0.66);
         }
       `}</style>
 
