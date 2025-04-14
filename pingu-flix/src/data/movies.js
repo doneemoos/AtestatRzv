@@ -24,7 +24,6 @@ const movies = [
     year: 2023,
     posterUrl: "https://example.com/polar-odyssey.jpg",
   },
-  // Adaugă mai multe filme...
 ];
 
 export default movies;

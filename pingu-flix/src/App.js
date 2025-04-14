@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Auth from './pages/Auth';      
 import Movies from './pages/Movies';
 import SearchPage from './pages/search'; // Importă componenta SearchPage
+import MovieDetails from "./pages/MoviesDetails";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/movies" element={<Movies />} /> {/* Asigură-te că apare o singură dată */}
           <Route path="/auth" element={<Auth />} />
           <Route path="/search" element={<SearchPage />} /> {/* Ruta pentru SearchPage */}
+          <Route path="/movies/:movieId" element={<MovieDetails />} />
         </Routes>
       </div>
     </Router>
