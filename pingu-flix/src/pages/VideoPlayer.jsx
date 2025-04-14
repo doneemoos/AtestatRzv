@@ -111,7 +111,7 @@ const VideoPlayer = () => {
             </p>
             <div className="flex flex-wrap gap-4 text-gray-600">
               <p>
-                <strong>Categoria:</strong> {movie.category || "Necunoscută"}
+                <strong>categoria:</strong> {movie.category || "Necunoscută"}
               </p>
               <p>
                 <strong>Anul:</strong> {movie.year || "Necunoscut"}
