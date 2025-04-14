@@ -74,7 +74,7 @@ function MovieDetails() {
                 <strong>Production:</strong> {movie.production || "N/A"}
               </p>
               <p>
-                <strong>Casts:</strong> {movie.cast || "N/A"}
+                <strong>Casts:</strong> {movie.casts || "N/A"}
               </p>
             </div>
 
