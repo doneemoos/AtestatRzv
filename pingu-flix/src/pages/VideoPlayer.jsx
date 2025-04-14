@@ -16,8 +16,7 @@ const VideoPlayer = () => {
   const [adIndex, setAdIndex] = useState(0);
   const [hasShownOverlayAd, setHasShownOverlayAd] = useState(false);
   const [pausedForAd, setPausedForAd] = useState(false);
-  const [resumeTime, setResumeTime] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const [resumeTime, setResumeTime] = useState(0); // unde să reia filmul
 
   useEffect(() => {
     if (phase === "movie" && videoRef.current) {
@@ -33,14 +32,7 @@ const VideoPlayer = () => {
           setPausedForAd(true);
           setHasShownOverlayAd(true);
         }
-
-        // actualizează dacă video-ul e pe pauză
-        if (videoRef.current.paused) {
-          setIsPaused(true);
-        } else {
-          setIsPaused(false);
-        }
-      }, 500);
+      }, 1000);
       return () => clearInterval(interval);
     }
   }, [phase, hasShownOverlayAd, pausedForAd]);
@@ -70,14 +62,6 @@ const VideoPlayer = () => {
     }
   };
 
-  const handlePlayButton = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
-  };
-
-  const showBigPlayButton = phase === "movie" && isPaused;
-
   if (!movie) {
     return (
       <div className="text-center mt-10 text-xl">Filmul nu a fost găsit!</div>
@@ -89,7 +73,6 @@ const VideoPlayer = () => {
       <h1 className="text-4xl font-bold text-center mb-6">{movie.title}</h1>
 
       <div className="relative">
-        {/* Reclame inițiale */}
         {phase === "preAds" ? (
           <video
             key={adIndex}
@@ -101,31 +84,17 @@ const VideoPlayer = () => {
             className="w-full rounded-lg shadow-lg"
           />
         ) : phase === "movie" ? (
-          <>
-            <video
-              ref={videoRef}
-              src={movie.videoUrl}
-              onClick={handleMovieClick}
-              controls={phase !== "overlayAd"}
-              poster={movie.posterUrl}
-              playsInline
-              className="w-full rounded-lg shadow-lg"
-            >
-              Browserul tău nu suportă acest video.
-            </video>
-
-            {/* Buton mare de tip Netflix */}
-            {showBigPlayButton && (
-              <button
-                onClick={handlePlayButton}
-                className="absolute inset-0 flex items-center justify-center z-20"
-              >
-                <div className="bg-black/60 text-white rounded-full w-20 h-20 flex items-center justify-center text-4xl hover:scale-110 transition">
-                  ►
-                </div>
-              </button>
-            )}
-          </>
+          <video
+            ref={videoRef}
+            src={movie.videoUrl}
+            onClick={handleMovieClick}
+            controls={phase !== "overlayAd"} // nu afișăm controale în timpul reclamei overlay
+            poster={movie.posterUrl}
+            playsInline
+            className="w-full rounded-lg shadow-lg"
+          >
+            Browserul tău nu suportă acest video.
+          </video>
         ) : (
           <video
             ref={overlayAdRef}

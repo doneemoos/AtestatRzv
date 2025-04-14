@@ -1,60 +1,71 @@
 // client/src/pages/Auth.jsx
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { auth } from "../firebase"; // Corect: Fișierul firebase.js este în directorul src
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
 
 function Auth() {
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
+  const navigate = useNavigate(); // Hook pentru navigare
 
   const handleChange = (e) => {
-    setFormData({ 
-      ...formData, 
-      [e.target.name]: e.target.value 
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const url = isLogin 
-      ? 'http://localhost:5000/api/auth/login' 
-      : 'http://localhost:5000/api/auth/register';
 
     try {
-      const res = await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-      const data = await res.json();
-      console.log('Răspuns server:', data);
-      // tratezi succesul sau eroarea
+      let userCredential;
+      if (isLogin) {
+        // Login cu Firebase
+        userCredential = await signInWithEmailAndPassword(
+          auth,
+          formData.email,
+          formData.password
+        );
+        console.log("Utilizator logat:", userCredential.user);
+      } else {
+        // Sign up cu Firebase
+        userCredential = await createUserWithEmailAndPassword(
+          auth,
+          formData.email,
+          formData.password
+        );
+        console.log("Utilizator înregistrat:", userCredential.user);
+      }
+
+      // Redirecționează către pagina principală și afișează mesajul de bun venit
+      navigate("/", { state: { message: `Bine ai venit, ${userCredential.user.email}!` } });
     } catch (error) {
-      console.error('Eroare:', error);
+      console.error("Eroare:", error.message);
+    }
+  };
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      console.log("Utilizator deconectat.");
+      navigate("/auth"); // Redirecționează utilizatorul către pagina de autentificare
+    } catch (error) {
+      console.error("Eroare la deconectare:", error.message);
     }
   };
 
   return (
     <div className="max-w-md mx-auto px-4 py-8">
       <h2 className="text-2xl font-bold mb-4">
-        {isLogin ? 'Log In' : 'Sign Up'}
+        {isLogin ? "Log In" : "Sign Up"}
       </h2>
       <form onSubmit={handleSubmit} className="space-y-4">
-        {!isLogin && (
-          <div>
-            <label className="block font-medium mb-1">Username</label>
-            <input
-              type="text"
-              name="username"
-              className="w-full border px-3 py-2 rounded"
-              onChange={handleChange}
-              required={!isLogin}
-            />
-          </div>
-        )}
-        
         <div>
           <label className="block font-medium mb-1">Email</label>
           <input
@@ -65,7 +76,7 @@ function Auth() {
             required
           />
         </div>
-        
+
         <div>
           <label className="block font-medium mb-1">Password</label>
           <input
@@ -76,12 +87,12 @@ function Auth() {
             required
           />
         </div>
-        
-        <button 
+
+        <button
           type="submit"
           className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition"
         >
-          {isLogin ? 'Log In' : 'Sign Up'}
+          {isLogin ? "Log In" : "Sign Up"}
         </button>
       </form>
 
@@ -107,6 +118,16 @@ function Auth() {
             </button>
           </p>
         )}
+      </div>
+
+      {/* Buton de Log Out */}
+      <div className="mt-6 text-center">
+        <button
+          onClick={handleLogout}
+          className="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition"
+        >
+          Log Out
+        </button>
       </div>
     </div>
   );
