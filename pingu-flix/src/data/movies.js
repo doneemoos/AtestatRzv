@@ -45,7 +45,7 @@ const movies = [
     category: "Action & Adventure",
     year: "2025",
     duration: "TBA",
-    posterUrl: "/movies&TvShows/Daredevil: Born Again.jpg",
+    posterUrl: "/movies&TvShows/Daredevil Born Again.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Marvel Studios",
@@ -84,7 +84,7 @@ const movies = [
     category: "Action & Adventure",
     year: "2019",
     duration: "181 minutes",
-    posterUrl: "/movies&TvShows/Avengers: Endgame.jpg",
+    posterUrl: "/movies&TvShows/Avengers Endgame.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Marvel Studios",
@@ -110,7 +110,7 @@ const movies = [
     category: "Drama",
     year: "2005–present",
     duration: "41 minutes per episode",
-    posterUrl: "/movies&TvShows/Grey's Anatomy.jpg",
+    posterUrl: "/movies&TvShows/GreyAnatomy.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Shondaland, The Mark Gordon Company, ABC Studios",
@@ -162,7 +162,7 @@ const movies = [
     category: "Drama",
     year: "2017–2025",
     duration: "50 minutes per episode",
-    posterUrl: "/movies&TvShows/The Handmaid's Tale.jpg",
+    posterUrl: "/movies&TvShows/The Handmaids Tale.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "MGM Television, Hulu",
