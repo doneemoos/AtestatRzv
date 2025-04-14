@@ -1,116 +1,147 @@
-// src/pages/VideoPlayer.jsx
-import React, { useState, useEffect, useRef } from 'react';
-import { useParams } from 'react-router-dom';
-import movies from '../data/movies';
+import React, { useState, useEffect, useRef } from "react";
+import { useParams } from "react-router-dom";
+import movies from "../data/movies";
 
-// Fișierele video din folderul public se apelează cu calea relativă de la root
-const adVideos = [
-  "/ad1.mp4", // asigură-te că fișierul public/ad1.mp4 există
-  "/ad2.mp4", // asigură-te că fișierul public/ad2.mp4 există
-];
+const adVideos = ["/ad1.mp4", "/ad2.mp4"];
+const overlayAdVideo = "/ad1.mp4";
 
 const VideoPlayer = () => {
   const { id } = useParams();
-  // Comparăm id-ul ca string, deoarece id-urile din movies.js sunt șiruri de caractere
   const movie = movies.find((m) => m.id === id);
 
   const videoRef = useRef(null);
-  const lastClickRef = useRef(null);
+  const overlayAdRef = useRef(null);
 
-  const [showMainVideo, setShowMainVideo] = useState(false);
-  const [currentAdIndex, setCurrentAdIndex] = useState(0);
-  const [isAdPlaying, setIsAdPlaying] = useState(true);
-  const [overlayAd, setOverlayAd] = useState(false);
+  const [phase, setPhase] = useState("preAds"); // preAds | movie | overlayAd
+  const [adIndex, setAdIndex] = useState(0);
+  const [hasShownOverlayAd, setHasShownOverlayAd] = useState(false);
+  const [pausedForAd, setPausedForAd] = useState(false);
+  const [resumeTime, setResumeTime] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
-    // Pornește primul ad automat
-    setIsAdPlaying(true);
-  }, []);
+    if (phase === "movie" && videoRef.current) {
+      const interval = setInterval(() => {
+        if (
+          videoRef.current.currentTime >= 60 &&
+          !hasShownOverlayAd &&
+          !pausedForAd
+        ) {
+          setResumeTime(videoRef.current.currentTime);
+          videoRef.current.pause();
+          setPhase("overlayAd");
+          setPausedForAd(true);
+          setHasShownOverlayAd(true);
+        }
+
+        // actualizează dacă video-ul e pe pauză
+        if (videoRef.current.paused) {
+          setIsPaused(true);
+        } else {
+          setIsPaused(false);
+        }
+      }, 500);
+      return () => clearInterval(interval);
+    }
+  }, [phase, hasShownOverlayAd, pausedForAd]);
 
   const handleAdEnded = () => {
-    if (currentAdIndex < adVideos.length - 1) {
-      setCurrentAdIndex((prev) => prev + 1);
+    if (adIndex < adVideos.length - 1) {
+      setAdIndex(adIndex + 1);
     } else {
-      setIsAdPlaying(false);
-      setShowMainVideo(true);
+      setPhase("movie");
     }
   };
 
-  const handleVideoClick = () => {
-    const now = Date.now();
-    if (!lastClickRef.current || now - lastClickRef.current > 60000) {
-      // Dacă au trecut mai mult de 60 secunde de la ultimul click, afișează overlay de reclamă
-      setOverlayAd(true);
-      setTimeout(() => {
-        setOverlayAd(false);
-      }, 3000);
-    } else {
-      // Alternăm play/pause pe video
+  const handleOverlayEnded = () => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = resumeTime;
+    }
+    setPhase("movie");
+  };
+
+  const handleMovieClick = () => {
+    if (videoRef.current) {
       if (videoRef.current.paused) {
         videoRef.current.play();
       } else {
         videoRef.current.pause();
       }
     }
-    lastClickRef.current = now;
   };
+
+  const handlePlayButton = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
+
+  const showBigPlayButton = phase === "movie" && isPaused;
 
   if (!movie) {
     return (
-      <div className="text-center mt-10 text-xl">
-        Filmul nu a fost găsit!
-      </div>
+      <div className="text-center mt-10 text-xl">Filmul nu a fost găsit!</div>
     );
   }
 
   return (
     <div className="max-w-[1200px] mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-center mb-6">
-        {movie.title}
-      </h1>
+      <h1 className="text-4xl font-bold text-center mb-6">{movie.title}</h1>
 
       <div className="relative">
-        {/* Playerul pentru reclame */}
-        {isAdPlaying ? (
+        {/* Reclame inițiale */}
+        {phase === "preAds" ? (
           <video
-            key={currentAdIndex} // Schimbăm reclama curentă
-            src={adVideos[currentAdIndex]}
+            key={adIndex}
+            src={adVideos[adIndex]}
             autoPlay
             controls
             onEnded={handleAdEnded}
+            playsInline
             className="w-full rounded-lg shadow-lg"
           />
-        ) : (
-          // Playerul principal al filmului
-          <div className="relative">
+        ) : phase === "movie" ? (
+          <>
             <video
               ref={videoRef}
-              onClick={handleVideoClick}
-              controls={!overlayAd}
+              src={movie.videoUrl}
+              onClick={handleMovieClick}
+              controls={phase !== "overlayAd"}
               poster={movie.posterUrl}
+              playsInline
               className="w-full rounded-lg shadow-lg"
             >
-              <source
-                src={movie.videoUrl || "https://www.w3schools.com/html/mov_bbb.mp4"}
-                type="video/mp4"
-              />
               Browserul tău nu suportă acest video.
             </video>
 
-            {/* Overlay pentru reclamă la click */}
-            {overlayAd && (
-              <div className="absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center">
-                <p className="text-white text-2xl font-bold">
-                  Reclamă în desfășurare...
-                </p>
-              </div>
+            {/* Buton mare de tip Netflix */}
+            {showBigPlayButton && (
+              <button
+                onClick={handlePlayButton}
+                className="absolute inset-0 flex items-center justify-center z-20"
+              >
+                <div className="bg-black/60 text-white rounded-full w-20 h-20 flex items-center justify-center text-4xl hover:scale-110 transition">
+                  ►
+                </div>
+              </button>
             )}
-          </div>
+          </>
+        ) : (
+          <video
+            ref={overlayAdRef}
+            src={overlayAdVideo}
+            autoPlay
+            muted
+            onEnded={handleOverlayEnded}
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover rounded-lg shadow-lg z-10"
+          >
+            Browserul tău nu suportă acest video.
+          </video>
         )}
       </div>
 
-      {/* Detalii despre film */}
-      {!isAdPlaying && showMainVideo && (
+      {phase === "movie" && (
         <>
           <div className="bg-white mt-6 p-6 rounded-lg shadow-md">
             <p className="text-gray-700 mb-4">
@@ -118,7 +149,7 @@ const VideoPlayer = () => {
             </p>
             <div className="flex flex-wrap gap-4 text-gray-600">
               <p>
-                <strong>Categori:</strong> {movie.category || "Necunoscută"}
+                <strong>Categorie:</strong> {movie.category || "Necunoscută"}
               </p>
               <p>
                 <strong>Anul:</strong> {movie.year || "Necunoscut"}
