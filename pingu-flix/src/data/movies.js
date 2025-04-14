@@ -14,7 +14,7 @@ const movies = [
   },
   {
     id: "Mission: Impossible – Dead Reckoning Part One",
-    title: "Mission: Impossible – Dead Reckoning Part One",
+    title: "Mission: Impossible",
     description: "Ethan Hunt and the IMF team embark on their most dangerous mission yet: to track down a terrifying new weapon that threatens all of humanity before it falls into the wrong hands. With control of the future and the fate of the world at stake, a deadly race around the globe begins.",
     category: "Action & Adventure",
     year: "2023",
