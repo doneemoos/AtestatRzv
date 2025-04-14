@@ -3,9 +3,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import movies from '../data/movies';
 
+// Fișierele video din folderul public se apelează cu calea relativă de la root
 const adVideos = [
-  "https://www.w3schools.com/html/movie.mp4",
-  "https://www.w3schools.com/html/mov_bbb.mp4"
+  "/ad1.mp4", // asigură-te că fișierul public/ad1.mp4 există
+  "/ad2.mp4", // asigură-te că fișierul public/ad2.mp4 există
 ];
 
 const VideoPlayer = () => {
@@ -22,7 +23,7 @@ const VideoPlayer = () => {
   const [overlayAd, setOverlayAd] = useState(false);
 
   useEffect(() => {
-    // Pornim primul ad automat
+    // Pornește primul ad automat
     setIsAdPlaying(true);
   }, []);
 
@@ -38,13 +39,13 @@ const VideoPlayer = () => {
   const handleVideoClick = () => {
     const now = Date.now();
     if (!lastClickRef.current || now - lastClickRef.current > 60000) {
-      // Dacă au trecut mai mult de 60 secunde de la ultimul click, afișăm un overlay cu reclamă
+      // Dacă au trecut mai mult de 60 secunde de la ultimul click, afișează overlay de reclamă
       setOverlayAd(true);
       setTimeout(() => {
         setOverlayAd(false);
       }, 3000);
     } else {
-      // Alternăm play/pause în funcție de starea video-ului
+      // Alternăm play/pause pe video
       if (videoRef.current.paused) {
         videoRef.current.play();
       } else {
@@ -55,18 +56,24 @@ const VideoPlayer = () => {
   };
 
   if (!movie) {
-    return <div className="text-center mt-10 text-xl">Filmul nu a fost găsit!</div>;
+    return (
+      <div className="text-center mt-10 text-xl">
+        Filmul nu a fost găsit!
+      </div>
+    );
   }
 
   return (
     <div className="max-w-[1200px] mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-center mb-6">{movie.title}</h1>
+      <h1 className="text-4xl font-bold text-center mb-6">
+        {movie.title}
+      </h1>
 
       <div className="relative">
         {/* Playerul pentru reclame */}
         {isAdPlaying ? (
           <video
-            key={currentAdIndex} // Asigură schimbarea reclamei între elementele adVideos
+            key={currentAdIndex} // Schimbăm reclama curentă
             src={adVideos[currentAdIndex]}
             autoPlay
             controls
@@ -111,14 +118,13 @@ const VideoPlayer = () => {
             </p>
             <div className="flex flex-wrap gap-4 text-gray-600">
               <p>
-                <strong>categoria:</strong> {movie.category || "Necunoscută"}
+                <strong>Categori:</strong> {movie.category || "Necunoscută"}
               </p>
               <p>
                 <strong>Anul:</strong> {movie.year || "Necunoscut"}
               </p>
               <p>
-                <strong>Durata:</strong>{" "}
-                {movie.duration || "Necunoscută"} minute
+                <strong>Durata:</strong> {movie.duration || "Necunoscută"} minute
               </p>
             </div>
           </div>
