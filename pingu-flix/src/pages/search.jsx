@@ -1,21 +1,25 @@
+// src/pages/SearchPage.jsx
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import movies from "../data/movies"; // Importă array-ul de filme
+import movies from "../data/movies"; // Array-ul de filme
 
+// Componenta Search - gestionează query-ul și filtrează filmele
 const Search = ({ onSearch }) => {
   const [query, setQuery] = useState("");
 
   useEffect(() => {
     const delayDebounce = setTimeout(() => {
       if (query.trim() === "") {
-        onSearch(movies); // Trimite toate filmele dacă nu există query
+        // Dacă nu există query, trimite toate filmele
+        onSearch(movies);
       } else {
+        // Filtrare după titlu, descriere sau categorie
         const filteredResults = movies.filter((movie) =>
-          movie.title.toLowerCase().includes(query.toLowerCase()) || // Filtrare după titlu
-          (movie.description && movie.description.toLowerCase().includes(query.toLowerCase())) || // Filtrare după descriere
-          (movie.category && movie.category.toLowerCase().includes(query.toLowerCase())) // Filtrare după categorie
+          movie.title.toLowerCase().includes(query.toLowerCase()) ||
+          (movie.description && movie.description.toLowerCase().includes(query.toLowerCase())) ||
+          (movie.category && movie.category.toLowerCase().includes(query.toLowerCase()))
         );
-        onSearch(filteredResults); // Trimite rezultatele filtrate
+        onSearch(filteredResults);
       }
     }, 300);
 
@@ -35,17 +39,19 @@ const Search = ({ onSearch }) => {
   );
 };
 
+// Componenta SearchPage - afișează rezultatele căutării sub formă de boxuri cu link-uri
 const SearchPage = () => {
   const [results, setResults] = useState([]);
 
   return (
     <div className="p-6 min-h-screen bg-gray-100">
       <h1 className="text-3xl font-bold text-center mb-6">🔍 Caută filme sau seriale</h1>
+      {/* Bara de căutare care actualizează rezultatele */}
       <Search onSearch={setResults} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {results.map((item) => (
           <Link
-            to={`/${item.episodes ? "show" : "movie"}/${item.id}`}
+            to={`/movies/${item.id}`}
             key={item.id}
             className="block bg-white p-4 rounded-2xl shadow-md hover:shadow-lg transition"
           >
@@ -56,14 +62,6 @@ const SearchPage = () => {
             </span>
           </Link>
         ))}
-        {results.map((movie) => {
-          console.log(movie.title); // Verifică dacă filmele sunt afișate de două ori
-          return (
-            <div key={movie.id}>
-              {/* Conținutul filmului */}
-            </div>
-          );
-        })}
       </div>
     </div>
   );
