@@ -6,6 +6,7 @@ import Auth from './pages/Auth';
 import Movies from './pages/Movies';
 import SearchPage from './pages/search'; // Importă componenta SearchPage
 import MovieDetails from "./pages/MoviesDetails";
+import VideoPlayer from "./pages/VideoPlayer";  // Importă componenta VideoPlayer
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/auth" element={<Auth />} />
           <Route path="/search" element={<SearchPage />} /> {/* Ruta pentru SearchPage */}
           <Route path="/movies/:movieId" element={<MovieDetails />} />
+          <Route path="/video/:id" element={<VideoPlayer />} /> {/* Ruta pentru VideoPlayer */}
         </Routes>
       </div>
     </Router>

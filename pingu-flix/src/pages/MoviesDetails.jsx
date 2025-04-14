@@ -1,6 +1,6 @@
 // src/pages/MovieDetails.jsx
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import movies from "../data/movies";
 
 function MovieDetails() {
@@ -38,6 +38,9 @@ function MovieDetails() {
       <p className="mb-2">
         <strong>An:</strong> {movie.year}
       </p>
+      <Link to={`/video/${movie.id}`} className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700 transition">
+        ▶ Vezi filmul
+      </Link>
     </div>
   );
 }
