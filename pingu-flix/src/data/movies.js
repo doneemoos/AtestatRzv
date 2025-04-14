@@ -6,7 +6,7 @@ const movies = [
     category: "Action & Adventure",
     year: "2023",
     duration: "141 minutes",
-    posterUrl: "/Movie/Fast X.jpg",
+    posterUrl: "/movies&TvShows/Fast X.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Universal Pictures, Original Film, One Race Films, Roth/Kirschenbaum Films, Perfect Storm Entertainment, China Film Co., Ltd.",
@@ -19,7 +19,7 @@ const movies = [
     category: "Action & Adventure",
     year: "2023",
     duration: "163 minutes",
-    posterUrl: "/Movie/Mission: Impossible – Dead Reckoning Part One.jpg",
+    posterUrl: "/movies&TvShows/Mission Impossible – Dead Reckoning Part One.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Paramount Pictures, Skydance Media, TC Productions, C2 Motion Picture Group",
@@ -32,7 +32,7 @@ const movies = [
     category: "Action & Adventure",
     year: "2022–present",
     duration: "Varies",
-    posterUrl: "/Movie/Reacher.jpg",
+    posterUrl: "/movies&TvShows/Reacher.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Amazon Studios, Skydance Television, Paramount Television Studios",
@@ -45,7 +45,7 @@ const movies = [
     category: "Action & Adventure",
     year: "2025",
     duration: "TBA",
-    posterUrl: "/Movie/Daredevil: Born Again.jpg",
+    posterUrl: "/movies&TvShows/Daredevil: Born Again.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Marvel Studios",
@@ -58,7 +58,7 @@ const movies = [
     category: "Action & Adventure",
     year: "2023",
     duration: "116 minutes",
-    posterUrl: "/Movie/Ghosted.jpg",
+    posterUrl: "/movies&TvShows/Ghosted.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Apple Studios, Skydance Media",
@@ -71,7 +71,7 @@ const movies = [
     category: "Action & Adventure",
     year: "2020",
     duration: "91 minutes",
-    posterUrl: "/Movie/Greyhound.jpg",
+    posterUrl: "/movies&TvShows/Greyhound.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Playtone, FilmNation Entertainment, Apple Studios",
@@ -84,7 +84,7 @@ const movies = [
     category: "Action & Adventure",
     year: "2019",
     duration: "181 minutes",
-    posterUrl: "/Movie/Avengers: Endgame.jpg",
+    posterUrl: "/movies&TvShows/Avengers: Endgame.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Marvel Studios",
@@ -97,7 +97,7 @@ const movies = [
     category: "Drama",
     year: "2011–2019",
     duration: "44 minutes per episode",
-    posterUrl: "/Movie/Suits.jpg",
+    posterUrl: "/movies&TvShows/Suits.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Universal Cable Productions",
@@ -110,7 +110,7 @@ const movies = [
     category: "Drama",
     year: "2005–present",
     duration: "41 minutes per episode",
-    posterUrl: "/Movie/Grey's Anatomy.jpg",
+    posterUrl: "/movies&TvShows/Grey's Anatomy.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Shondaland, The Mark Gordon Company, ABC Studios",
@@ -123,7 +123,7 @@ const movies = [
     category: "Drama",
     year: "2000–2007",
     duration: "44 minutes per episode",
-    posterUrl: "/Movie/Gilmore Girls.jpg",
+    posterUrl: "/movies&TvShows/Gilmore Girls.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Dorothy Parker Drank Here Productions, Hofflund/Polone, Warner Bros. Television",
@@ -136,7 +136,7 @@ const movies = [
     category: "Drama",
     year: "2021–present",
     duration: "60 minutes per episode",
-    posterUrl: "/Movie/The White Lotus.jpg",
+    posterUrl: "/movies&TvShows/The White Lotus.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "HBO Entertainment, Pallogram, The District, Rip Cord Productions",
@@ -149,7 +149,7 @@ const movies = [
     category: "Drama",
     year: "2023–present",
     duration: "60 minutes per episode",
-    posterUrl: "/Movie/The Last of Us.jpg",
+    posterUrl: "/movies&TvShows/The Last of Us.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Sony Pictures Television, PlayStation Productions, Naughty Dog, Word Games",
@@ -162,7 +162,7 @@ const movies = [
     category: "Drama",
     year: "2017–2025",
     duration: "50 minutes per episode",
-    posterUrl: "/Movie/The Handmaid's Tale.jpg",
+    posterUrl: "/movies&TvShows/The Handmaid's Tale.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "MGM Television, Hulu",
@@ -175,7 +175,7 @@ const movies = [
     category: "Drama",
     year: "2018–present",
     duration: "45 minutes per episode",
-    posterUrl: "/Movie/You.jpg",
+    posterUrl: "/movies&TvShows/You.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "A+E Studios, Alloy Entertainment, Berlanti Productions, Warner Horizon Television",
@@ -188,7 +188,7 @@ const movies = [
     category: "Drama",
     year: "2025",
     duration: "8 episodes",
-    posterUrl: "/Movie/Étoile.jpg",
+    posterUrl: "/movies&TvShows/Étoile.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Sesquipedalian Corporation, Dorothy Parker Drank Here Productions, Big Indie Pictures, Amazon MGM Studios",
@@ -201,7 +201,7 @@ const movies = [
     category: "Drama",
     year: "2025",
     duration: "8 episodes",
-    posterUrl: "/Movie/Dying for Sex.jpg",
+    posterUrl: "/movies&TvShows/Dying for Sex.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Pasta with Sauce, Elizabeth Meriwether Pictures, Wondery, 20th Television",
@@ -214,7 +214,7 @@ const movies = [
     category: "Drama",
     year: "2004–2012",
     duration: "45 minutes per episode",
-    posterUrl: "/Movie/Desperate Housewives.jpg",
+    posterUrl: "/movies&TvShows/Desperate Housewives.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Cherry Productions, ABC Studios",
@@ -227,7 +227,7 @@ const movies = [
     category: "Drama",
     year: "2023",
     duration: "141 minutes",
-    posterUrl: "/Movie/Poor Things.jpg",
+    posterUrl: "/movies&TvShows/Poor Things.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Searchlight Pictures, Element Pictures, Film4 Productions",
@@ -240,7 +240,7 @@ const movies = [
     category: "Drama",
     year: "2003–present",
     duration: "44 minutes per episode",
-    posterUrl: "/Movie/NCIS.jpg",
+    posterUrl: "/movies&TvShows/NCIS.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "CBS Studios, Belisarius Productions",
@@ -253,7 +253,7 @@ const movies = [
     category: "Comedy, Mystery",
     year: "2021–present",
     duration: "26–40 minutes per episode",
-    posterUrl: "/Movie/Only Murders in the Building.jpg",
+    posterUrl: "/movies&TvShows/Only Murders in the Building.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Rhode Island Ave. Productions, Another Hoffman Story Productions, 40 Share Productions, 20th Television",
@@ -266,7 +266,7 @@ const movies = [
     category: "Sports Comedy Drama",
     year: "2020–2023",
     duration: "29–78 minutes per episode",
-    posterUrl: "/Movie/Ted Lasso.jpg",
+    posterUrl: "/movies&TvShows/Ted Lasso.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Ruby's Tuna Inc., Doozer, Universal Television, Warner Bros. Television",
@@ -279,7 +279,7 @@ const movies = [
     category: "Comedy, Drama",
     year: "2023–present",
     duration: "30 minutes per episode",
-    posterUrl: "/Movie/Shrinking.jpg",
+    posterUrl: "/movies&TvShows/Shrinking.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Dozer Productions, Apple Studios, Warner Bros. Television",
@@ -292,7 +292,7 @@ const movies = [
     category: "Comedy",
     year: "2009–2020",
     duration: "22 minutes per episode",
-    posterUrl: "/Movie/Modern Family.jpg",
+    posterUrl: "/movies&TvShows/Modern Family.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Steven Levitan Productions, Picador Productions, 20th Century Fox Television",
@@ -305,7 +305,7 @@ const movies = [
     category: "Comedy, Romance",
     year: "1994–2004",
     duration: "22 minutes per episode",
-    posterUrl: "/Movie/Friends.jpg",
+    posterUrl: "/movies&TvShows/Friends.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Bright/Kauffman/Crane Productions, Warner Bros. Television",
@@ -318,7 +318,7 @@ const movies = [
     category: "Comedy",
     year: "2007–2019",
     duration: "22 minutes per episode",
-    posterUrl: "/Movie/The Big Bang Theory.jpg",
+    posterUrl: "/movies&TvShows/The Big Bang Theory.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Chuck Lorre Productions, Warner Bros. Television",
@@ -331,7 +331,7 @@ const movies = [
     category: "Comedy, Drama",
     year: "2021–present",
     duration: "30 minutes per episode",
-    posterUrl: "/Movie/Hacks.jpg",
+    posterUrl: "/movies&TvShows/Hacks.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Universal Television, Paulilu, First Thought Productions, 3 Arts Entertainment",
@@ -344,7 +344,7 @@ const movies = [
     category: "Comedy, Fantasy",
     year: "1994",
     duration: "101 minutes",
-    posterUrl: "/Movie/The Mask.jpg",
+    posterUrl: "/movies&TvShows/The Mask.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Dark Horse Entertainment, New Line Cinema",
@@ -357,7 +357,7 @@ const movies = [
     category: "Comedy",
     year: "2009",
     duration: "100 minutes",
-    posterUrl: "/Movie/The Hangover.jpg",
+    posterUrl: "/movies&TvShows/The Hangover.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Green Hat Films, Legendary Pictures, Warner Bros. Pictures",
@@ -370,7 +370,7 @@ const movies = [
     category: "Comedy",
     year: "2025",
     duration: "44 minutes per episode",
-    posterUrl: "/Movie/The Studio.jpg",
+    posterUrl: "/movies&TvShows/The Studio.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Apple TV+, Point Grey Pictures, Lionsgate Television",
@@ -383,7 +383,7 @@ const movies = [
     category: "Comedy, Crime, Drama",
     year: "2024",
     duration: "44 minutes per episode",
-    posterUrl: "/Movie/High Potential.jpg",
+    posterUrl: "/movies&TvShows/High Potential.jpg",
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "ABC Signature, Goddard Textiles, Spondoolie Productions",
