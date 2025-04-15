@@ -123,14 +123,9 @@ const Navbar = () => {
 
           {/* Coloana dreaptă: Butoanele pentru Log In și Sign Up */}
           <div className="flex items-center justify-end">
-            <Link
-              className="text-white hover:underline text-[23px]"
-              to="/Auth"
-            >
-              Log In
-            </Link>
-            {/* Separator vertical */}
-            <div className="border-l-[1px] border-white h-6 mx-3" />
+           
+            
+            
             {/* Buton "Sign Up" care folosește clasa signUpButton pentru a anima gradientul */}
             <Link
               to="/Auth"
@@ -146,7 +141,7 @@ const Navbar = () => {
                 signUpButton
               "
             >
-              Sign Up
+              LOG IN
             </Link>
           </div>
         </div>
@@ -201,12 +196,7 @@ const Navbar = () => {
             </li>
           </ul>
           <div className="flex items-center">
-            <Link
-              className="text-white hover:underline text-[23px]"
-              to="/Auth"
-            >
-              Log In
-            </Link>
+            
             {/* Separator vertical */}
             <div className="border-l-[1px] border-white h-6 mx-3" />
             {/* Buton "Sign Up" pentru mobile */}
