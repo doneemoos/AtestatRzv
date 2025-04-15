@@ -12,23 +12,15 @@ function Home() {
   const featuredMovie = movies[0];
 
   return (
-    <div
-      className="
-        relative
-        w-full
-        h-auto            /* pe mobil, se adaptează la conținut */
-        md:min-h-[70vh]   /* pe desktop, avem min. 70vh */
-        text-white
-        bg-[#0F0C25]
-        bg-cover
-        bg-center
-        bg-no-repeat
-      "
-      style={{
-        backgroundImage: 'url("/ImageBkgHomepage.png")',
-      }}
-    >
-      {/* (Opțional) Stilurile pentru clasa signUpButton – asigură-te că acestea nu sunt deja definite global */}
+    <div className="relative w-full h-auto md:min-h-[80vh] text-white bg-[#09091A]">
+      {/* Imaginea de fundal, rotită 180° */}
+      <img
+        src="/abstract-blurred-background-light-leaks.jpg"
+        alt="Background"
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-[60%] transform rotate-180"
+      />
+
+      {/* (Opțional) Stilurile pentru clasa signUpButton – poți elimina acest bloc dacă stilurile sunt definite global */}
       <style>{`
         @property --middle-color {
           syntax: '<color>';
@@ -54,12 +46,6 @@ function Home() {
 
       {/* Conținutul afișat peste overlay */}
       <div className="relative z-[20] p-4 md:p-8">
-        {/* 
-          Layout general:
-            - Pe mobil: flex-col (elementele stivuite vertical)
-            - Pe desktop: flex-row (poster stânga, text dreapta)
-            - items-center și justify-center / md:justify-between asigură centrarea pe mobil și distribuție între elemente pe desktop 
-        */}
         <div className="max-w-[1200px] mx-auto w-full flex flex-col md:flex-row items-center justify-center md:justify-between gap-8">
           
           {/* Titlul - vizibil DOAR pe mobil */}
@@ -74,30 +60,12 @@ function Home() {
             <img
               src={featuredMovie.posterUrl}
               alt={featuredMovie.title}
-              className="
-                w-auto
-                h-auto
-                max-h-[30rem]     /* poster mai mic pe mobil */
-                md:max-h-[65vh]   /* poster poate fi mai înalt pe desktop */
-                object-contain
-                rounded
-                shadow-md
-              "
+              className="w-auto h-auto max-h-[30rem] md:max-h-[65vh] object-contain rounded shadow-md"
             />
           </div>
 
           {/* Zona de text */}
-          <div
-            className="
-              w-full
-              md:w-[60%]
-              max-w-sm          /* pe mobil textul e mai îngust (~384px) */
-              md:max-w-xl       /* pe desktop textul se poate extinde (~768px) */
-              mx-auto
-              text-center
-              md:text-left
-            "
-          >
+          <div className="w-full md:w-[60%] max-w-sm md:max-w-xl mx-auto text-center md:text-left">
             {/* Titlul - vizibil DOAR pe desktop */}
             <h1 className="hidden md:block text-3xl md:text-4xl font-bold mb-4">
               {featuredMovie.title}
@@ -115,19 +83,7 @@ function Home() {
             
             {/* Buton PLAY cu stilul din navbar */}
             <button
-              className="
-                mt-2
-                inline-flex
-                items-center
-                justify-center
-                px-8 py-2.5
-                text-white
-                text-[20px]
-                font-bold
-                rounded-[0.8rem]
-                shadow-md
-                signUpButton
-              "
+              className="mt-2 inline-flex items-center justify-center px-8 py-2.5 text-white text-[20px] font-bold rounded-[0.8rem] shadow-md signUpButton"
             >
               PLAY
             </button>
