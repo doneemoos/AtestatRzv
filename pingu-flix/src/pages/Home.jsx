@@ -7,14 +7,14 @@ function Home() {
   const location = useLocation();
   const message = location.state?.message;
 
-  // State pentru filmul curent și filmul anterior (pentru animația de ieșire)
+  // Stările pentru filmul curent și filmul anterior (pentru animația de ieșire)
   const [currentIndex, setCurrentIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState(null);
 
   // Filmul curent
   const featuredMovie = movies[currentIndex];
 
-  // Schimbare film la fiecare 4.5s, aleatoriu
+  // Schimbare film la fiecare 4.5 secunde, aleatoriu
   useEffect(() => {
     const interval = setInterval(() => {
       setPrevIndex(currentIndex);
@@ -27,7 +27,7 @@ function Home() {
     return () => clearInterval(interval);
   }, [currentIndex]);
 
-  // Eliminăm filmul anterior după 1.5s (durata animației)
+  // Eliminăm filmul anterior după 1.5 secunde (durata animației)
   useEffect(() => {
     if (prevIndex !== null) {
       const timer = setTimeout(() => setPrevIndex(null), 1500);
@@ -35,7 +35,7 @@ function Home() {
     }
   }, [prevIndex]);
 
-  // Dezactivăm overflow-x în timpul animației de 1.5s
+  // Dezactivăm overflow-x în timpul tranziției de 1.5 secunde
   useEffect(() => {
     document.body.style.overflowX = "hidden";
     const timer = setTimeout(() => {
@@ -48,7 +48,9 @@ function Home() {
   }, [currentIndex]);
 
   return (
-    <div className="relative flex items-center justify-center w-full h-[88vh] text-white bg-[#09091A] overflow-hidden">
+    <div
+      className="relative flex items-center justify-center w-full h-[88vh] text-white bg-[#09091A] overflow-hidden hero-container"
+    >
       {/* Imaginea de fundal */}
       <img
         src="/abstract-blurred-background-light-leaks.jpg"
@@ -56,9 +58,8 @@ function Home() {
         className="absolute top-0 left-0 w-full h-full object-cover opacity-60 transform rotate-180"
       />
 
-      {/* Stiluri CSS pentru animații și buton */}
+      {/* Stiluri CSS pentru animații, buton și override pe telefon */}
       <style>{`
-        /* Keyframes pentru intrare (slide + fade-in) */
         @keyframes slideIn {
           from {
             transform: translateX(100%);
@@ -69,7 +70,6 @@ function Home() {
             opacity: 1;
           }
         }
-        /* Keyframes pentru ieșire (slide spre stânga + fade-out) */
         @keyframes slideOut {
           from {
             transform: translateX(0);
@@ -80,22 +80,18 @@ function Home() {
             opacity: 0;
           }
         }
-        /* Aplicație animațiilor */
         .slide-in {
           animation: slideIn 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
         .slide-out {
           animation: slideOut 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
-        /* Menținem layout-ul containerului cu position absolute */
         .film-slide {
           position: absolute;
           top: 0;
           left: 0;
           width: 100%;
         }
-
-        /* Stiluri pentru butonul de PLAY */
         @property --middle-color {
           syntax: '<color>';
           initial-value: rgba(146, 29, 255, 1);
@@ -113,21 +109,55 @@ function Home() {
         .signUpButton:hover {
           --middle-color: rgba(34, 120, 207, 0.66);
         }
+
+        /* --------- Override layout DOAR pe telefon --------- */
+        @media (max-width: 768px) {
+          /* Crește min-height pentru a avea loc tot conținutul și a-l urca pe ecran */
+          .hero-container {
+            min-height: 120vh !important; 
+            height: auto !important;      /* Suprascrie h-[88vh] */
+            align-items: flex-start !important; /* Aliniem conținutul mai sus */
+            padding-top: 3rem;           /* Ajustare: spațiu de sus, vezi cum arată */
+          }
+
+          /* Containerul general al slide-urilor pe mobil */
+          .mobile-hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+          }
+
+          /* Posterul pe mobil */
+          .film-slide img {
+            max-width: 80vw; 
+            height: auto;
+            margin-bottom: 1rem;
+          }
+
+          /* Textul (titlu, descriere, gen, buton) să fie centrat și vizibil mai sus */
+          .film-info-mobile {
+            margin: 0 auto;
+            text-align: center !important;
+            max-width: 90vw;
+          }
+        }
       `}</style>
 
       {/* Overlay pentru întunecare */}
       <div className="absolute inset-0 bg-[#0F0C25] opacity-50 z-[10]" />
 
-      {/* Containerul pentru slide-uri (justify-around) */}
-      <div className="relative z-[20] w-full max-w-[1400px] mx-auto px-4 md:px-8 h-full flex items-center justify-around">
+      {/* Containerul pentru slide-uri – folosim clasa .mobile-hero pentru override pe telefon */}
+      <div className="relative z-[20] w-full max-w-[1400px] mx-auto px-4 md:px-8 h-full flex items-center justify-around mobile-hero">
         {/* Slide anterior (dacă există) */}
         {prevIndex !== null && (
           <div
             key={movies[prevIndex].id}
-            className="film-slide slide-out flex items-center justify-around w-full h-full"
+            className="film-slide slide-out flex flex-col md:flex-row items-center justify-around w-full h-full"
           >
             {/* Posterul filmului anterior */}
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center mb-4 md:mb-0">
               <img
                 src={movies[prevIndex].posterUrl}
                 alt={movies[prevIndex].title}
@@ -135,8 +165,8 @@ function Home() {
               />
             </div>
 
-            {/* Textul filmului anterior (max-w-sm pentru a fi mai restrâns) */}
-            <div className="text-center md:text-left max-w-sm">
+            {/* Textul filmului anterior */}
+            <div className="text-center md:text-left max-w-sm film-info-mobile">
               <h1 className="hidden md:block text-3xl md:text-4xl font-bold mb-4">
                 {movies[prevIndex].title}
               </h1>
@@ -155,10 +185,10 @@ function Home() {
         {/* Slide curent */}
         <div
           key={featuredMovie.id}
-          className="film-slide slide-in flex items-center justify-around w-full h-full"
+          className="film-slide slide-in flex flex-col md:flex-row items-center justify-around w-full h-full"
         >
           {/* Posterul filmului curent */}
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center mb-4 md:mb-0">
             <img
               src={featuredMovie.posterUrl}
               alt={featuredMovie.title}
@@ -166,14 +196,15 @@ function Home() {
             />
           </div>
 
-          {/* Textul filmului curent (max-w-sm pentru a fi mai restrâns) */}
-          <div className="text-center md:text-left max-w-sm">
+          {/* Textul filmului curent */}
+          <div className="text-center md:text-left max-w-sm film-info-mobile">
             <h1 className="hidden md:block text-3xl md:text-4xl font-bold mb-4">
               {featuredMovie.title}
             </h1>
             <p className="text-base mb-3">{featuredMovie.description}</p>
             <p className="text-sm mb-1">
-              <span className="font-semibold">Gen:</span> {featuredMovie.category}
+              <span className="font-semibold">Gen:</span>{" "}
+              {featuredMovie.category}
             </p>
             <button className="mt-4 inline-flex items-center justify-center px-8 py-2.5 text-white text-[20px] font-bold rounded-[0.8rem] shadow-md signUpButton">
               PLAY
