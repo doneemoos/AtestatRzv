@@ -87,7 +87,7 @@ const Navbar = () => {
               onMouseEnter={handleDesktopHoverEnter}
               onMouseLeave={handleDesktopHoverLeave}
             >
-              PinguFlix
+              PenguFlix
             </Link>
           </div>
 

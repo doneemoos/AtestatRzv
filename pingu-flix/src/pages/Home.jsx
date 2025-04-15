@@ -1,27 +1,101 @@
 // src/pages/Home.jsx
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-// Import array-ul de filme
 import movies from "../data/movies";
 
 function Home() {
   const location = useLocation();
   const message = location.state?.message;
 
-  // Exemplu: folosim primul film din listă
-  const featuredMovie = movies[0];
+  // State pentru filmul curent și filmul anterior (pentru animația de ieșire)
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [prevIndex, setPrevIndex] = useState(null);
+
+  // Filmul curent
+  const featuredMovie = movies[currentIndex];
+
+  // Schimbare film la fiecare 4.5s, aleatoriu
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPrevIndex(currentIndex);
+      let newIndex = Math.floor(Math.random() * movies.length);
+      while (movies.length > 1 && newIndex === currentIndex) {
+        newIndex = Math.floor(Math.random() * movies.length);
+      }
+      setCurrentIndex(newIndex);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
+  // Eliminăm filmul anterior după 1.5s (durata animației)
+  useEffect(() => {
+    if (prevIndex !== null) {
+      const timer = setTimeout(() => setPrevIndex(null), 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [prevIndex]);
+
+  // Dezactivăm overflow-x în timpul animației de 1.5s
+  useEffect(() => {
+    document.body.style.overflowX = "hidden";
+    const timer = setTimeout(() => {
+      document.body.style.overflowX = "";
+    }, 1500);
+    return () => {
+      clearTimeout(timer);
+      document.body.style.overflowX = "";
+    };
+  }, [currentIndex]);
 
   return (
-    <div className="relative w-full h-auto md:min-h-[85vh] text-white bg-[#09091A]">
-      {/* Imaginea de fundal, rotită 180° */}
+    <div className="relative flex items-center justify-center w-full h-[88vh] text-white bg-[#09091A] overflow-hidden">
+      {/* Imaginea de fundal */}
       <img
         src="/abstract-blurred-background-light-leaks.jpg"
         alt="Background"
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-[60%] transform rotate-180"
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-60 transform rotate-180"
       />
 
-      {/* (Opțional) Stilurile pentru clasa signUpButton – poți elimina acest bloc dacă stilurile sunt definite global */}
+      {/* Stiluri CSS pentru animații și buton */}
       <style>{`
+        /* Keyframes pentru intrare (slide + fade-in) */
+        @keyframes slideIn {
+          from {
+            transform: translateX(100%);
+            opacity: 0;
+          }
+          to {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+        /* Keyframes pentru ieșire (slide spre stânga + fade-out) */
+        @keyframes slideOut {
+          from {
+            transform: translateX(0);
+            opacity: 1;
+          }
+          to {
+            transform: translateX(-100%);
+            opacity: 0;
+          }
+        }
+        /* Aplicație animațiilor */
+        .slide-in {
+          animation: slideIn 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        .slide-out {
+          animation: slideOut 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        /* Menținem layout-ul containerului cu position absolute */
+        .film-slide {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+        }
+
+        /* Stiluri pentru butonul de PLAY */
         @property --middle-color {
           syntax: '<color>';
           initial-value: rgba(146, 29, 255, 1);
@@ -41,50 +115,67 @@ function Home() {
         }
       `}</style>
 
-      {/* Overlay pentru întunecare (opțional) */}
+      {/* Overlay pentru întunecare */}
       <div className="absolute inset-0 bg-[#0F0C25] opacity-50 z-[10]" />
 
-      {/* Conținutul afișat peste overlay */}
-      <div className="relative z-[20] p-4 md:p-8">
-        <div className="max-w-[1200px] mx-auto w-full flex flex-col md:flex-row items-center justify-center md:justify-between gap-8">
-          
-          {/* Titlul - vizibil DOAR pe mobil */}
-          <div className="block md:hidden w-full text-center mb-2">
-            <h1 className="text-3xl font-bold">
-              {featuredMovie.title}
-            </h1>
-          </div>
+      {/* Containerul pentru slide-uri (justify-around) */}
+      <div className="relative z-[20] w-full max-w-[1400px] mx-auto px-4 md:px-8 h-full flex items-center justify-around">
+        {/* Slide anterior (dacă există) */}
+        {prevIndex !== null && (
+          <div
+            key={movies[prevIndex].id}
+            className="film-slide slide-out flex items-center justify-around w-full h-full"
+          >
+            {/* Posterul filmului anterior */}
+            <div className="flex items-center justify-center">
+              <img
+                src={movies[prevIndex].posterUrl}
+                alt={movies[prevIndex].title}
+                className="object-contain object-center max-h-[70vh] rounded shadow-md"
+              />
+            </div>
 
-          {/* Posterul filmului */}
-          <div className="w-full md:w-[40%] flex items-center justify-center">
+            {/* Textul filmului anterior (max-w-sm pentru a fi mai restrâns) */}
+            <div className="text-center md:text-left max-w-sm">
+              <h1 className="hidden md:block text-3xl md:text-4xl font-bold mb-4">
+                {movies[prevIndex].title}
+              </h1>
+              <p className="text-base mb-3">{movies[prevIndex].description}</p>
+              <p className="text-sm mb-1">
+                <span className="font-semibold">Gen:</span>{" "}
+                {movies[prevIndex].category}
+              </p>
+              <button className="mt-4 inline-flex items-center justify-center px-8 py-2.5 text-white text-[20px] font-bold rounded-[0.8rem] shadow-md signUpButton">
+                PLAY
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Slide curent */}
+        <div
+          key={featuredMovie.id}
+          className="film-slide slide-in flex items-center justify-around w-full h-full"
+        >
+          {/* Posterul filmului curent */}
+          <div className="flex items-center justify-center">
             <img
               src={featuredMovie.posterUrl}
               alt={featuredMovie.title}
-              className="w-auto h-auto max-h-[30rem] md:max-h-[65vh] object-contain rounded shadow-md"
+              className="object-contain object-center max-h-[70vh] rounded shadow-md"
             />
           </div>
 
-          {/* Zona de text */}
-          <div className="w-full md:w-[60%] max-w-sm md:max-w-xl mx-auto text-center md:text-left">
-            {/* Titlul - vizibil DOAR pe desktop */}
+          {/* Textul filmului curent (max-w-sm pentru a fi mai restrâns) */}
+          <div className="text-center md:text-left max-w-sm">
             <h1 className="hidden md:block text-3xl md:text-4xl font-bold mb-4">
               {featuredMovie.title}
             </h1>
-
-            <p className="text-base mb-3">
-              {featuredMovie.description}
-            </p>
+            <p className="text-base mb-3">{featuredMovie.description}</p>
             <p className="text-sm mb-1">
-              <span className="font-semibold">Gen:</span> {featuredMovie.genre}
+              <span className="font-semibold">Gen:</span> {featuredMovie.category}
             </p>
-            <p className="text-sm mb-3">
-              <span className="font-semibold">IMDb:</span> {featuredMovie.imdbRating}
-            </p>
-            
-            {/* Buton PLAY cu stilul din navbar */}
-            <button
-              className="mt-2 inline-flex items-center justify-center px-8 py-2.5 text-white text-[20px] font-bold rounded-[0.8rem] shadow-md signUpButton"
-            >
+            <button className="mt-4 inline-flex items-center justify-center px-8 py-2.5 text-white text-[20px] font-bold rounded-[0.8rem] shadow-md signUpButton">
               PLAY
             </button>
           </div>
