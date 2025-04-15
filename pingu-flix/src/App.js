@@ -14,10 +14,17 @@ import VideoPlayer from "./pages/VideoPlayer";
 
 function App() {
   const [user, setUser] = useState(null);
+  const [showPopup, setShowPopup] = useState(false); // Control pentru mesajul pop-up
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      if (currentUser) {
+        setShowPopup(true); // Afișează mesajul pop-up
+        setTimeout(() => {
+          setShowPopup(false); // Ascunde mesajul după 5 secunde
+        }, 5000);
+      }
     });
 
     return () => unsubscribe();
@@ -25,15 +32,14 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-gray-100">
+      <div className="min-h-screen bg-gray-100 relative">
         <Navbar />
-        <div className="p-4">
-          {user ? (
-            <p className="text-green-600">Bun venit, {user.email}!</p>
-          ) : (
-            <p className="text-red-600">Nu ești autentificat.</p>
-          )}
-        </div>
+        {/* Mesajul pop-up */}
+        {showPopup && (
+          <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-4 py-2 rounded shadow-lg z-50">
+            Bun venit, {user?.email}!
+          </div>
+        )}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/auth" element={<Auth />} />
