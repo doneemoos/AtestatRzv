@@ -1,7 +1,6 @@
-// src/pages/SearchPage.jsx
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import movies from "../data/movies"; // Array-ul de filme, fiecare film conținând proprietatea posterUrl
+// Search.jsx
+import React, { useState, useEffect } from "react";
+import movies from "../data/movies"; // Array-ul complet de filme
 
 // Componenta Search – gestionează query-ul și filtrează filmele
 const Search = ({ onSearch }) => {
@@ -10,10 +9,10 @@ const Search = ({ onSearch }) => {
   useEffect(() => {
     const delayDebounce = setTimeout(() => {
       if (query.trim() === "") {
-        // Dacă nu există query, trimite toate filmele
+        // Dacă nu există query, se transmit toate filmele
         onSearch(movies);
       } else {
-        // Filtrare după titlu, descriere sau categorie
+        // Se filtrează după titlu, descriere sau categorie
         const filteredResults = movies.filter((movie) =>
           movie.title.toLowerCase().includes(query.toLowerCase()) ||
           (movie.description &&
@@ -41,47 +40,4 @@ const Search = ({ onSearch }) => {
   );
 };
 
-// Componenta SearchPage – afișează rezultatele căutării sub formă de box-uri cu link-uri
-const SearchPage = () => {
-  const [results, setResults] = useState([]);
-
-  return (
-    <div className="p-6 min-h-screen bg-gray-100">
-      <h1 className="text-3xl font-bold text-center mb-6">
-        🔍 Caută filme sau seriale
-      </h1>
-      {/* Bara de căutare care actualizează rezultatele */}
-      <Search onSearch={setResults} />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        {results.map((item) => (
-          <Link
-            to={`/movies/${item.id}`}
-            key={item.id}
-            className="block bg-white p-4 rounded-2xl shadow-md hover:shadow-lg transition"
-          >
-            <h2 className="text-xl font-semibold mb-1">{item.title}</h2>
-            {/* Afișarea imaginii filmului folosind posterUrl */}
-            {item.posterUrl && (
-              <img
-                src={item.posterUrl}
-                alt={item.title}
-                // Poți folosi fie w-full pentru a umple containerul, fie w-auto și mx-auto pentru a păstra dimensiunea naturală centrată:
-                className="w-full h-[30rem] object-cover rounded mb-2"
-                // Alternativ:
-                // className="w-auto mx-auto h-64 object-cover rounded mb-2"
-              />
-            )}
-            <p className="text-sm text-gray-600 mb-2">
-              {item.description || "Fără descriere"}
-            </p>
-            <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
-              {item.category || "Fără categorie"}
-            </span>
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-export default SearchPage;
+export default Search;

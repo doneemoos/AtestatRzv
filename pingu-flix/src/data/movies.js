@@ -10,7 +10,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Universal Pictures, Original Film, One Race Films, Roth/Kirschenbaum Films, Perfect Storm Entertainment, China Film Co., Ltd.",
-    casts: "Vin Diesel, Michelle Rodriguez, Tyrese Gibson, Chris 'Ludacris' Bridges, John Cena, Nathalie Emmanuel, Jordana Brewster, Sung Kang, Scott Eastwood, Daniela Melchior, Alan Ritchson, Helen Mirren, Brie Larson, Rita Moreno, Jason Statham, Jason Momoa, Charlize Theron"
+    casts: "Vin Diesel, Michelle Rodriguez, Tyrese Gibson, Chris 'Ludacris' Bridges, John Cena, Nathalie Emmanuel, Jordana Brewster, Sung Kang, Scott Eastwood, Daniela Melchior, Alan Ritchson, Helen Mirren, Brie Larson, Rita Moreno, Jason Statham, Jason Momoa, Charlize Theron",
+    type:"Movie",
   },
   {
     id: "Mission: Impossible – Dead Reckoning Part One",
@@ -23,7 +24,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Paramount Pictures, Skydance Media, TC Productions, C2 Motion Picture Group",
-    casts: "Tom Cruise, Hayley Atwell, Ving Rhames, Simon Pegg, Rebecca Ferguson, Vanessa Kirby, Esai Morales, Pom Klementieff, Mariela Garriga, Henry Czerny"
+    casts: "Tom Cruise, Hayley Atwell, Ving Rhames, Simon Pegg, Rebecca Ferguson, Vanessa Kirby, Esai Morales, Pom Klementieff, Mariela Garriga, Henry Czerny",
+    type:"TV Show",
   },
   {
     id: "Reacher",
