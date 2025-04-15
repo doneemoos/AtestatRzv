@@ -1,11 +1,9 @@
-// src/pages/MovieDetails.jsx
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import movies from "../data/movies";
 
 function MovieDetails() {
   const { movieId } = useParams();
-  // Căutăm filmul comparând id-ul direct (deoarece id-urile sunt string-uri, ex: "ThePenguinAdventure")
   const movie = movies.find((m) => m.id === movieId);
 
   if (!movie) {
@@ -37,9 +35,13 @@ function MovieDetails() {
 
           {/* Detalii */}
           <div className="md:ml-8 mt-6 md:mt-0 flex-1">
-            <button className="bg-blue-600 text-white px-5 py-2 rounded-lg mb-4">
+            {/* Butonul "Watch now" care duce către pagina VideoPlayer pentru redarea filmului */}
+            <Link
+              to={`/video/${movie.id}`}
+              className="bg-blue-600 text-white px-5 py-2 rounded-lg mb-4 inline-block"
+            >
               ▶ Watch now
-            </button>
+            </Link>
 
             <h1 className="text-3xl font-bold mb-2">{movie.title}</h1>
 
@@ -78,6 +80,24 @@ function MovieDetails() {
               </p>
             </div>
 
+            {/* Secțiunea pentru episoade (doar dacă filmul este de tip TV Show) */}
+            {movie.type === "TV Show" && movie.episodes && (
+              <div className="mt-8">
+                <h2 className="text-2xl font-bold mb-4">Episoade</h2>
+                <div className="flex flex-wrap gap-4">
+                  {movie.episodes.map((episode, index) => (
+                    <Link
+                      key={index}
+                      to={`/video/${movie.id}/episode/${index}`}
+                      className="px-4 py-2 rounded-lg shadow bg-gray-200 text-gray-700 hover:bg-blue-600 hover:text-white transition"
+                    >
+                      {episode.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Butoane Like/Dislike/Favorite */}
             <div className="flex items-center gap-4 mt-6">
               <button className="bg-blue-600 text-white px-4 py-1 rounded">
@@ -89,16 +109,6 @@ function MovieDetails() {
               <button className="bg-gray-100 border px-4 py-1 rounded text-gray-800 hover:bg-gray-200">
                 ➕ Add to favorite
               </button>
-            </div>
-
-            {/* Link spre video player */}
-            <div className="mt-8">
-              <Link
-                to={`/video/${movie.id}`}
-                className="inline-block bg-blue-700 text-white px-6 py-2 rounded shadow hover:bg-blue-800 transition"
-              >
-                ▶ Vezi filmul
-              </Link>
             </div>
           </div>
         </div>
