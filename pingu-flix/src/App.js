@@ -11,6 +11,7 @@ import Movies from "./pages/Movies";
 import SearchPage from "./pages/search";
 import MovieDetails from "./pages/MoviesDetails";
 import VideoPlayer from "./pages/VideoPlayer";
+import Tranding from "./components/tranding";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -47,6 +48,7 @@ function App() {
           <Route path="/search" element={<SearchPage />} />
           <Route path="/movies/:movieId" element={<MovieDetails />} />
           <Route path="/video/:id" element={<VideoPlayer />} />
+          <Route path="/tranding" element={<Tranding />}/>
         </Routes>
       </div>
     </Router>
