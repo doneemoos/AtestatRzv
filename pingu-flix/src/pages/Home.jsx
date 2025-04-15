@@ -12,7 +12,7 @@ function Home() {
   const featuredMovie = movies[0];
 
   return (
-    <div className="relative w-full h-auto md:min-h-[80vh] text-white bg-[#09091A]">
+    <div className="relative w-full h-auto md:min-h-[85vh] text-white bg-[#09091A]">
       {/* Imaginea de fundal, rotită 180° */}
       <img
         src="/abstract-blurred-background-light-leaks.jpg"

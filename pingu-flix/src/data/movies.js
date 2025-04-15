@@ -38,7 +38,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Amazon Studios, Skydance Television, Paramount Television Studios",
-    casts: "Alan Ritchson, Malcolm Goodwin, Willa Fitzgerald, Chris Webster, Bruce McGill, Maria Sten, Harvey Guillén"
+    casts: "Alan Ritchson, Malcolm Goodwin, Willa Fitzgerald, Chris Webster, Bruce McGill, Maria Sten, Harvey Guillén",
+    type: "TV Show",
   },
   {
     id: "Daredevil: Born Again",
@@ -51,7 +52,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Marvel Studios",
-    casts: "Charlie Cox, Vincent D'Onofrio, Jon Bernthal, Deborah Ann Woll, Elden Henson, Margarita Levieva, Michael Gandolfini"
+    casts: "Charlie Cox, Vincent D'Onofrio, Jon Bernthal, Deborah Ann Woll, Elden Henson, Margarita Levieva, Michael Gandolfini",
+    type: "TV Show",
   },
   {
     id: "Ghosted",
@@ -64,7 +66,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Apple Studios, Skydance Media",
-    casts: "Chris Evans, Ana de Armas, Adrien Brody, Mike Moh, Amy Sedaris, Tate Donovan"
+    casts: "Chris Evans, Ana de Armas, Adrien Brody, Mike Moh, Amy Sedaris, Tate Donovan",
+    type: "Movie",
   },
   {
     id: "Greyhound",
@@ -77,7 +80,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Playtone, FilmNation Entertainment, Apple Studios",
-    casts: "Tom Hanks, Stephen Graham, Rob Morgan, Elisabeth Shue, Karl Glusman, Tom Brittney"
+    casts: "Tom Hanks, Stephen Graham, Rob Morgan, Elisabeth Shue, Karl Glusman, Tom Brittney",
+    type: "Movie",
   },
   {
     id: "Avengers: Endgame",
@@ -90,7 +94,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Marvel Studios",
-    casts: "Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth, Scarlett Johansson, Jeremy Renner, Don Cheadle, Paul Rudd, Brie Larson, Karen Gillan, Danai Gurira, Benedict Wong, Jon Favreau, Bradley Cooper, Josh Brolin"
+    casts: "Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth, Scarlett Johansson, Jeremy Renner, Don Cheadle, Paul Rudd, Brie Larson, Karen Gillan, Danai Gurira, Benedict Wong, Jon Favreau, Bradley Cooper, Josh Brolin",
+    type: "Movie",
   },
   {
     id: "Suits",
@@ -103,7 +108,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Universal Cable Productions",
-    casts: "Gabriel Macht, Patrick J. Adams, Meghan Markle, Sarah Rafferty, Rick Hoffman, Gina Torres"
+    casts: "Gabriel Macht, Patrick J. Adams, Meghan Markle, Sarah Rafferty, Rick Hoffman, Gina Torres",
+    type: "TV Show",
   },
   {
     id: "Grey's Anatomy",
@@ -116,7 +122,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Shondaland, The Mark Gordon Company, ABC Studios",
-    casts: "Ellen Pompeo, Chandra Wilson, James Pickens Jr., Justin Chambers, Kevin McKidd, Jesse Williams"
+    casts: "Ellen Pompeo, Chandra Wilson, James Pickens Jr., Justin Chambers, Kevin McKidd, Jesse Williams",
+    type: "TV Show",
   },
   {
     id: "Gilmore Girls",
@@ -129,7 +136,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Dorothy Parker Drank Here Productions, Hofflund/Polone, Warner Bros. Television",
-    casts: "Lauren Graham, Alexis Bledel, Scott Patterson, Kelly Bishop, Edward Herrmann, Melissa McCarthy"
+    casts: "Lauren Graham, Alexis Bledel, Scott Patterson, Kelly Bishop, Edward Herrmann, Melissa McCarthy",
+    type: "TV Show",
   },
   {
     id: "The White Lotus",
@@ -142,7 +150,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "HBO Entertainment, Pallogram, The District, Rip Cord Productions",
-    casts: "Jennifer Coolidge, Natasha Rothwell, Jon Gries, Leslie Bibb, Carrie Coon, Michelle Monaghan"
+    casts: "Jennifer Coolidge, Natasha Rothwell, Jon Gries, Leslie Bibb, Carrie Coon, Michelle Monaghan",
+    type: "TV Show",
   },
   {
     id: "The Last of Us",
@@ -155,7 +164,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Sony Pictures Television, PlayStation Productions, Naughty Dog, Word Games",
-    casts: "Pedro Pascal, Bella Ramsey, Anna Torv, Gabriel Luna, Merle Dandridge, Nico Parker"
+    casts: "Pedro Pascal, Bella Ramsey, Anna Torv, Gabriel Luna, Merle Dandridge, Nico Parker",
+    type: "TV Show",
   },
   {
     id: "The Handmaid's Tale",
@@ -168,7 +178,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "MGM Television, Hulu",
-    casts: "Elisabeth Moss, Joseph Fiennes, Yvonne Strahovski, Alexis Bledel, Madeline Brewer, Ann Dowd, O-T Fagbenle, Max Minghella, Samira Wiley, Amanda Brugel, Bradley Whitford, Sam Jaeger"
+    casts: "Elisabeth Moss, Joseph Fiennes, Yvonne Strahovski, Alexis Bledel, Madeline Brewer, Ann Dowd, O-T Fagbenle, Max Minghella, Samira Wiley, Amanda Brugel, Bradley Whitford, Sam Jaeger",
+    type: "TV Show",
   },
   {
     id: "You",
@@ -181,7 +192,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "A+E Studios, Alloy Entertainment, Berlanti Productions, Warner Horizon Television",
-    casts: "Penn Badgley, Elizabeth Lail, Victoria Pedretti, Tati Gabrielle, Jenna Ortega, James Scully"
+    casts: "Penn Badgley, Elizabeth Lail, Victoria Pedretti, Tati Gabrielle, Jenna Ortega, James Scully",
+    type: "TV Show",
   },
   {
     id: "Étoile",
@@ -194,7 +206,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Sesquipedalian Corporation, Dorothy Parker Drank Here Productions, Big Indie Pictures, Amazon MGM Studios",
-    casts: "Luke Kirby, Charlotte Gainsbourg, Lou de Laâge, Gideon Glick, David Alvarez, Ivan du Pontavice, Taïs Vinolo, David Haig"
+    casts: "Luke Kirby, Charlotte Gainsbourg, Lou de Laâge, Gideon Glick, David Alvarez, Ivan du Pontavice, Taïs Vinolo, David Haig",
+    type: "TV Show",
   },
   {
     id: "Dying for Sex",
@@ -207,7 +220,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Pasta with Sauce, Elizabeth Meriwether Pictures, Wondery, 20th Television",
-    casts: "Michelle Williams, Jenny Slate, Rob Delaney, Jay Duplass, Kelvin Yu, Sissy Spacek"
+    casts: "Michelle Williams, Jenny Slate, Rob Delaney, Jay Duplass, Kelvin Yu, Sissy Spacek",
+    type: "TV Show",
   },
   {
     id: "Desperate Housewives",
@@ -220,7 +234,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Cherry Productions, ABC Studios",
-    casts: "Teri Hatcher, Felicity Huffman, Marcia Cross, Eva Longoria, Nicollette Sheridan, Brenda Strong"
+    casts: "Teri Hatcher, Felicity Huffman, Marcia Cross, Eva Longoria, Nicollette Sheridan, Brenda Strong",
+    type: "TV Show",
   },
   {
     id: "Poor Things",
@@ -233,7 +248,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Searchlight Pictures, Element Pictures, Film4 Productions",
-    casts: "Emma Stone, Mark Ruffalo, Willem Dafoe, Ramy Youssef, Jerrod Carmichael"
+    casts: "Emma Stone, Mark Ruffalo, Willem Dafoe, Ramy Youssef, Jerrod Carmichael",
+    type: "Movie",
   },
   {
     id: "NCIS",
@@ -246,7 +262,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "CBS Studios, Belisarius Productions",
-    casts: "Mark Harmon, Sean Murray, Wilmer Valderrama, Emily Wickersham, Brian Dietzen, David McCallum"
+    casts: "Mark Harmon, Sean Murray, Wilmer Valderrama, Emily Wickersham, Brian Dietzen, David McCallum",
+    type: "TV Show",
   },
   {
     id: "Only Murders in the Building",
@@ -259,7 +276,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Rhode Island Ave. Productions, Another Hoffman Story Productions, 40 Share Productions, 20th Television",
-    casts: "Steve Martin, Martin Short, Selena Gomez, Michael Cyril Creighton, Paul Rudd, Meryl Streep"
+    casts: "Steve Martin, Martin Short, Selena Gomez, Michael Cyril Creighton, Paul Rudd, Meryl Streep",
+    type: "TV Show",
   },
   {
     id: "Ted Lasso",
@@ -272,7 +290,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Ruby's Tuna Inc., Doozer, Universal Television, Warner Bros. Television",
-    casts: "Jason Sudeikis, Hannah Waddingham, Jeremy Swift, Phil Dunster, Brett Goldstein, Brendan Hunt, Nick Mohammed, Juno Temple"
+    casts: "Jason Sudeikis, Hannah Waddingham, Jeremy Swift, Phil Dunster, Brett Goldstein, Brendan Hunt, Nick Mohammed, Juno Temple",
+    type: "TV Show",
   },
   {
     id: "Shrinking",
@@ -285,7 +304,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Dozer Productions, Apple Studios, Warner Bros. Television",
-    casts: "Jason Segel, Harrison Ford, Jessica Williams, Christa Miller, Michael Urie, Luke Tennie"
+    casts: "Jason Segel, Harrison Ford, Jessica Williams, Christa Miller, Michael Urie, Luke Tennie",
+    type: "TV Show",
   },
   {
     id: "Modern Family",
@@ -298,7 +318,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Steven Levitan Productions, Picador Productions, 20th Century Fox Television",
-    casts: "Ed O'Neill, Sofía Vergara, Julie Bowen, Ty Burrell, Jesse Tyler Ferguson, Eric Stonestreet"
+    casts: "Ed O'Neill, Sofía Vergara, Julie Bowen, Ty Burrell, Jesse Tyler Ferguson, Eric Stonestreet",
+    type: "TV Show",
   },
   {
     id: "Friends",
@@ -311,7 +332,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Bright/Kauffman/Crane Productions, Warner Bros. Television",
-    casts: "Jennifer Aniston, Courteney Cox, Lisa Kudrow, Matt LeBlanc, Matthew Perry, David Schwimmer"
+    casts: "Jennifer Aniston, Courteney Cox, Lisa Kudrow, Matt LeBlanc, Matthew Perry, David Schwimmer",
+    type: "TV Show",
   },
   {
     id: "The Big Bang Theory",
@@ -324,7 +346,9 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Chuck Lorre Productions, Warner Bros. Television",
-    casts: "Johnny Galecki, Jim Parsons, Kaley Cuoco, Simon Helberg, Kunal Nayyar, Mayim Bialik, Melissa Rauch"
+    casts: "Johnny Galecki, Jim Parsons, Kaley Cuoco, Simon Helberg, Kunal Nayyar, Mayim Bialik, Melissa Rauch",
+    type: "TV Show",
+
   },
   {
     id: "Hacks",
@@ -337,7 +361,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Universal Television, Paulilu, First Thought Productions, 3 Arts Entertainment",
-    casts: "Jean Smart, Hannah Einbinder, Carl Clemons-Hopkins, Paul W. Downs, Megan Stalter"
+    casts: "Jean Smart, Hannah Einbinder, Carl Clemons-Hopkins, Paul W. Downs, Megan Stalter",
+    type: "TV Show",
   },
   {
     id: "The Mask",
@@ -350,7 +375,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Dark Horse Entertainment, New Line Cinema",
-    casts: "Jim Carrey, Cameron Diaz, Peter Riegert, Peter Greene, Amy Yasbeck"
+    casts: "Jim Carrey, Cameron Diaz, Peter Riegert, Peter Greene, Amy Yasbeck",
+    type: "Movie",
   },
   {
     id: "The Hangover",
@@ -363,7 +389,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Green Hat Films, Legendary Pictures, Warner Bros. Pictures",
-    casts: "Bradley Cooper, Ed Helms, Zach Galifianakis, Justin Bartha, Ken Jeong"
+    casts: "Bradley Cooper, Ed Helms, Zach Galifianakis, Justin Bartha, Ken Jeong",
+    type: "Movie",
   },
   {
     id: "The Studio",
@@ -376,7 +403,8 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "Apple TV+, Point Grey Pictures, Lionsgate Television",
-    casts: "Seth Rogen, Catherine O'Hara, Ike Barinholtz, Chase Sui Wonders, Kathryn Hahn"
+    casts: "Seth Rogen, Catherine O'Hara, Ike Barinholtz, Chase Sui Wonders, Kathryn Hahn",
+    type: "TV Show",
   },
   {
     id: "High Potential",
@@ -389,17 +417,19 @@ const movies = [
     videoUrl: "/File.mp4", // link to trailer
     country: "United States",
     production: "ABC Signature, Goddard Textiles, Spondoolie Productions",
-    casts: "Kaitlin Olson, Daniel Sunjata, Javicia Leslie, Deniz Akdeniz, Judy Reyes"
+    casts: "Kaitlin Olson, Daniel Sunjata, Javicia Leslie, Deniz Akdeniz, Judy Reyes",
+    type: "TV Show",
   },
   {
-    id: "1",
+    id: "Frozen",
     title: "Frozen",
     description: "Descriere film exemplu.",
     category: "Acțiune",
     year: "2021",
     duration: "120",
     posterUrl: "/postere/film_exemplu.jpg",
-    videoUrl: "/Frozen.mp4",  // link către trailer
+    videoUrl: "/Frozen.mp4", 
+    type: "Movie", // link către trailer
   },
 
   // Adăugați mai multe obiecte de filme după cum este necesar...
