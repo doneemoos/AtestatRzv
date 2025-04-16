@@ -13,6 +13,7 @@ import MovieDetails from "./pages/MoviesDetails";
 import VideoPlayer from "./pages/VideoPlayer";
 import Tranding from "./components/tranding";
 
+
 function App() {
   const [user, setUser] = useState(null);
   const [showPopup, setShowPopup] = useState(false); // Control pentru mesajul pop-up
