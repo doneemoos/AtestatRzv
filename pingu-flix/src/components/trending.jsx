@@ -1,12 +1,16 @@
+// src/components/trending.jsx
 import React, { useRef, useState, useEffect } from "react";
-import movies from "../data/movies"; // Lista ta locală de filme
+import { useNavigate } from "react-router-dom";
+import movies from "../data/movies"; // Local movie list
 
 function Tranding() {
+  const navigate = useNavigate();
   const sliderRef = useRef(null);
   const [trendingMovies, setTrendingMovies] = useState([]);
-  const apiKey = "b824d3987acfe368a810569eb6ba6bdd"; // Înlocuiește cu cheia ta TMDb
+  const apiKey = "b824d3987acfe368a810569eb6ba6bdd"; // Replace with your TMDb key
+  const isDragging = useRef(false);
 
-  // Funcție care caută în TMDb un film după titlu și returnează popularitatea
+  /* ---------------- Fetch TMDb popularity ---------------- */
   const fetchPopularity = async (movie) => {
     try {
       const response = await fetch(
@@ -15,138 +19,106 @@ function Tranding() {
         )}`
       );
       const data = await response.json();
-      if (data.results && data.results.length > 0) {
-        // Caută o potrivire exactă pe titlu (ignoring case); dacă nu, folosește primul rezultat
+      if (data.results?.length) {
         const exactMatch = data.results.find(
-          (result) =>
-            result.title.toLowerCase() === movie.title.toLowerCase()
+          (r) => r.title.toLowerCase() === movie.title.toLowerCase()
         );
         const bestMatch = exactMatch || data.results[0];
         return bestMatch.popularity || 0;
-      } else {
-        return 0;
       }
-    } catch (error) {
-      console.error(`Error fetching popularity for ${movie.title}:`, error);
+      return 0;
+    } catch (err) {
+      console.error(`Error fetching popularity for ${movie.title}:`, err);
       return 0;
     }
   };
 
-  // useEffect: pentru fiecare film din lista locală, se obține popularitatea din TMDb,
-  // se sortează descrescător și se setează top 20 filme
+  /* ---------------- Build trending list ---------------- */
   useEffect(() => {
-    async function fetchTrendingData() {
+    (async () => {
       try {
-        const moviesWithPopularity = await Promise.all(
-          movies.map(async (movie) => {
-            const popularity = await fetchPopularity(movie);
-            return { ...movie, popularity };
-          })
+        const enriched = await Promise.all(
+          movies.map(async (m) => ({ ...m, popularity: await fetchPopularity(m) }))
         );
-        // Sortează filmele descrescător după popularitate
-        const sortedMovies = moviesWithPopularity.sort(
-          (a, b) => b.popularity - a.popularity
-        );
-        // Selectează primele 20
-        setTrendingMovies(sortedMovies.slice(0, 20));
-      } catch (error) {
-        console.error("Error fetching trending movies:", error);
+        const sorted = enriched.sort((a, b) => b.popularity - a.popularity);
+        setTrendingMovies(sorted.slice(0, 20));
+      } catch (e) {
+        console.error("Error fetching trending movies:", e);
       }
-    }
-    fetchTrendingData();
+    })();
   }, [apiKey]);
 
-  // --- Funcționalitate slider: scroll smooth și drag ---
-
+  /* ---------------- Slider helpers ---------------- */
   const isDown = useRef(false);
   const startX = useRef(0);
-  const scrollLeftStart = useRef(0);
+  const scrollStart = useRef(0);
+  const dragThreshold = 5; // threshold to detect actual drag
 
-  // Funcție de easing pentru o tranziție smooth
-  const easeInOutQuad = (t) =>
-    t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  const CARD_WIDTH_PX = 420; // ~ card (384) + gap (24‑32)
+  const CARDS_TO_SCROLL = 3;
+  const SCROLL_DELTA = CARD_WIDTH_PX * CARDS_TO_SCROLL; // ≈ 1260px
 
-  // Funcție pentru a anima scroll-ul folosind requestAnimationFrame
-  const animateScroll = (element, to, duration) => {
-    const start = element.scrollLeft;
-    const change = to - start;
-    const startTime = performance.now();
+  const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
 
-    const animate = (currentTime) => {
-      const elapsed = currentTime - startTime;
-      let progress = elapsed / duration;
-      if (progress > 1) progress = 1;
-      const easeProgress = easeInOutQuad(progress);
-      element.scrollLeft = start + change * easeProgress;
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
+  const animateScroll = (el, to, dur) => {
+    const from = el.scrollLeft;
+    const change = to - from;
+    const start = performance.now();
+    const step = (now) => {
+      const prog = Math.min(1, (now - start) / dur);
+      el.scrollLeft = from + change * easeInOutQuad(prog);
+      if (prog < 1) requestAnimationFrame(step);
     };
-
-    requestAnimationFrame(animate);
+    requestAnimationFrame(step);
   };
 
-  const scrollLeft = () => {
-    if (sliderRef.current) {
-      animateScroll(sliderRef.current, sliderRef.current.scrollLeft - 300, 600);
-    }
-  };
+  const scrollLeft = () =>
+    sliderRef.current &&
+    animateScroll(sliderRef.current, sliderRef.current.scrollLeft - SCROLL_DELTA, 600);
 
-  const scrollRight = () => {
-    if (sliderRef.current) {
-      animateScroll(sliderRef.current, sliderRef.current.scrollLeft + 300, 600);
-    }
-  };
+  const scrollRight = () =>
+    sliderRef.current &&
+    animateScroll(sliderRef.current, sliderRef.current.scrollLeft + SCROLL_DELTA, 600);
 
-  // Handlers pentru drag pe desktop
-  const handleMouseDown = (e) => {
+  /* ---------------- Drag / touch handlers ---------------- */
+  const onDown = (x) => {
     isDown.current = true;
-    startX.current = e.pageX - sliderRef.current.offsetLeft;
-    scrollLeftStart.current = sliderRef.current.scrollLeft;
+    isDragging.current = false;
+    startX.current = x - sliderRef.current.offsetLeft;
+    scrollStart.current = sliderRef.current.scrollLeft;
   };
-
-  const handleMouseLeave = () => {
-    isDown.current = false;
-  };
-
-  const handleMouseUp = () => {
-    isDown.current = false;
-  };
-
-  const handleMouseMove = (e) => {
+  const onMove = (x) => {
     if (!isDown.current) return;
-    e.preventDefault();
-    const x = e.pageX - sliderRef.current.offsetLeft;
     const walk = x - startX.current;
-    sliderRef.current.scrollLeft = scrollLeftStart.current - walk;
+    if (Math.abs(walk) > dragThreshold) isDragging.current = true;
+    sliderRef.current.scrollLeft = scrollStart.current - walk;
   };
-
-  // Handlers pentru touch (mobile)
-  const handleTouchStart = (e) => {
-    isDown.current = true;
-    startX.current = e.touches[0].pageX - sliderRef.current.offsetLeft;
-    scrollLeftStart.current = sliderRef.current.scrollLeft;
-  };
-
-  const handleTouchMove = (e) => {
-    if (!isDown.current) return;
-    const x = e.touches[0].pageX - sliderRef.current.offsetLeft;
-    const walk = x - startX.current;
-    sliderRef.current.scrollLeft = scrollLeftStart.current - walk;
-  };
-
-  const handleTouchEnd = () => {
-    isDown.current = false;
-  };
+  const onUp = () => (isDown.current = false);
 
   return (
     <section
       className="relative w-full py-8 px-4 overflow-hidden"
       style={{ background: "linear-gradient(90deg, #140046 0%, #281564 100%)" }}
     >
-      <h2 className="text-white text-3xl font-bold mb-6">Trending Movies</h2>
+      {/* Reuse gradient button styles */}
+      <style>{`
+        @property --middle-color {
+          syntax: '<color>';
+          initial-value: rgba(146, 29, 255, 0.66);
+          inherits: false;
+        }
+        .signUpButton {
+          background: linear-gradient(330deg, rgba(13,42,71,1) 0%, var(--middle-color) 50%, rgba(13,42,71,1) 98%);
+          transition: --middle-color 1s ease;
+        }
+        .signUpButton:hover { --middle-color: rgba(34,120,207,0.66); }
+      `}</style>
+
+      {/* Title shifted to the right (ml-32) */}
+      <h2 className="text-white text-3xl font-bold mb-6 ml-[2rem]">Trending Movies</h2>
+
       <div className="relative flex items-center">
-        {/* Buton scroll stânga */}
+        {/* Scroll left button */}
         <button
           onClick={scrollLeft}
           className="absolute left-2 z-10 bg-white text-black rounded-full p-2 shadow hover:scale-105 transition"
@@ -158,49 +130,70 @@ function Tranding() {
         <div
           ref={sliderRef}
           className="flex space-x-6 px-6 overflow-hidden cursor-grab"
-          onMouseDown={handleMouseDown}
-          onMouseLeave={handleMouseLeave}
-          onMouseUp={handleMouseUp}
-          onMouseMove={handleMouseMove}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
+          onMouseDown={(e) => onDown(e.pageX)}
+          onMouseLeave={onUp}
+          onMouseUp={onUp}
+          onMouseMove={(e) => onMove(e.pageX)}
+          onTouchStart={(e) => onDown(e.touches[0].pageX)}
+          onTouchMove={(e) => onMove(e.touches[0].pageX)}
+          onTouchEnd={onUp}
         >
           {trendingMovies.length === 0 ? (
-            <p className="text-white">Se încarcă...</p>
+            <p className="text-white">Loading...</p>
           ) : (
             trendingMovies.map((movie) => (
-              <div key={movie.id} className="flex-none w-96 py-4">
+              <div
+                key={movie.id}
+                className="flex-none w-96 py-4"
+                onClick={() => {
+                  if (!isDragging.current) navigate(`/movies/${movie.id}`);
+                }}
+                style={{ cursor: "pointer" }}
+              >
                 <div
                   className="bg-[#190b3d] text-white rounded-xl shadow-lg h-[36rem] flex flex-col transform transition duration-200 ease-out hover:scale-105"
-                  style={{ transformOrigin: "center" }}
                 >
-                  {/* Folosim posterUrl din lista locală */}
                   <img
                     src={movie.posterUrl}
                     alt={movie.title}
                     draggable={false}
                     onDragStart={(e) => e.preventDefault()}
-                    className="rounded-t-xl h-64 w-full object-cover"
+                    className="rounded-t-xl h-[20rem] w-full object-cover"
                   />
                   <div className="p-4 flex-1 overflow-hidden">
-                    <h3 className="text-xl font-semibold mb-1">{movie.title}</h3>
-                    <p className="text-sm opacity-75 mb-2">
+                    <h3 className="text-xl font-semibold mb-1 truncate">
+                      {movie.title}
+                    </h3>
+                    <p
+                      className="text-sm opacity-75 mb-2"
+                      style={{
+                        display: "-webkit-box",
+                        WebkitLineClamp: "2",
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                      }}
+                    >
                       {movie.description}
                     </p>
                     <p className="text-sm opacity-75 mb-2">
-                      <strong>Gen:</strong> {movie.category}
+                      <strong>Genre:</strong> {movie.category}
                     </p>
                     <p className="text-sm opacity-75 mb-2">
-                      <strong>An:</strong> {movie.year}
+                      <strong>Year:</strong> {movie.year}
                     </p>
                     <p className="text-sm opacity-75 mb-2">
-                      <strong>Tip:</strong> {movie.type}
+                      <strong>Type:</strong> {movie.type}
                     </p>
                     <p className="text-sm opacity-75 mb-2">
-                      Popularitate: {movie.popularity.toFixed(2)}
+                      Popularity: {movie.popularity.toFixed(2)}
                     </p>
-                    <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full text-sm">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/movies/${movie.id}`);
+                      }}
+                      className="inline-flex items-center justify-center px-3 py-1 text-white text-[16px] rounded-[0.5rem] shadow-md signUpButton"
+                    >
                       Discover
                     </button>
                   </div>
@@ -210,7 +203,7 @@ function Tranding() {
           )}
         </div>
 
-        {/* Buton scroll dreapta */}
+        {/* Scroll right button */}
         <button
           onClick={scrollRight}
           className="absolute right-2 z-10 bg-white text-black rounded-full p-2 shadow hover:scale-105 transition"
