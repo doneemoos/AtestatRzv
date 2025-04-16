@@ -1,11 +1,11 @@
-import React, { useRef, useState, useEffect } from "react";
+import React from "react";
 import { useParams, Link } from "react-router-dom";
 import movies from "../data/movies";
 import Footer from "../components/footer";
 
 function MovieDetails() {
-  const { movieId } = useParams();
-  const movie = movies.find((m) => m.id === movieId);
+  const { id } = useParams();
+  const movie = movies.find((m) => m.id === decodeURIComponent(id));
 
   if (!movie) {
     return (
@@ -19,9 +19,9 @@ function MovieDetails() {
     <div className="relative min-h-screen bg-gray-100">
       {/* Fundal blur din poster */}
       <div
-        className="absolute top-0 left-0 w-full h-96 bg-cover bg-center blur-sm brightness-50"
+        className="absolute inset-0 h-96 bg-cover bg-center blur-sm brightness-50"
         style={{ backgroundImage: `url(${movie.posterUrl})` }}
-      ></div>
+      />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-12">
         <div className="bg-white rounded-xl shadow-lg flex flex-col md:flex-row p-6">
@@ -36,9 +36,13 @@ function MovieDetails() {
 
           {/* Detalii */}
           <div className="md:ml-8 mt-6 md:mt-0 flex-1">
-            {/* Butonul "Watch now" care duce către pagina VideoPlayer pentru redarea filmului */}
+            {/* Watch now – pentru film sau primul episod */}
             <Link
-              to={`/video/${movie.id}`}
+              to={
+                movie.type === "TV Show"
+                  ? `/video/${encodeURIComponent(movie.id)}/episode/0`
+                  : `/video/${encodeURIComponent(movie.id)}`
+              }
               className="bg-blue-600 text-white px-5 py-2 rounded-lg mb-4 inline-block"
             >
               ▶ Watch now
@@ -68,7 +72,7 @@ function MovieDetails() {
                 <strong>Genre:</strong> {movie.category}
               </p>
               <p>
-                <strong>Duration:</strong> {movie.duration || "N/A"} min
+                <strong>Duration:</strong> {movie.duration || "N/A"}
               </p>
               <p>
                 <strong>Country:</strong> {movie.country || "N/A"}
@@ -81,18 +85,18 @@ function MovieDetails() {
               </p>
             </div>
 
-            {/* Secțiunea pentru episoade (doar dacă filmul este de tip TV Show) */}
-            {movie.type === "TV Show" && movie.episodes && (
+            {/* Episoade (numai pentru serial) */}
+            {movie.type === "TV Show" && movie.episodes?.length > 0 && (
               <div className="mt-8">
                 <h2 className="text-2xl font-bold mb-4">Episoade</h2>
                 <div className="flex flex-wrap gap-4">
-                  {movie.episodes.map((episode, index) => (
+                  {movie.episodes.map((ep, idx) => (
                     <Link
-                      key={index}
-                      to={`/video/${movie.id}/episode/${index}`}
+                      key={idx}
+                      to={`/video/${encodeURIComponent(movie.id)}/episode/${idx}`}
                       className="px-4 py-2 rounded-lg shadow bg-gray-200 text-gray-700 hover:bg-blue-600 hover:text-white transition"
                     >
-                      {episode.title}
+                      {ep.title || `Episodul ${idx + 1}`}
                     </Link>
                   ))}
                 </div>

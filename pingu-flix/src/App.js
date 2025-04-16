@@ -3,56 +3,66 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { auth } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
 
-// Componente proprii
-import Navbar from "./components/navbar";
-import Home from "./pages/Home";
-import Auth from "./pages/Auth";
-import Movies from "./pages/Movies";
-import SearchPage from "./pages/search";
-import MovieDetails from "./pages/MoviesDetails";
-import VideoPlayer from "./pages/VideoPlayer";
-import Tranding from "./components/trending";
-import Footer from "./components/footer";
-
+/* componente proprii */
+import Navbar        from "./components/navbar";
+import Home          from "./pages/Home";
+import AuthPage      from "./pages/Auth";
+import MoviesPage    from "./pages/Movies";
+import SearchPage    from "./pages/search";
+import MovieDetails  from "./pages/MoviesDetails";   // <- fișierul tău se numește *MoviesDetails.jsx*
+import VideoPlayer   from "./pages/VideoPlayer";
+import Trending      from "./components/trending";   // fișier: components/trending.jsx
+import Footer        from "./components/footer";
 
 function App() {
+  /* ----------- autentificare Firebase ----------- */
   const [user, setUser] = useState(null);
-  const [showPopup, setShowPopup] = useState(false); // Control pentru mesajul pop-up
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, currentUser => {
       setUser(currentUser);
       if (currentUser) {
-        setShowPopup(true); // Afișează mesajul pop-up
-        setTimeout(() => {
-          setShowPopup(false); // Ascunde mesajul după 5 secunde
-        }, 5000);
+        setShowPopup(true);
+        setTimeout(() => setShowPopup(false), 5_000);
       }
     });
-
     return () => unsubscribe();
   }, []);
 
+  /* ------------------- UI ------------------- */
   return (
     <Router>
       <div className="min-h-screen bg-gray-100 relative">
         <Navbar />
-        {/* Mesajul pop-up */}
+
+        {/* pop‑up bun‑venit */}
         {showPopup && (
-          <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-4 py-2 rounded shadow-lg z-50">
+          <div className="fixed top-4 left-1/2 -translate-x-1/2 bg-green-600 text-white px-4 py-2 rounded shadow-lg z-50">
             Bun venit, {user?.email}!
           </div>
         )}
+
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/auth" element={<Auth />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/movies/:movieId" element={<MovieDetails />} />
-          <Route path="/video/:id" element={<VideoPlayer />} />
-          <Route path="/tranding" element={<Tranding />}/>
-          <Route path="/footer" element={<Footer/>}/>
+          {/* principale */}
+          <Route path="/"         element={<Home />}      />
+          <Route path="/auth"     element={<AuthPage />}  />
+          <Route path="/movies"   element={<MoviesPage />} />
+          <Route path="/search"   element={<SearchPage />} />
+
+          {/* detalii film / serial */}
+          <Route path="/movies/:id" element={<MovieDetails />} />
+
+          {/* redare film sau episod */}
+          <Route path="/video/:id"                       element={<VideoPlayer />} />
+          <Route path="/video/:id/episode/:episodeIndex" element={<VideoPlayer />} />
+
+          {/* alte pagini */}
+          <Route path="/trending" element={<Trending />} />
         </Routes>
+
+        {/* footer global */}
+        <Footer />
       </div>
     </Router>
   );
