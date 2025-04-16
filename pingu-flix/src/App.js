@@ -11,7 +11,8 @@ import Movies from "./pages/Movies";
 import SearchPage from "./pages/search";
 import MovieDetails from "./pages/MoviesDetails";
 import VideoPlayer from "./pages/VideoPlayer";
-import Tranding from "./components/tranding";
+import Tranding from "./components/trending";
+import Footer from "./components/footer";
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
           <Route path="/movies/:movieId" element={<MovieDetails />} />
           <Route path="/video/:id" element={<VideoPlayer />} />
           <Route path="/tranding" element={<Tranding />}/>
+          <Route path="/footer" element={<Footer/>}/>
         </Routes>
       </div>
     </Router>

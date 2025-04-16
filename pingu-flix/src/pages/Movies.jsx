@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Search from "./search"; // Componenta pentru căutare
 import movies from "../data/movies"; // Array-ul complet de filme/seriale
+import Footer from "../components/footer";
 
 function Movies() {
   const [results, setResults] = useState(movies);
@@ -53,6 +54,7 @@ function Movies() {
   };
 
   return (
+    <div className="integrate">
     <div className="max-w-[1400px] mx-auto px-4 py-8">
       {/* Butoanele de filtrare */}
       <div className="flex items-center justify-between mb-6">
@@ -166,7 +168,11 @@ function Movies() {
           </Link>
         ))}
       </div>
+      
     </div>
+    <Footer />
+    </div>
+   
   );
 }
 

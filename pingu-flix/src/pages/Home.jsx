@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import movies from "../data/movies";
-import Tranding from "../components/tranding"; // Importă componenta Tranding
+import Tranding from "../components/trending"; // Importă componenta Tranding
+import Footer from "../components/footer";
 
 function Home() {
   const location = useLocation();
@@ -213,6 +214,7 @@ function Home() {
 
       {/* Secțiunea Tranding inserată imediat după hero section */}
       <Tranding />
+      <Footer />
     </>
   );
 }

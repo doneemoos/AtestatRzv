@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import movies from "../data/movies";
+import Footer from "../components/footer";
 
 function MovieDetails() {
   const { movieId } = useParams();
@@ -113,6 +114,7 @@ function MovieDetails() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
