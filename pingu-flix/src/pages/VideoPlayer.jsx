@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import movies from "../data/movies";
 
-const adVideos = ["/ad1.mp4", "/ad2.mp4"];
-const overlayAdVideo = "/ad1.mp4";
+const preRollAds = ["/ad1.mp4", "/ad2.mp4"]; // Multiple reclame pre-roll
+const overlayAdVideo = "/ad1.mp4"; // Reclama overlay
 
-// Componenta pentru redarea unui episod (nu folosește hook-uri, deci nu este afectată)
+// Componenta pentru redarea unui episod (fără gestionare reclame)
 const EpisodePlayer = ({ movieId, episodeIndex }) => {
   const movie = movies.find((m) => m.id === movieId);
 
@@ -33,112 +33,120 @@ const EpisodePlayer = ({ movieId, episodeIndex }) => {
   );
 };
 
-// Componenta pentru redarea filmului cu gestionarea reclamelor
+// Componenta de redare a filmului cu gestionarea reclamelor
 const MoviePlayer = ({ id }) => {
-  // Chiar dacă "movie" nu este găsit, apelăm toate hook-urile înainte de a face un eventual return.
   const movie = movies.find((m) => m.id === id);
-
-  // Apelăm hook-urile necondiționat
   const videoRef = useRef(null);
-  const overlayAdRef = useRef(null);
-  const [phase, setPhase] = useState("preAds"); // posibile valori: "preAds", "movie", "overlayAd"
+
+  // Stări pentru gestionarea secvenței:
+  // phase: "preroll", "movie" sau "overlay"
+  const [phase, setPhase] = useState("preroll");
+  // adIndex pentru reclamele pre-roll curente (0 sau 1)
   const [adIndex, setAdIndex] = useState(0);
-  const [hasShownOverlayAd, setHasShownOverlayAd] = useState(false);
-  const [pausedForAd, setPausedForAd] = useState(false);
+  // Pentru a reține secunda la care se întrerupe filmul, pentru reluare
   const [resumeTime, setResumeTime] = useState(0);
+  // Flag pentru a ne asigura că reclama overlay se redă o singură dată
+  const [overlayPlayed, setOverlayPlayed] = useState(false);
 
-  // Efectul este definit indiferent de condiții
+  // La montare, setăm sursa inițială ca fiind prima reclamă pre-roll
   useEffect(() => {
-    if (phase === "movie" && videoRef.current) {
-      const interval = setInterval(() => {
-        if (
-          videoRef.current.currentTime >= 60 &&
-          !hasShownOverlayAd &&
-          !pausedForAd
-        ) {
-          setResumeTime(videoRef.current.currentTime);
-          videoRef.current.pause();
-          setPhase("overlayAd");
-          setPausedForAd(true);
-          setHasShownOverlayAd(true);
-        }
-      }, 1000);
-      return () => clearInterval(interval);
+    const video = videoRef.current;
+    if (video) {
+      video.src = preRollAds[0];
+      video.play().catch((err) =>
+        console.warn("Autoplay failed; poate e necesară o interacțiune din partea utilizatorului.", err)
+      );
     }
-  }, [phase, hasShownOverlayAd, pausedForAd]);
+  }, []);
 
-  // Dacă filmul nu este găsit, redăm un mesaj. Această verificare se face după apelarea hook-urilor,
-  // astfel încât regula de hooks este respectată.
+  // Handler pentru evenimentul onEnded (sfârșitul redării clipului curent)
+  const handleEnded = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (phase === "preroll") {
+      // Dacă mai avem reclame pre-roll de redat
+      if (adIndex < preRollAds.length - 1) {
+        const nextAdIndex = adIndex + 1;
+        setAdIndex(nextAdIndex);
+        video.src = preRollAds[nextAdIndex];
+        video.play();
+      } else {
+        // Am terminat reclamele pre-roll; comutăm la film
+        setPhase("movie");
+        video.src = movie.videoUrl;
+        video.play();
+      }
+    } else if (phase === "overlay") {
+      // La finalul reclamei overlay, revenim la film
+      setPhase("movie");
+      video.src = movie.videoUrl;
+      // În momentul încărcării metadatelor, vom seta currentTime la resumeTime
+      video.play();
+    } else if (phase === "movie") {
+      // Dacă filmul s-a terminat
+      console.log("Filmul s-a încheiat.");
+    }
+  };
+
+  // Handler pentru onTimeUpdate, monitorizează progresul filmului
+  const handleTimeUpdate = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    // În faza de film, verificăm dacă a ajuns la 60 de secunde
+    if (phase === "movie" && !overlayPlayed) {
+      if (video.currentTime >= 60) {
+        // Salvăm secunda de întrerupere
+        setResumeTime(video.currentTime);
+        // Marcăm că reclama overlay va fi redată o singură dată
+        setOverlayPlayed(true);
+        // Comutăm la faza overlay
+        setPhase("overlay");
+        video.pause();
+        video.src = overlayAdVideo;
+        video.play();
+      }
+    }
+  };
+
+  // Handler pentru onLoadedMetadata. Folosit la revenirea la film după overlay,
+  // asigură setarea timpului corect (resumeTime) după ce sursa filmului a fost încărcată.
+  const handleLoadedMetadata = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (phase === "movie" && resumeTime > 0) {
+      video.currentTime = resumeTime;
+      // Resetăm resumeTime pentru a evita aplicarea lui la alte încărcări
+      setResumeTime(0);
+    }
+  };
+
   if (!movie) {
     return (
       <div className="text-center mt-10 text-xl">Filmul nu a fost găsit!</div>
     );
   }
 
-  const handleAdEnded = () => {
-    if (adIndex < adVideos.length - 1) {
-      setAdIndex(adIndex + 1);
-    } else {
-      setPhase("movie");
-    }
-  };
-
-  const handleOverlayEnded = () => {
-    if (videoRef.current) {
-      videoRef.current.currentTime = resumeTime;
-    }
-    setPhase("movie");
-  };
-
-  const handleMovieClick = () => {
-    if (videoRef.current) {
-      videoRef.current.paused
-        ? videoRef.current.play()
-        : videoRef.current.pause();
-    }
-  };
-
   return (
     <div className="max-w-[1200px] mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-center mb-6">{movie.title}</h1>
-      <div className="relative">
-        {phase === "preAds" ? (
-          <video
-            key={adIndex}
-            src={adVideos[adIndex]}
-            autoPlay
-            controls
-            onEnded={handleAdEnded}
-            playsInline
-            className="w-full rounded-lg shadow-lg"
-          />
-        ) : phase === "movie" ? (
-          <video
-            ref={videoRef}
-            src={movie.videoUrl}
-            onClick={handleMovieClick}
-            controls={phase !== "overlayAd"}
-            poster={movie.posterUrl}
-            playsInline
-            className="w-full rounded-lg shadow-lg"
-          >
-            Browserul tău nu suportă acest video.
-          </video>
-        ) : (
-          <video
-            ref={overlayAdRef}
-            src={overlayAdVideo}
-            autoPlay
-            muted
-            onEnded={handleOverlayEnded}
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover rounded-lg shadow-lg z-10"
-          >
-            Browserul tău nu suportă acest video.
-          </video>
-        )}
-      </div>
-      {phase === "movie" && (
+
+      {/* Elementul video unificat */}
+      <video
+        ref={videoRef}
+        controls
+        playsInline
+        poster={movie.posterUrl}
+        className="w-full rounded-lg shadow-lg"
+        onEnded={handleEnded}
+        onTimeUpdate={handleTimeUpdate}
+        onLoadedMetadata={handleLoadedMetadata}
+      >
+        Browserul tău nu suportă acest video.
+      </video>
+
+      {/* Detaliile filmului și butonul de navigare, afișate după terminarea reclamelor pre-roll */}
+      {phase !== "preroll" && (
         <>
           <div className="bg-white mt-6 p-6 rounded-lg shadow-md">
             <p className="text-gray-700 mb-4">
@@ -170,8 +178,7 @@ const MoviePlayer = ({ id }) => {
   );
 };
 
-// Componenta principală VideoPlayer: apelăm useParams necondiționat,
-// apoi în interiorul returnului folosim o expresie ternară pentru a alege între EpisodePlayer și MoviePlayer.
+// Componenta principală VideoPlayer care determină dacă se redă un episod sau un film
 const VideoPlayer = () => {
   const { id, movieId, episodeIndex } = useParams();
 
