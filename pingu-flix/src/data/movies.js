@@ -34,8 +34,8 @@ const movies = [
       "Tom Cruise, Hayley Atwell, Ving Rhames, Simon Pegg, Rebecca Ferguson, Vanessa Kirby, Esai Morales, Pom Klementieff, Mariela Garriga, Henry Czerny",
     type: "TV Show",
     episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
+      { title: "Episode 1: The Beginning", videoUrl: "/Frozen.mp4" },
+      { title: "Episode 2: The Journey", videoUrl: "/Frozen.mp4" },
       { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
     ],
   },
