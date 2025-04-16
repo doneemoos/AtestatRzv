@@ -149,7 +149,7 @@ function Movies() {
           ))}
         </div>
       </div>
-      <Footer />
+  
     </div>
   );
 }

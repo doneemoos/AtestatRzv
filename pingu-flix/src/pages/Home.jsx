@@ -184,7 +184,7 @@ function Home() {
       </div>
 
       <Tranding />
-      <Footer />
+
     </>
   );
 }
