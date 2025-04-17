@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { auth } from "../firebase";
 
 import {
@@ -7,6 +7,7 @@ import {
   signOut,
   GoogleAuthProvider,
   signInWithPopup,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
@@ -17,7 +18,15 @@ function Auth() {
     email: "",
     password: "",
   });
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -66,6 +75,33 @@ function Auth() {
       console.error("Eroare la autentificarea cu Google:", error.message);
     }
   };
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      navigate("/");
+    } catch (error) {
+      console.error("Eroare la delogare:", error.message);
+    }
+  };
+
+  if (user) {
+    return (
+      <div className="flex font-poppins items-center justify-center dark:bg-gray-900 min-w-screen min-h-screen">
+        <div className="text-center">
+          <h2 className="text-2xl mb-4 dark:text-gray-400">
+            Bine ai venit, {user.displayName || user.email}!
+          </h2>
+          <button
+            onClick={handleLogout}
+            className="bg-gradient-to-r from-red-500 to-pink-500 shadow-lg p-4 text-white rounded-lg text-xl hover:scale-105 hover:from-pink-500 hover:to-red-500 transition duration-300 ease-in-out"
+          >
+            Deconectare
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex font-poppins items-center justify-center dark:bg-gray-900 min-w-screen min-h-screen">
