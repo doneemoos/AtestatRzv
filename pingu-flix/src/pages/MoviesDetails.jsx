@@ -92,7 +92,7 @@ export default function MovieDetails() {
             </div>
 
             {/* seasons */}
-            {movie.type === "TV Show" && (
+            {movie.type === "TV Show" && movie.seasons && movie.seasons.length > 0 && (
               <div className="mt-8">
                 <h2 className="text-2xl font-bold mb-4">Sezoane</h2>
                 <div className="flex gap-4 mb-4">
@@ -111,20 +111,24 @@ export default function MovieDetails() {
                   ))}
                 </div>
 
-                <h3 className="text-xl font-semibold mb-2">
-                  Episoade - Sezonul {movie.seasons[selectedSeason].season}
-                </h3>
-                <div className="flex flex-wrap gap-4">
-                  {movie.seasons[selectedSeason].episodes.map((ep, i) => (
-                    <Link
-                      key={i}
-                      to={`/video/${encodeURIComponent(movie.id)}/season/${selectedSeason}/episode/${i}`}
-                      className="px-4 py-2 rounded-lg shadow bg-gray-200 text-gray-700 hover:bg-blue-600 hover:text-white transition"
-                    >
-                      {ep.title || `Episodul ${i + 1}`}
-                    </Link>
-                  ))}
-                </div>
+                {selectedSeason !== null && movie.seasons[selectedSeason] && (
+                  <>
+                    <h3 className="text-xl font-semibold mb-2">
+                      Episoade - Sezonul {movie.seasons[selectedSeason].season}
+                    </h3>
+                    <div className="flex flex-wrap gap-4">
+                      {movie.seasons[selectedSeason].episodes.map((ep, i) => (
+                        <Link
+                          key={i}
+                          to={`/video/${encodeURIComponent(movie.id)}/season/${selectedSeason}/episode/${i}`}
+                          className="px-4 py-2 rounded-lg shadow bg-gray-200 text-gray-700 hover:bg-blue-600 hover:text-white transition"
+                        >
+                          {ep.title || `Episodul ${i + 1}`}
+                        </Link>
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
             )}
 
