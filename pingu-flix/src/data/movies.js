@@ -8,7 +8,7 @@ const movies = [
     year: "2023",
     duration: "141 minutes",
     posterUrl: "/movies&TvShows/Fast X.jpg",
-    videoUrl: "/File.mp4",
+    videoUrl: "/movies&TvShows/FAST X _ Official Trailer.mp4",
     country: "United States",
     production: "Universal Pictures, Original Film, One Race Films, Roth/Kirschenbaum Films, Perfect Storm Entertainment, China Film Co., Ltd.",
     casts: "Vin Diesel, Michelle Rodriguez, Tyrese Gibson, Chris 'Ludacris' Bridges, John Cena, Nathalie Emmanuel, Jordana Brewster, Sung Kang, Scott Eastwood, Daniela Melchior, Alan Ritchson, Helen Mirren, Brie Larson, Rita Moreno, Jason Statham, Jason Momoa, Charlize Theron",
@@ -321,7 +321,7 @@ const movies = [
     year: "2025",
     duration: "8 episodes",
     posterUrl: "/movies&TvShows/Dying for Sex.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Dying for Sex _ Official Trailer _ Michelle Williams, Jenny Slate, Rob Delaney _ FX.mp4",
     country: "United States",
     production:
       "Pasta with Sauce, Elizabeth Meriwether Pictures, Wondery, 20th Television",
@@ -329,9 +329,21 @@ const movies = [
       "Michelle Williams, Jenny Slate, Rob Delaney, Jay Duplass, Kelvin Yu, Sissy Spacek",
     type: "TV Show",
     episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
+      {
+        title: "Episode 1: The Beginning",
+        videoUrl:
+          "/movies&TvShows/Dying for Sex _ Official Trailer _ Michelle Williams, Jenny Slate, Rob Delaney _ FX.mp4",
+      },
+      {
+        title: "Episode 2: The Journey",
+        videoUrl:
+          "/movies&TvShows/Dying for Sex _ Official Trailer _ Michelle Williams, Jenny Slate, Rob Delaney _ FX.mp4",
+      },
+      {
+        title: "Episode 3: The Climax",
+        videoUrl:
+          "/movies&TvShows/Dying for Sex _ Official Trailer _ Michelle Williams, Jenny Slate, Rob Delaney _ FX.mp4",
+      },
     ],
   },
   {
@@ -752,7 +764,7 @@ const movies = [
     year: "2021",
     duration: "2h 28m",
     posterUrl:
-      "/movies&TvShows/encanto.jpg",
+      "/movies&TvShows/spider man no way home.jpg",
     videoUrl: "https://www.youtube.com/watch?v=JfVOs4VSpmA",
     country: "USA",
     production: "Marvel Studios",
@@ -768,7 +780,7 @@ const movies = [
     year: "2021",
     duration: "1h 42m",
     posterUrl:
-      "https://en.wikipedia.org/wiki/Special:FilePath/Encanto_poster.jpg",
+      "/movies&TvShows/encanto.jpg",
     videoUrl: "https://www.youtube.com/watch?v=CaimKeDcudo",
     country: "USA",
     production: "Walt Disney Pictures",
@@ -814,7 +826,7 @@ const movies = [
     year: "2022",
     duration: "3h 12m",
     posterUrl: "/movies&TvShows/Avatar The Way of Water.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=d9MyW72ELq0",
+    videoUrl: "/movies&TvShows/Avatar The Way of Water.jpg",
     country: "USA",
     production: "20th Century Studios",
     casts: "Sam Worthington, Zoe Saldaña, Sigourney Weaver",
@@ -919,7 +931,7 @@ const movies = [
     year: "2023",
     duration: "1h 54m",
     posterUrl: "/movies&TvShows/Barbie.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=pBk4NYhWNMM",
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4",
     country: "USA",
     production: "Warner Bros.",
     casts: "Margot Robbie, Ryan Gosling, America Ferrera",
@@ -966,7 +978,7 @@ const movies = [
     year: "2014",
     duration: "169 minutes",
     posterUrl: "/movies&TvShows/Interstellar.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=zSWdZVtXT7E",
+    videoUrl: "/movies&TvShows/Interstellar - Trailer - Official Warner Bros. UK.mp4",
     country: "USA",
     production: "Paramount Pictures, Warner Bros.",
     casts: "Matthew McConaughey, Anne Hathaway, Jessica Chastain, Michael Caine",
@@ -1071,7 +1083,7 @@ const movies = [
     year: "1997",
     duration: "195 minutes",
     posterUrl: "/movies&TvShows/Titanic.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=2e-eXJ6HgkQ",
+    videoUrl: "/movies&TvShows/Titanic 25th Anniversary _ AUDIO DESCRIBED Official Trailer _ In Cinemas February 10.mp4",
     country: "USA",
     production: "20th Century Fox, Paramount Pictures",
     casts: "Leonardo DiCaprio, Kate Winslet",
@@ -1407,7 +1419,7 @@ const movies = [
     year: "2014",
     duration: "99 minutes",
     posterUrl: "/movies&TvShows/The Grand Budapest Hotel.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=1Fg5iWmQjwk",
+    videoUrl: "/movies&TvShows/THE GRAND BUDAPEST HOTEL - Official Wolrdwide Trailer HD.mp4",
     country: "USA/Germany",
     production: "Fox Searchlight Pictures",
     casts: "Ralph Fiennes, Tony Revolori, Saoirse Ronan",
@@ -1482,7 +1494,7 @@ const movies = [
     year: "2001",
     duration: "125 minutes",
     posterUrl: "/movies&TvShows/Spirited Away.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=ByXuk9QqQkk",
+    videoUrl: "/movies&TvShows/SPIRITED AWAY _ Official English Trailer.mp4",
     country: "Japan",
     production: "Studio Ghibli",
     casts: "Rumi Hiiragi, Miyu Irino, Mari Natsuki (voice)",
