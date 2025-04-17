@@ -1,5 +1,5 @@
 // src/pages/Movies.jsx
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Search from "./search";
 import movies from "../data/movies";
@@ -21,6 +21,8 @@ function Movies() {
   const [results, setResults] = useState(movies);
   const [selectedCategory, setSelectedCategory] = useState(getCategoryFromQuery());
   const [selectedGenre, setSelectedGenre] = useState("All");
+  const [showGenres, setShowGenres] = useState(false);
+  const genresDropdownRef = useRef(null);
 
   /* ---------------- Sync URL ↔ state ---------------- */
   useEffect(() => {
@@ -62,6 +64,26 @@ function Movies() {
       : `All TV shows in ${selectedGenre}`;
   };
 
+  /* ---------------- Close dropdown on outside click ---------------- */
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        genresDropdownRef.current &&
+        !genresDropdownRef.current.contains(event.target)
+      ) {
+        setShowGenres(false);
+      }
+    }
+    if (showGenres) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showGenres]);
+
   /* ---------------- JSX ---------------- */
   return (
     <div className="integrate">
@@ -88,41 +110,70 @@ function Movies() {
               </button>
             ))}
 
-            {/* Genres dropdown (pure CSS hover) */}
-            <div className="relative group">
+            {/* Genres dropdown modern */}
+            <div className="relative" ref={genresDropdownRef}>
               <button
-                className={`px-4 py-2 rounded font-semibold shadow-md transition-transform duration-300 ${
-                  selectedGenre !== "All"
-                    ? "bg-gradient-to-r from-purple-500 to-blue-500 text-white scale-105 shadow-lg"
-                    : "bg-gray-200 text-gray-700 group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-blue-500 group-hover:text-white hover:scale-105"
+                onClick={() => setShowGenres((v) => !v)}
+                className={`px-4 py-2 rounded font-semibold shadow-md transition-transform duration-300 flex items-center gap-2 ${
+                  showGenres || selectedGenre !== "All"
+                    ? "bg-gradient-to-r from-purple-500 to-blue-500 text-white"
+                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                 }`}
               >
-                🎭 Genres
+                🎭 {selectedGenre === "All" ? "Genres" : selectedGenre}
+                <span
+                  className={`transform transition-transform duration-200 ${
+                    showGenres ? "rotate-180" : ""
+                  }`}
+                >
+                  ▼
+                </span>
               </button>
-
-              {/* Dropdown visible while hovering button or menu */}
-              <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg p-4 z-10 w-48 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200">
-                <ul className="space-y-2">
-                  {genres.map((g) => (
-                    <li key={g}>
-                      <button
-                        onClick={() => setSelectedGenre(g)}
-                        className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-700 rounded transition-colors duration-200"
-                      >
-                        {g}
-                      </button>
-                    </li>
-                  ))}
-                  <li>
-                    <button
-                      onClick={() => setSelectedGenre("All")}
-                      className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-700 rounded transition-colors duration-200"
-                    >
-                      All Genres
-                    </button>
-                  </li>
-                </ul>
-              </div>
+              {showGenres && (
+                <div className="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-2xl z-50 w-64 py-2 border border-blue-200">
+                  <div className="max-h-96 overflow-y-auto">
+                    <div className="sticky top-0 bg-gray-50 px-4 py-2 border-b border-gray-100">
+                      <h3 className="text-sm font-semibold text-gray-700">
+                        Genre
+                      </h3>
+                    </div>
+                    <ul className="grid grid-cols-1 gap-1 p-2">
+                      <li>
+                        <button
+                          onClick={() => {
+                            setSelectedGenre("All");
+                            setShowGenres(false);
+                          }}
+                          className={`w-full text-left px-4 py-2 text-sm rounded-md transition-colors duration-200 ${
+                            selectedGenre === "All"
+                              ? "bg-blue-50 text-blue-700"
+                              : "text-gray-700 hover:bg-blue-100"
+                          }`}
+                        >
+                          All Genres
+                        </button>
+                      </li>
+                      {genres.map((genre) => (
+                        <li key={genre}>
+                          <button
+                            onClick={() => {
+                              setSelectedGenre(genre);
+                              setShowGenres(false);
+                            }}
+                            className={`w-full text-left px-4 py-2 text-sm rounded-md transition-colors duration-200 ${
+                              selectedGenre === genre
+                                ? "bg-blue-50 text-blue-700"
+                                : "text-gray-700 hover:bg-blue-100"
+                            }`}
+                          >
+                            {genre}
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Dynamic message */}
@@ -149,7 +200,6 @@ function Movies() {
           ))}
         </div>
       </div>
-  
     </div>
   );
 }
