@@ -3,63 +3,71 @@ const movies = [
   {
     id: "Fast X",
     title: "Fast X",
-    description:
-      "The latest chapter in the Fast & Furious saga brings the Toretto family back into action, facing a mysterious enemy connected to past events. With high-octane action across multiple continents, the film maintains the franchise's trademark adrenaline.",
+    description: "The latest chapter in the Fast & Furious saga brings the Toretto family back into action, facing a mysterious enemy connected to past events. With high-octane action across multiple continents, the film maintains the franchise's trademark adrenaline.",
     category: "Action & Adventure",
     year: "2023",
     duration: "141 minutes",
     posterUrl: "/movies&TvShows/Fast X.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/File.mp4",
     country: "United States",
-    production:
-      "Universal Pictures, Original Film, One Race Films, Roth/Kirschenbaum Films, Perfect Storm Entertainment, China Film Co., Ltd.",
-    casts:
-      "Vin Diesel, Michelle Rodriguez, Tyrese Gibson, Chris 'Ludacris' Bridges, John Cena, Nathalie Emmanuel, Jordana Brewster, Sung Kang, Scott Eastwood, Daniela Melchior, Alan Ritchson, Helen Mirren, Brie Larson, Rita Moreno, Jason Statham, Jason Momoa, Charlize Theron",
+    production: "Universal Pictures, Original Film, One Race Films, Roth/Kirschenbaum Films, Perfect Storm Entertainment, China Film Co., Ltd.",
+    casts: "Vin Diesel, Michelle Rodriguez, Tyrese Gibson, Chris 'Ludacris' Bridges, John Cena, Nathalie Emmanuel, Jordana Brewster, Sung Kang, Scott Eastwood, Daniela Melchior, Alan Ritchson, Helen Mirren, Brie Larson, Rita Moreno, Jason Statham, Jason Momoa, Charlize Theron",
     type: "Movie",
   },
   {
     id: "Mission: Impossible – Dead Reckoning Part One",
     title: "Mission: Impossible",
-    description:
-      "Ethan Hunt and the IMF team embark on their most dangerous mission yet: to track down a terrifying new weapon that threatens all of humanity before it falls into the wrong hands. With control of the future and the fate of the world at stake, a deadly race around the globe begins.",
+    description: "Ethan Hunt and the IMF team embark on their most dangerous mission yet: to track down a terrifying new weapon that threatens all of humanity before it falls into the wrong hands. With control of the future and the fate of the world at stake, a deadly race around the globe begins.",
     category: "Action & Adventure",
     year: "2023",
     duration: "163 minutes",
-    posterUrl:
-      "/movies&TvShows/Mission Impossible – Dead Reckoning Part One.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    posterUrl: "/movies&TvShows/Mission Impossible – Dead Reckoning Part One.jpg",
+    videoUrl: "/File.mp4",
     country: "United States",
-    production:
-      "Paramount Pictures, Skydance Media, TC Productions, C2 Motion Picture Group",
-    casts:
-      "Tom Cruise, Hayley Atwell, Ving Rhames, Simon Pegg, Rebecca Ferguson, Vanessa Kirby, Esai Morales, Pom Klementieff, Mariela Garriga, Henry Czerny",
+    production: "Paramount Pictures, Skydance Media, TC Productions, C2 Motion Picture Group",
+    casts: "Tom Cruise, Hayley Atwell, Ving Rhames, Simon Pegg, Rebecca Ferguson, Vanessa Kirby, Esai Morales, Pom Klementieff, Mariela Garriga, Henry Czerny",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning",   videoUrl: "/Frozen.mp4" },
+          { title: "Episode 2: The Journey",     videoUrl: "/videos/mi2.mp4" },
+          { title: "Episode 3: The Climax",      videoUrl: "/videos/mi3.mp4" },
+        ],
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "Episode 1: Resurgence",      videoUrl: "/videos/mi4.mp4" },
+          { title: "Episode 2: Underground",     videoUrl: "/videos/mi5.mp4" },
+          { title: "Episode 3: Final Showdown",  videoUrl: "/videos/mi6.mp4" },
+        ],
+      },
     ],
   },
   {
     id: "Reacher",
     title: "Reacher",
-    description:
-      "Jack Reacher, a former military police officer, arrives in a seemingly peaceful town only to uncover a web of corruption and organized crime. The series combines brutal action with a charismatic lead character, delivering a tense and engaging atmosphere.",
+    description: "Jack Reacher, a former military police officer, arrives in a seemingly peaceful town only to uncover a web of corruption and organized crime. The series combines brutal action with a charismatic lead character, delivering a tense and engaging atmosphere.",
     category: "Action & Adventure",
     year: "2022–present",
     duration: "Varies",
     posterUrl: "/movies&TvShows/Reacher.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/File.mp4",
     country: "United States",
-    production:
-      "Amazon Studios, Skydance Television, Paramount Television Studios",
-    casts:
-      "Alan Ritchson, Malcolm Goodwin, Willa Fitzgerald, Chris Webster, Bruce McGill, Maria Sten, Harvey Guillén",
+    production: "Amazon Studios, Skydance Television, Paramount Television Studios",
+    casts: "Alan Ritchson, Malcolm Goodwin, Willa Fitzgerald, Chris Webster, Bruce McGill, Maria Sten, Harvey Guillén",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/videos/re1.mp4" },
+          { title: "Episode 2: The Journey",   videoUrl: "/videos/re2.mp4" },
+          { title: "Episode 3: The Climax",    videoUrl: "/videos/re3.mp4" },
+        ],
+      },
     ],
   },
   {

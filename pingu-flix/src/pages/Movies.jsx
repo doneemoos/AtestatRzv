@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Search from "./search";
 import movies from "../data/movies";
-import Footer from "../components/footer";
+
 
 function Movies() {
   const location = useLocation();
