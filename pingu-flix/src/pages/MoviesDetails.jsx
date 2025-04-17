@@ -1,11 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import movies from "../data/movies";
 import Footer from "../components/footer";
 
+/* 🔗 Firebase & context */
+import { useAuth } from "../context/AuthContext";
+import { addToList, removeFromList } from "../utils/db";
+import { db } from "../firebase";
+import { doc, getDoc } from "firebase/firestore";
+
 function MovieDetails() {
   const { id } = useParams();
   const movie = movies.find((m) => m.id === decodeURIComponent(id));
+  const user  = useAuth();
+
+  /* starea butoanelor */
+  const [liked,     setLiked] = useState(false);
+  const [favorited, setFav]   = useState(false);
+
+  /* când componenta sau user‑ul se schimbă, verificăm dacă filmul e deja salvat */
+  useEffect(() => {
+    if (!user || !movie) return;
+
+    (async () => {
+      const likeSnap = await getDoc(doc(db, "users", user.uid, "likes",      movie.id));
+      const favSnap  = await getDoc(doc(db, "users", user.uid, "favorites", movie.id));
+      setLiked(likeSnap.exists());
+      setFav(favSnap.exists());
+    })();
+  }, [user, movie]);
+
+  /* adaugă / scoate din colecția Firestore corespunzătoare */
+  const toggle = async (listName, setter, state) => {
+    if (!user) {
+      alert("Trebuie să fii logat ca să folosești această funcție!");
+      return;
+    }
+    state
+      ? await removeFromList(user.uid, listName, movie.id)
+      : await addToList   (user.uid, listName, movie);
+    setter(!state);
+  };
+
+  /* -------- UI -------- */
 
   if (!movie) {
     return (
@@ -17,7 +54,7 @@ function MovieDetails() {
 
   return (
     <div className="relative min-h-screen bg-gray-100">
-      {/* Fundal blur din poster */}
+      {/* fundal blur din poster */}
       <div
         className="absolute inset-0 h-96 bg-cover bg-center blur-sm brightness-50"
         style={{ backgroundImage: `url(${movie.posterUrl})` }}
@@ -25,7 +62,7 @@ function MovieDetails() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-12">
         <div className="bg-white rounded-xl shadow-lg flex flex-col md:flex-row p-6">
-          {/* Poster */}
+          {/* poster */}
           <div className="w-full md:w-1/4">
             <img
               src={movie.posterUrl}
@@ -34,9 +71,9 @@ function MovieDetails() {
             />
           </div>
 
-          {/* Detalii */}
+          {/* detalii */}
           <div className="md:ml-8 mt-6 md:mt-0 flex-1">
-            {/* Watch now – pentru film sau primul episod */}
+            {/* watch now */}
             <Link
               to={
                 movie.type === "TV Show"
@@ -65,27 +102,15 @@ function MovieDetails() {
             <p className="text-gray-700 mb-4">{movie.description}</p>
 
             <div className="text-sm text-gray-600 space-y-1">
-              <p>
-                <strong>Released:</strong> {movie.year}
-              </p>
-              <p>
-                <strong>Genre:</strong> {movie.category}
-              </p>
-              <p>
-                <strong>Duration:</strong> {movie.duration || "N/A"}
-              </p>
-              <p>
-                <strong>Country:</strong> {movie.country || "N/A"}
-              </p>
-              <p>
-                <strong>Production:</strong> {movie.production || "N/A"}
-              </p>
-              <p>
-                <strong>Casts:</strong> {movie.casts || "N/A"}
-              </p>
+              <p><strong>Released:</strong>   {movie.year}</p>
+              <p><strong>Genre:</strong>      {movie.category}</p>
+              <p><strong>Duration:</strong>   {movie.duration || "N/A"}</p>
+              <p><strong>Country:</strong>    {movie.country   || "N/A"}</p>
+              <p><strong>Production:</strong> {movie.production|| "N/A"}</p>
+              <p><strong>Casts:</strong>      {movie.casts     || "N/A"}</p>
             </div>
 
-            {/* Episoade (numai pentru serial) */}
+            {/* episoade (doar la serial) */}
             {movie.type === "TV Show" && movie.episodes?.length > 0 && (
               <div className="mt-8">
                 <h2 className="text-2xl font-bold mb-4">Episoade</h2>
@@ -103,21 +128,32 @@ function MovieDetails() {
               </div>
             )}
 
-            {/* Butoane Like/Dislike/Favorite */}
+            {/* butoane like / favorite */}
             <div className="flex items-center gap-4 mt-6">
-              <button className="bg-blue-600 text-white px-4 py-1 rounded">
-                👍 Like
+              <button
+                onClick={() => toggle("likes", setLiked, liked)}
+                className={`px-4 py-1 rounded text-white transition ${
+                  liked ? "bg-red-600" : "bg-blue-600"
+                }`}
+              >
+                {liked ? "❤️ Liked" : "👍 Like"}
               </button>
-              <button className="bg-gray-300 text-gray-800 px-4 py-1 rounded">
-                👎 Dislike
-              </button>
-              <button className="bg-gray-100 border px-4 py-1 rounded text-gray-800 hover:bg-gray-200">
-                ➕ Add to favorite
+
+              <button
+                onClick={() => toggle("favorites", setFav, favorited)}
+                className={`px-4 py-1 rounded border transition ${
+                  favorited
+                    ? "bg-yellow-400 text-white"
+                    : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                }`}
+              >
+                {favorited ? "⭐ Favorit" : "➕ Add to favorite"}
               </button>
             </div>
           </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );
