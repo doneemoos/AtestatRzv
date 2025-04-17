@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import movies from "../data/movies";
+import { FaPlay, FaPause, FaExpand, FaCompress, FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 
 // ─── Fișiere publicitare ─────────────────────────────────────────────────
 const preRollAds = ["/ad1.mp4", "/ad2.mp4"];
@@ -102,18 +103,18 @@ function CustomVideoPlayer({ title, videoUrl, posterUrl, description, extraInfo 
     setVolume(vol);
   };
 
-  const handleSpeedChange = e => {
-    const v = videoRef.current;
-    const sp = parseFloat(e.target.value);
-    v.playbackRate = sp;
-    setSpeed(sp);
-  };
-
   const toggleFullscreen = () => {
     const el = videoRef.current;
     if (!el) return;
     if (!isFullscreen) el.requestFullscreen?.(); else document.exitFullscreen?.();
     setIsFullscreen(!isFullscreen);
+  };
+
+  const handleSpeedChange = e => {
+    const v = videoRef.current;
+    const sp = parseFloat(e.target.value);
+    v.playbackRate = sp;
+    setSpeed(sp);
   };
 
   const formatTime = t => {
@@ -123,75 +124,122 @@ function CustomVideoPlayer({ title, videoUrl, posterUrl, description, extraInfo 
   };
 
   return (
-    <div className="max-w-[1200px] mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-center mb-6">{title}</h1>
-      <div className="relative bg-black rounded-lg overflow-hidden">
+    <div className="max-w-[1200px] mx-auto px-4 py-8 bg-gray-900 min-h-screen">
+      <h1 className="text-4xl font-bold text-center mb-6 text-white">{title}</h1>
+      <div className="relative bg-black rounded-xl overflow-hidden shadow-2xl">
         <video
           ref={videoRef}
           poster={posterUrl}
-          className="w-full"
+          className="w-full aspect-video"
           onEnded={handleEnded}
           onTimeUpdate={handleTimeUpdate}
           onLoadedMetadata={handleLoadedMetadata}
         />
 
+        {/* Ad Badge */}
         {(phase === 'preroll' || phase === 'overlay') && (
-          <div className="absolute top-2 left-2 bg-red-600 text-white px-2 py-1 rounded">
-            RECLAMĂ
+          <div className="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full font-semibold text-sm tracking-wider animate-pulse">
+            AD
           </div>
         )}
 
-        <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 p-4 flex items-center gap-4">
-          <button onClick={togglePlay} className="text-white">
-            {playing ? '❚❚' : '►'}
-          </button>
-          <span className="text-white text-sm">
-            {formatTime(currentTime)} / {formatTime(duration)}
-          </span>
-          <input
-            type="range"
-            min={0}
-            max={duration}
-            step="0.1"
-            value={currentTime}
-            onChange={handleSeek}
-            className="flex-grow"
-          />
-          <input
-            type="range"
-            min={0}
-            max={1}
-            step="0.01"
-            value={volume}
-            onChange={handleVolumeChange}
-            className="w-24"
-          />
-          <select value={speed} onChange={handleSpeedChange} className="text-white">
-            {[0.5, 1, 1.5, 2].map(sp => (
-              <option key={sp} value={sp}>{sp}×</option>
-            ))}
-          </select>
-          <button onClick={toggleFullscreen} className="text-white">
-            {isFullscreen ? '🡼' : '🡾'}
-          </button>
+        {/* Controls Overlay */}
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 opacity-0 hover:opacity-100 transition-opacity duration-300">
+          {/* Progress Bar */}
+          <div className="relative w-full h-1 bg-gray-600 rounded-full mb-4 cursor-pointer group">
+            <div 
+              className="absolute h-full bg-red-600 rounded-full"
+              style={{ width: `${(currentTime / duration) * 100}%` }}
+            />
+            <input
+              type="range"
+              min={0}
+              max={duration}
+              step="0.1"
+              value={currentTime}
+              onChange={handleSeek}
+              className="absolute w-full h-full opacity-0 cursor-pointer"
+            />
+          </div>
+
+          {/* Controls */}
+          <div className="flex items-center gap-6">
+            {/* Play/Pause */}
+            <button 
+              onClick={togglePlay}
+              className="text-white hover:text-red-500 transition"
+            >
+              {playing ? <FaPause size={20} /> : <FaPlay size={20} />}
+            </button>
+
+            {/* Time */}
+            <div className="text-white text-sm font-medium">
+              {formatTime(currentTime)} / {formatTime(duration)}
+            </div>
+
+            {/* Volume Control */}
+            <div className="flex items-center gap-2 group relative">
+              <button 
+                onClick={() => setVolume(volume === 0 ? 1 : 0)}
+                className="text-white hover:text-red-500 transition"
+              >
+                {volume === 0 ? <FaVolumeMute size={20} /> : <FaVolumeUp size={20} />}
+              </button>
+              <input
+                type="range"
+                min={0}
+                max={1}
+                step="0.01"
+                value={volume}
+                onChange={handleVolumeChange}
+                className="w-0 group-hover:w-24 transition-all duration-300"
+              />
+            </div>
+
+            <div className="flex-grow" />
+
+            {/* Playback Speed */}
+            <select 
+              value={speed} 
+              onChange={handleSpeedChange}
+              className="bg-transparent text-white border border-gray-600 rounded px-2 py-1 text-sm hover:border-red-500 transition"
+            >
+              {[0.5, 1, 1.5, 2].map(sp => (
+                <option key={sp} value={sp} className="bg-gray-900">{sp}×</option>
+              ))}
+            </select>
+
+            {/* Fullscreen */}
+            <button 
+              onClick={toggleFullscreen}
+              className="text-white hover:text-red-500 transition"
+            >
+              {isFullscreen ? <FaCompress size={20} /> : <FaExpand size={20} />}
+            </button>
+          </div>
         </div>
       </div>
 
+      {/* Content Info */}
       {phase === 'main' && (
-        <>
-          <div className="bg-white mt-6 p-6 rounded-lg shadow-md">
-            {description && <p className="text-gray-700 mb-4">{description}</p>}
-            {extraInfo}
+        <div className="mt-8 space-y-6">
+          <div className="bg-gray-800 p-6 rounded-xl shadow-xl">
+            {description && (
+              <p className="text-gray-300 leading-relaxed">{description}</p>
+            )}
+            <div className="mt-4 text-gray-400">{extraInfo}</div>
           </div>
-          <div className="mt-6 text-center">
+          
+          <div className="text-center">
             <button
               onClick={() => window.history.back()}
-              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+              className="bg-red-600 text-white px-8 py-3 rounded-full font-semibold 
+                         hover:bg-red-700 transform hover:scale-105 transition duration-300"
             >
-              ⬅ Înapoi
+              Back to Browse
             </button>
           </div>
-        </>
+        </div>
       )}
     </div>
   );
