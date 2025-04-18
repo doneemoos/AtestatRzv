@@ -22,26 +22,33 @@ function Auth() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
+  // Ascunde scroll-ul orizontal
+  useEffect(() => {
+    document.body.style.overflowX = "hidden";
+    return () => {
+      document.body.style.overflowX = "";
+    };
+  }, []);
+
+  // Observe schimbarea autentificării
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
-    return () => unsubscribe();
+    return unsubscribe;
   }, []);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      let userCredential;
+      let cred;
       if (isLogin) {
-        userCredential = await signInWithEmailAndPassword(
+        cred = await signInWithEmailAndPassword(
           auth,
           formData.email,
           formData.password
@@ -54,7 +61,7 @@ function Auth() {
         }
         console.log("Utilizator logat:", userCredential.user);
       } else {
-        userCredential = await createUserWithEmailAndPassword(
+        cred = await createUserWithEmailAndPassword(
           auth,
           formData.email,
           formData.password
@@ -70,8 +77,8 @@ function Auth() {
           message: `Bine ai venit, ${formData.name || userCredential.user.displayName || userCredential.user.email}!`,
         },
       });
-    } catch (error) {
-      console.error("Eroare:", error.message);
+    } catch (err) {
+      console.error("Authentication error:", err.message);
     }
   };
 
@@ -79,13 +86,11 @@ function Auth() {
     const provider = new GoogleAuthProvider();
     try {
       const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-      console.log("Autentificat cu Google:", user);
       navigate("/", {
-        state: { message: `Bine ai venit, ${user.displayName || "utilizator"}!` },
+        state: { message: `Welcome, ${result.user.displayName}!` },
       });
-    } catch (error) {
-      console.error("Eroare la autentificarea cu Google:", error.message);
+    } catch (err) {
+      console.error("Google Error:", err.message);
     }
   };
 
@@ -93,10 +98,14 @@ function Auth() {
     try {
       await signOut(auth);
       navigate("/");
-    } catch (error) {
-      console.error("Eroare la delogare:", error.message);
+    } catch (err) {
+      console.error("Error signing out:", err.message);
     }
   };
+
+  // Wrapper cu fundal uniform
+  const wrapperClass =
+    "relative flex items-center justify-center w-screen min-h-[110vh] pt-[10vh] bg-gradient-to-r from-[#010b12]/100 to-[#010b12]/100";
 
   if (user) {
     return (
@@ -107,7 +116,7 @@ function Auth() {
           </h2>
           <button
             onClick={handleLogout}
-            className="bg-gradient-to-r from-red-500 to-pink-500 shadow-lg p-4 text-white rounded-lg text-xl hover:scale-105 hover:from-pink-500 hover:to-red-500 transition duration-300 ease-in-out"
+            className="bg-gradient-to-r from-red-500 to-pink-500 shadow-lg px-6 py-3 text-white rounded-lg text-lg hover:scale-105 transition"
           >
             Deconectare
           </button>
@@ -117,131 +126,112 @@ function Auth() {
   }
 
   return (
-    <div className="flex font-poppins items-center justify-center dark:bg-gray-900 min-w-screen min-h-screen">
-      <div className="grid gap-8">
-        <div
-          id="back-div"
-          className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-[30px] mx-auto max-w-[1100px] p-4"
-        >
-          <div className="border-[25px] border-transparent rounded-[30px] dark:bg-gray-900 bg-white shadow-lg xl:p-12 2xl:p-12 lg:p-12 md:p-10 sm:p-6 m-4 max-w-[1000px] mx-auto">
-            <h1 className="pt-10 pb-8 font-bold text-6xl dark:text-gray-400 text-center cursor-default">
-              {isLogin ? "Log In" : "Sign Up"}
-            </h1>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {!isLogin && (
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="mb-3 dark:text-gray-400 text-xl"
-                  >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="border dark:bg-indigo-700 dark:text-gray-300 dark:border-gray-700 p-4 shadow-md placeholder:text-lg border-gray-300 rounded-lg w-full focus:scale-105 ease-in-out duration-300"
-                    placeholder="Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required={!isLogin}
-                  />
-                </div>
-              )}
+    <div className={wrapperClass}>
+      {/* Background image */}
+      <img
+        src="/abstract-blurred-background-light-leaks.jpg"
+        alt="Background"
+        fetchPriority="high"
+        loading="eager"
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-60 transform rotate-180"
+      />
+
+      {/* Container responsive */}
+      <div className="relative z-10 w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl p-4 bg-gradient-to-r from-blue-500/50 to-purple-500/50 rounded-[30px]">
+        <div className="border-[25px] border-transparent rounded-[30px] bg-[#190B3D]/50 backdrop-blur-lg shadow-lg w-full p-8">
+          <h1 className="text-center text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            {isLogin ? "Log In" : "Sign Up"}
+          </h1>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {!isLogin && (
               <div>
                 <label
-                  htmlFor="email"
-                  className="mb-3 dark:text-gray-400 text-xl"
+                  htmlFor="name"
+                  className="block mb-2 text-lg md:text-xl text-white"
                 >
-                  Email
+                  Name
                 </label>
                 <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="border dark:bg-indigo-700 dark:text-gray-300 dark:border-gray-700 p-4 shadow-md placeholder:text-lg border-gray-300 rounded-lg w-full focus:scale-105 ease-in-out duration-300"
-                  placeholder="Email"
-                  value={formData.email}
+                  id="name"
+                  name="name"
+                  value={formData.name}
                   onChange={handleChange}
-                  required
+                  required={!isLogin}
+                  className="w-full p-4 border border-white rounded-lg shadow placeholder:text-base md:placeholder:text-lg focus:scale-105 transition duration-300 ease-in-out bg-transparent text-white"
+                  placeholder="Name"
                 />
               </div>
-              <div>
-                <label
-                  htmlFor="password"
-                  className="mb-3 dark:text-gray-400 text-xl"
-                >
-                  Password
-                </label>
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  className="border dark:bg-indigo-700 dark:text-gray-300 dark:border-gray-700 p-4 mb-3 shadow-md placeholder:text-lg border-gray-300 rounded-lg w-full focus:scale-105 ease-in-out duration-300"
-                  placeholder="Password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                className="bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg mt-8 p-4 text-white rounded-lg w-full text-xl hover:scale-105 hover:from-purple-500 hover:to-blue-500 transition duration-300 ease-in-out"
+            )}
+            <div>
+              <label
+                htmlFor="email"
+                className="block mb-2 text-lg md:text-xl text-white"
               >
-                {isLogin ? "LOG IN" : "SIGN UP"}
-              </button>
-            </form>
-            <div className="flex flex-col mt-6 items-center justify-center text-lg">
-              <h3>
-                <span className="cursor-default dark:text-gray-300">
-                  {isLogin
-                    ? "Don't have an account?"
-                    : "Already have an account?"}
-                </span>
-                <button
-                  onClick={() => {
-                    setIsLogin(!isLogin);
-                    setFormData({ name: "", email: "", password: "" });
-                  }}
-                  className="group text-blue-400 transition-all duration-100 ease-in-out ml-2 underline"
-                >
-                  {isLogin ? "Sign Up" : "Log In"}
-                </button>
-              </h3>
+                Email
+              </label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full p-4 border border-white rounded-lg shadow placeholder:text-base md:placeholder:text-lg focus:scale-105 transition duration-300 ease-in-out bg-transparent text-gray-100"
+                placeholder="Email"
+              />
             </div>
-            <div
-              id="third-party-auth"
-              className="flex items-center justify-center mt-8 flex-wrap"
+            <div>
+              <label
+                htmlFor="password"
+                className="block mb-2 text-lg md:text-xl text-white"
+              >
+                Password
+              </label>
+              <input
+                id="password"
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+                className="w-full p-4 border border-white rounded-lg shadow placeholder:text-base md:placeholder:text-lg focus:scale-105 transition duration-300 ease-in-out bg-transparent text-white"
+                placeholder="Password"
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full py-4 text-lg md:text-xl font-medium text-white bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg shadow hover:scale-105 transition"
             >
-              <button className="hover:scale-105 ease-in-out duration-300 shadow-lg p-3 rounded-lg m-2">
-                <img
-                  className="max-w-[30px]"
-                  src="https://ucarecdn.com/8f25a2ba-bdcf-4ff1-b596-088f330416ef/"
-                  alt="Google"
-                />
-              </button>
-              <button className="hover:scale-105 ease-in-out duration-300 shadow-lg p-3 rounded-lg m-2">
-                <img
-                  className="max-w-[30px]"
-                  src="https://ucarecdn.com/95eebb9c-85cf-4d12-942f-3c40d7044dc6/"
-                  alt="Apple"
-                />
-              </button>
-              <button className="hover:scale-105 ease-in-out duration-300 shadow-lg p-3 rounded-lg m-2">
-                <img
-                  className="max-w-[30px] bg-white rounded-full"
-                  src="https://ucarecdn.com/be5b0ffd-85e8-4639-83a6-5162dfa15a16/"
-                  alt="GitHub"
-                />
-              </button>
-              <button className="hover:scale-105 ease-in-out duration-300 shadow-lg p-3 rounded-lg m-2">
-                <img
-                  className="max-w-[30px]"
-                  src="https://ucarecdn.com/6f56c0f1-c9c0-4d72-b44d-51a79ff38ea9/"
-                  alt="Twitter"
-                />
-              </button>
-            </div>
+              {isLogin ? "LOG IN" : "SIGN UP"}
+            </button>
+          </form>
+
+          <div className="flex flex-col items-center justify-center mt-8 text-base md:text-lg">
+            <span className="text-gray-300">
+              {isLogin ? "Don't have an account?" : "Already have an account?"}
+            </span>
+            <button
+              onClick={() => {
+                setIsLogin(!isLogin);
+                setFormData({ name: "", email: "", password: "" });
+              }}
+              className="mt-2 text-blue-300 underline hover:text-blue-400 transition text-base md:text-lg"
+            >
+              {isLogin ? "Sign Up" : "Log In"}
+            </button>
+          </div>
+
+          <div className="flex items-center justify-center mt-8">
+            <button
+              onClick={handleGoogleSignIn}
+              className="p-3 rounded-lg shadow hover:scale-105 transition bg-white"
+            >
+              <img
+                className="w-6 h-6"
+                src="https://ucarecdn.com/8f25a2ba-bdcf-4ff1-b596-088f330416ef/"
+                alt="Google"
+              />
+            </button>
           </div>
         </div>
       </div>
