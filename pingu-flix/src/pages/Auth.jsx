@@ -22,7 +22,6 @@ function Auth() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
-  // Ascunde scroll-ul orizontal
   useEffect(() => {
     document.body.style.overflowX = "hidden";
     return () => {
@@ -30,7 +29,6 @@ function Auth() {
     };
   }, []);
 
-  // Observe schimbarea autentificării
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -58,7 +56,7 @@ function Auth() {
             displayName: formData.name,
           });
         }
-        console.log("Utilizator logat:", cred.user);
+        console.log("Logged in user:", cred.user);
       } else {
         cred = await createUserWithEmailAndPassword(
           auth,
@@ -68,11 +66,13 @@ function Auth() {
         await updateProfile(cred.user, {
           displayName: formData.name,
         });
-        console.log("Utilizator înregistrat:", cred.user);
+        console.log("Registered user:", cred.user);
       }
       navigate("/", {
         state: {
-          message: `Bine ai venit, ${formData.name || cred.user.displayName || cred.user.email}!`,
+          message: `Welcome, ${
+            formData.name || cred.user.displayName || cred.user.email
+          }!`,
         },
       });
     } catch (err) {
@@ -101,23 +101,60 @@ function Auth() {
     }
   };
 
-  // Wrapper cu fundal uniform
+  // Bkg
   const wrapperClass =
-    "relative flex items-center justify-center w-screen min-h-[110vh] pt-[10vh] bg-gradient-to-r from-[#010b12]/100 to-[#010b12]/100";
+    "relative flex items-center overflow-hidden h-screen justify-center w-screen min-h-[125vh] min-pt-[10vh] bg-gradient-to-r from-[#010b12]/100 to-[#010b12]/100";
 
   if (user) {
     return (
-      <div className="flex font-poppins items-center justify-center dark:bg-gray-900 min-w-screen min-h-screen">
-        <div className="text-center">
-          <h2 className="text-2xl mb-4 dark:text-gray-400">
-            Bine ai venit, {user.displayName || "Utilizator"}!
-          </h2>
-          <button
-            onClick={handleLogout}
-            className="bg-gradient-to-r from-red-500 to-pink-500 shadow-lg px-6 py-3 text-white rounded-lg text-lg hover:scale-105 transition"
-          >
-            Deconectare
-          </button>
+      <div className={wrapperClass}>
+        {/* Background image */}
+        <img
+          src="/abstract-blurred-background-light-leaks.jpg"
+          alt="Background"
+          fetchPriority="high"
+          loading="eager"
+          className="
+              absolute inset-0 
+              w-full h-full 
+              object-cover 
+              opacity-60 
+              transform rotate-180 
+              pointer-events-none 
+              z-0
+            "
+        />
+
+        {/* Content */}
+        <div
+          className="
+              relative z-10 
+              flex items-center justify-center 
+              font-poppins 
+              bg-[#190B3D]/50 
+              w-full h-full
+            "
+        >
+          <div className="text-center px-4">
+            <h2 className="text-3xl sm:text-4xl mb-6 text-white drop-shadow-lg">
+              Welcome, {user.displayName || "User"}!
+            </h2>
+            <button
+              onClick={handleLogout}
+              className="
+                  bg-gradient-to-r from-red-500 to-pink-500 
+                  shadow-xl 
+                  px-8 py-3 
+                  text-white 
+                  rounded-full 
+                  text-lg 
+                  transform hover:scale-105 
+                  transition
+                "
+            >
+              Log Out
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -125,7 +162,6 @@ function Auth() {
 
   return (
     <div className={wrapperClass}>
-      {/* Background image */}
       <img
         src="/abstract-blurred-background-light-leaks.jpg"
         alt="Background"
@@ -134,7 +170,6 @@ function Auth() {
         className="absolute top-0 left-0 w-full h-full object-cover opacity-60 transform rotate-180"
       />
 
-      {/* Container responsive */}
       <div className="relative z-10 w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl p-4 bg-gradient-to-r from-blue-500/50 to-purple-500/50 rounded-[30px]">
         <div className="border-[25px] border-transparent rounded-[30px] bg-[#190B3D]/50 backdrop-blur-lg shadow-lg w-full p-8">
           <h1 className="text-center text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -208,28 +243,54 @@ function Auth() {
             <span className="text-gray-300">
               {isLogin ? "Don't have an account?" : "Already have an account?"}
             </span>
-            <button
-              onClick={() => {
-                setIsLogin(!isLogin);
-                setFormData({ name: "", email: "", password: "" });
-              }}
-              className="mt-2 text-blue-300 underline hover:text-blue-400 transition text-base md:text-lg"
-            >
-              {isLogin ? "Sign Up" : "Log In"}
-            </button>
-          </div>
+            <div>
+              <button
+                onClick={() => {
+                  setIsLogin(!isLogin);
+                  setFormData({ name: "", email: "", password: "" });
+                }}
+                className="mt-2 text-blue-300 underline hover:text-blue-400 transition text-base md:text-lg"
+              >
+                {isLogin ? "Sign Up" : "Log In"}
+              </button>
+            </div>
 
-          <div className="flex items-center justify-center mt-8">
-            <button
-              onClick={handleGoogleSignIn}
-              className="p-3 rounded-lg shadow hover:scale-105 transition bg-white"
-            >
-              <img
-                className="w-6 h-6"
-                src="https://ucarecdn.com/8f25a2ba-bdcf-4ff1-b596-088f330416ef/"
-                alt="Google"
-              />
-            </button>
+            <div className="flex w-full max-w-md justify-center space-x-4 mt-12">
+              <button
+                onClick={handleGoogleSignIn}
+                className="flex items-center justify-center w-12 h-12 bg-white rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition"
+              >
+                <img
+                  src="https://ucarecdn.com/8f25a2ba-bdcf-4ff1-b596-088f330416ef/"
+                  alt="Google"
+                  className="w-6 h-6"
+                />
+              </button>
+
+              <button className="flex items-center justify-center w-12 h-12 bg-white rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition">
+                <img
+                  src="https://ucarecdn.com/95eebb9c-85cf-4d12-942f-3c40d7044dc6/"
+                  alt="Apple"
+                  className="w-6 h-6"
+                />
+              </button>
+
+              <button className="flex items-center justify-center w-12 h-12 bg-white rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition">
+                <img
+                  src="https://ucarecdn.com/be5b0ffd-85e8-4639-83a6-5162dfa15a16/"
+                  alt="GitHub"
+                  className="w-6 h-6 bg-white rounded-full"
+                />
+              </button>
+
+              <button className="flex items-center justify-center w-12 h-12 bg-white rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition">
+                <img
+                  src="https://ucarecdn.com/6f56c0f1-c9c0-4d72-b44d-51a79ff38ea9/"
+                  alt="Twitter"
+                  className="w-6 h-6"
+                />
+              </button>
+            </div>
           </div>
         </div>
       </div>

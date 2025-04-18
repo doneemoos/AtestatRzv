@@ -129,7 +129,8 @@ function Home() {
                   {movies[prevIndex].description}
                 </p>
                 <p className="text-sm mb-1">
-                  <span className="font-semibold">Genre:</span> {movies[prevIndex].category}
+                  <span className="font-semibold">Genre:</span>{" "}
+                  {movies[prevIndex].category}
                 </p>
                 <Link
                   to={`/movies/${movies[prevIndex].id}`}
@@ -163,7 +164,8 @@ function Home() {
                 {featuredMovie.description}
               </p>
               <p className="text-sm mb-1">
-                <span className="font-semibold">Genre:</span> {featuredMovie.category}
+                <span className="font-semibold">Genre:</span>{" "}
+                {featuredMovie.category}
               </p>
               <Link
                 to={`/movies/${featuredMovie.id}`}
@@ -175,17 +177,15 @@ function Home() {
           </div>
         </div>
 
-        {/* Easter Egg Button */}
         <div className="absolute bottom-4 right-4 z-50">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 py-2 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+            className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-1 py- rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
           >
-            Easter Egg 🐣
+            🐣
           </button>
         </div>
 
-        {/* Modal */}
         {isModalOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-white rounded-lg p-4 relative max-w-[90%] max-h-[90%]">

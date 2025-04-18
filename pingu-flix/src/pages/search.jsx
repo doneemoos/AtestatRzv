@@ -1,27 +1,27 @@
-// Search.jsx
 import React, { useState, useEffect } from "react";
-import movies from "../data/movies"; // Array-ul complet de filme
+import movies from "../data/movies";
 
 const Search = ({ onSearch }) => {
   const [query, setQuery] = useState("");
-  const [isTyping, setIsTyping] = useState(false); // Stare pentru animația de typing
+  const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
-    setIsTyping(true); // Pornește animația când utilizatorul tastează
+    setIsTyping(true);
     const delayDebounce = setTimeout(() => {
       if (query.trim() === "") {
-        onSearch(movies); // Dacă nu există query, se transmit toate filmele
+        onSearch(movies);
       } else {
-        const filteredResults = movies.filter((movie) =>
-          movie.title.toLowerCase().includes(query.toLowerCase()) ||
-          (movie.description &&
-            movie.description.toLowerCase().includes(query.toLowerCase())) ||
-          (movie.category &&
-            movie.category.toLowerCase().includes(query.toLowerCase()))
+        const filteredResults = movies.filter(
+          (movie) =>
+            movie.title.toLowerCase().includes(query.toLowerCase()) ||
+            (movie.description &&
+              movie.description.toLowerCase().includes(query.toLowerCase())) ||
+            (movie.category &&
+              movie.category.toLowerCase().includes(query.toLowerCase()))
         );
         onSearch(filteredResults);
       }
-      setIsTyping(false); // Oprește animația după procesare
+      setIsTyping(false);
     }, 300);
 
     return () => clearTimeout(delayDebounce);
@@ -29,7 +29,6 @@ const Search = ({ onSearch }) => {
 
   return (
     <div className="flex justify-center mb-8 relative">
-      {/* Animație de typing dots */}
       {isTyping && (
         <div className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 text-gray-500 text-sm animate-pulse">
           Searching...<span className="dot-1">.</span>

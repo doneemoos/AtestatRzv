@@ -88,10 +88,9 @@ function Movies() {
     };
   }, [showGenres]);
 
-  /* ---------------- JSX ---------------- */
   return (
     <>
-      {/* inject card-gradient CSS with hover anim */}
+      {/*  hover   anim*/}
       <style>{`
         @property --middle-color {
           syntax: '<color>';
@@ -124,10 +123,9 @@ function Movies() {
         }}
       >
         <div className="max-w-[1400px] mx-auto px-4 py-8">
-          {/* Filter bar */}
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4">
             <div className="flex gap-4 items-center flex-wrap">
-              {/* Category buttons */}
+              {/* cat btn */}
               {[
                 { label: "🎬 All", value: "All" },
                 { label: "🎬 Movies", value: "Movies" },
@@ -146,7 +144,7 @@ function Movies() {
                 </button>
               ))}
 
-              {/* Genres dropdown */}
+              {/*dropdown */}
               <div className="relative" ref={genresDropdownRef}>
                 <button
                   onClick={() => setShowGenres((v) => !v)}
@@ -213,7 +211,7 @@ function Movies() {
               </div>
             </div>
 
-            {/* Dynamic message */}
+            {/* msg dynam */}
             <div>
               <span className="text-lg font-medium text-gray-200">
                 {getDynamicMessage()}

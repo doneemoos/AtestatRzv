@@ -21,8 +21,11 @@ function Account() {
 
   if (!user)
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <h1 className="text-2xl">You need to log in.</h1>
+      <div
+        className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#170359] to-[#170359]
+"
+      >
+        <h1 className="text-2xl text-white">You need to log in.</h1>
       </div>
     );
 
