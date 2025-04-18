@@ -63,12 +63,44 @@ const movies = [
       {
         season: 1,
         episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey",   videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax",    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Welcome to Margrave",       videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "First Dance",               videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Spoonful",                  videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "In a Tree",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "No Apologies",              videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Papier",                    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Reacher Said Nothing",      videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Pie",                       videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        ],
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "ATM",                                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "What Happens in Atlantic City",       videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Picture Says a Thousand Words",       videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "A Night at the Symphony",             videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Burial",                              videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "New York's Finest",                   videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Man Goes Through",                videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Fly Boy",                             videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        ],
+      },
+      {
+        season: 3,
+        episodes: [
+          { title: "Persuader",             videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Truckin'",              videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Number 2 with a Bullet",videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Dominique",             videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Smackdown",             videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Smoke on the Water",    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "L.A. Story",            videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Unfinished Business",   videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
         ],
       },
     ],
+    
   },
   {
     id: "Daredevil: Born Again",
@@ -87,20 +119,32 @@ const movies = [
       {
         season: 1,
         episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
-        ]
+          { title: "Heaven's Half Hour",            videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Optics",                        videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Hollow of His Hand",        videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Sic Semper Systema",            videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "With Interest",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Excessive Force",               videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Art for Art's Sake",            videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Isle of Joy",                   videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Straight to Hell",              videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        ],
       },
       {
         season: 2,
         episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
-        ]
-      }
+          { title: "Episode 1: TBA",                videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: TBA",                videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: TBA",                videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 4: TBA",                videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 5: TBA",                videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 6: TBA",                videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 7: TBA",                videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 8: TBA",                videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        ],
+      },
     ]
+    
   },
   {
     id: "Ghosted",
@@ -169,20 +213,184 @@ const movies = [
       {
         season: 1,
         episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+          { title: "Pilot", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Errors and Omissions", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Inside Track", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Dirty Little Secrets", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Bail Out", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Tricks of the Trade", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Play the Man", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Identity Crisis", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Undefeated", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Shelf Life", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Rules of the Game", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Dog Fight", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
         ]
       },
       {
         season: 2,
         episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+          { title: "She Knows", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Choice", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Meet the New Boss", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Discovery", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Break Point", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "All In", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Sucker Punch", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Rewind", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Asterisk", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "High Noon", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Blind-Sided", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Blood in the Water", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Zane vs. Zane", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "He's Back", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Normandy", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "War", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 3,
+        episodes: [
+          { title: "The Arrangement", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "I Want You to Want Me", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Unfinished Business", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Conflict of Interest", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Shadow of a Doubt", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Other Time", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "She's Mine", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Endgame", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Bad Faith", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Stay", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Buried Secrets", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Yesterday's Gone", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Moot Point", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Heartburn", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Know When to Fold 'Em", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "No Way Out", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 4,
+        episodes: [
+          { title: "One‑Two‑Three Go…", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Breakfast, Lunch and Dinner", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Two in the Knees", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Leveraged", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Pound of Flesh", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Litt the Hell Up", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "We're Done", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Exposure", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Gone", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "This Is Rome", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Enough Is Enough", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Respect", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Fork in the Road", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Derailed", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Intent", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Not Just a Pretty Face", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 5,
+        episodes: [
+          { title: "Denial", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Compensation", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "No Refills", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Toe to Toe", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Shut the Door. Have a Seat", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Privilege", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Hitting Home", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Mea Culpa", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Uninvited Guests", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Faith", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Blowback", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Live to Fight", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "God's Green Earth", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Self Defense", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Tick Tock", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "25th Hour", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 6,
+        episodes: [
+          { title: "To Trouble", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Accounts Payable", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Back on the Map", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Turn", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Trust", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Spain", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Shake the Trees", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Borrowed Time", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Hand That Feeds You", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "P.S.L.", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "She's Gone", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Painting", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Teeth, Nose, Teeth", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Admission of Guilt", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Quid Pro Quo", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Character and Fitness", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 7,
+        episodes: [
+          { title: "Skin in the Game", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Statue", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Mudmare", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Divide and Conquer", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Brooklyn Housing", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Home to Roost", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Full Disclosure", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "100", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Shame", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Donna", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Hard Truths", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Bad Man", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Inevitable", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Pulling the Goalie", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Tiny Violin", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Good‑Bye", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 8,
+        episodes: [
+          { title: "Right‑Hand Man", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Peacemaker", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Promise", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Revenue Per Square Foot", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Pecking Order", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Cats, Ballet, Harvey Specter", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Sour Grapes", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Wrong Side of the Tracks", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Motion to Delay", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Managing Partner", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Rock the Boat", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Whale Hunt", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Thing About Birthdays", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Peas in a Pod", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Stalking Horse", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Harvey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 9,
+        episodes: [
+          { title: "Everything's Changed", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Special Master", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Windmills", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Cairo", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "If the Shoe Fits", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Whatever It Takes", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Scenic Route", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Prisoner's Dilemma", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Thunder Away", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "One Last Con", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
         ]
       }
     ]
+    
   },
   {
     id: "Grey's Anatomy",
@@ -203,20 +411,21 @@ const movies = [
       {
         season: 1,
         episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+          { title: "A Hard Day's Night",                       videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The First Cut Is the Deepest",             videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Winning a Battle, Losing the War",         videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
         ]
       },
       {
         season: 2,
         episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+          { title: "Raindrops Keep Falling on My Head",        videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Enough Is Enough",                         videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Make Me Lose Control",                     videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
         ]
       }
     ]
+    
   },
   {
     id: "Gilmore Girls",
@@ -238,17 +447,57 @@ const movies = [
       {
         season: 1,
         episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+          { title: "Pilot",                                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Lorelais' First Day at Chilton",    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Kill Me Now",                           videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
         ]
       },
       {
         season: 2,
         episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+          { title: "Sadie, Sadie...",                       videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Hammers and Veils",                     videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Red Light on the Wedding Night",        videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 3,
+        episodes: [
+          { title: "Those Lazy-Hazy-Crazy Days",            videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Haunted Leg",                           videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "They Shoot Gilmores, Don't They?",      videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 4,
+        episodes: [
+          { title: "Ballrooms and Biscotti",                videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Hobbit, the Sofa and Digger Stiles",videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Lorelais' First Day at Yale",       videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 5,
+        episodes: [
+          { title: "Say Goodbye to Daisy Miller",           videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Written in the Stars",                  videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Pulp Friction",                         videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 6,
+        episodes: [
+          { title: "New and Improved Lorelais",             videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Perfect Dress",                     videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Bridesmaids Revisited",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 7,
+        episodes: [
+          { title: "Walking in St. Mary’s",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Bridesmaids Revisited",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Unto the Breach",                      videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
         ]
       }
     ]
@@ -273,20 +522,21 @@ const movies = [
       {
         season: 1,
         episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+          { title: "Arrivals",             videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "New Day",              videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Mysterious Monkeys",   videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
         ]
       },
       {
         season: 2,
         episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+          { title: "Ciao",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Italian Dream",        videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Bull Elephants",       videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
         ]
       }
     ]
+    
   },
   {
     id: "The Last of Us",
@@ -308,20 +558,21 @@ const movies = [
       {
         season: 1,
         episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+          { title: "When You're Lost in the Darkness", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Infected",                        videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Long, Long Time",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
         ]
       },
       {
         season: 2,
         episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+          { title: "Episode 1: TBA", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: TBA", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: TBA", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
         ]
       }
     ]
+    
   },
   {
     id: "The Handmaid's Tale",
@@ -342,20 +593,100 @@ const movies = [
       {
         season: 1,
         episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
-        ]
+          { title: "Offred",                             videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Birth Day",                          videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Late",                               videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Nolite Te Bastardes Carborundorum",  videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Faithful",                           videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "A Woman's Place",                    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Other Side",                     videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Jezebels",                           videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Bridge",                         videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Night",                              videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        ],
       },
       {
         season: 2,
         episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
-        ]
-      }
-    ]
+          { title: "June",                             videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Unwomen",                          videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Baggage",                          videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Other Women",                      videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Seeds",                            videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "First Blood",                      videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "After",                            videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Women's Work",                     videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Smart Power",                      videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Last Ceremony",                videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Holly",                            videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Postpartum",                       videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Word",                         videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        ],
+      },
+      {
+        season: 3,
+        episodes: [
+          { title: "Night",                            videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Mary and Martha",                  videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Useful",                           videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "God Bless the Child",              videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Unknown Caller",                   videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Household",                        videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Under His Eye",                    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Unfit",                            videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Heroic",                           videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Bear Witness",                     videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Liars",                            videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Sacrifice",                        videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Mayday",                           videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        ],
+      },
+      {
+        season: 4,
+        episodes: [
+          { title: "Pigs",                             videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Nightshade",                       videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Crossing",                     videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Milk",                             videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Chicago",                          videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Vows",                             videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Home",                             videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Testimony",                        videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Progress",                         videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Wilderness",                   videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        ],
+      },
+      {
+        season: 5,
+        episodes: [
+          { title: "Morning",                          videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Ballet",                           videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Border",                           videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Dear Offred",                      videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Fairytale",                        videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Together",                         videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "No Man's Land",                    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Motherland",                       videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Allegiance",                       videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Safe",                             videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        ],
+      },
+      {
+        season: 6,
+        episodes: [
+          { title: "Train",                            videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Exile",                            videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Devotion",                         videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Promotion",                        videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Janine",                           videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Surprise",                         videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Shattered",                        videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Exodus",                           videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Execution",                        videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Handmaid's Tale",              videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        ],
+      },
+    ],
   },
   {
     id: "You",
@@ -377,125 +708,192 @@ const movies = [
       {
         season: 1,
         episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+          { title: "Pilot",                         videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Last Nice Guy in New York",  videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Maybe",                         videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Captain",                   videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Living with the Enemy",         videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Amour Fou",                     videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Everythingship",                videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "You Got Me, Babe",              videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Candace",                       videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Bluebeard's Castle",            videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
         ]
       },
       {
         season: 2,
         episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
-        ]
-      }
-    ]
-  },
-  {
-    id: "Étoile",
-    title: "Étoile",
-    description:
-      "In an ambitious effort to save their storied institutions, two world-renowned ballet companies in New York City and Paris swap their most talented stars. This series delves into the beauty, humor, and unpredictability of a life devoted to the arts, both on stage and off.",
-    category: "Drama",
-    year: "2025",
-    duration: "8 episodes",
-    posterUrl: "/movies&TvShows/Étoile.jpg",
-    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
-    country: "United States",
-    production:
-      "Sesquipedalian Corporation, Dorothy Parker Drank Here Productions, Big Indie Pictures, Amazon MGM Studios",
-    casts:
-      "Luke Kirby, Charlotte Gainsbourg, Lou de Laâge, Gideon Glick, David Alvarez, Ivan du Pontavice, Taïs Vinolo, David Haig",
-    type: "TV Show",
-    seasons: [
-      {
-        season: 1,
-        episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+          { title: "A Fresh Start",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Just the Tip",                  videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "What Are Friends For?",         videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Good, the Bad, & the Hendy",videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Have a Good Wellkend, Joe!",    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Farewell, My Bunny",            videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Ex‑istential Crisis",           videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Fear and Loathing in Beverly Hills", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "P.I. Joe",                      videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Love, Actually",                videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
         ]
       },
       {
-        season: 2,
+        season: 3,
         episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
-        ]
-      }
-    ]
-  },
-  {
-    id: "Dying for Sex",
-    title: "Dying for Sex",
-    description:
-      "After being diagnosed with Stage IV metastatic breast cancer, Molly leaves her husband and embarks on a journey to explore her sexual desires, leading to a profound exploration of love, mortality, and self-discovery.",
-    category: "Drama",
-    year: "2025",
-    duration: "8 episodes",
-    posterUrl: "/movies&TvShows/Dying for Sex.jpg",
-    videoUrl: "/movies&TvShows/Dying for Sex _ Official Trailer _ Michelle Williams, Jenny Slate, Rob Delaney _ FX.mp4",
-    country: "United States",
-    production:
-      "Pasta with Sauce, Elizabeth Meriwether Pictures, Wondery, 20th Television",
-    casts:
-      "Michelle Williams, Jenny Slate, Rob Delaney, Jay Duplass, Kelvin Yu, Sissy Spacek",
-    type: "TV Show",
-    seasons: [
-      {
-        season: 1,
-        episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+          { title: "And They Lived Happily Ever After",  videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "So I Married an Axe Murderer",       videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Missing White Woman Syndrome",       videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Hands Across Madre Linda",           videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Into the Woods",                     videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "W.O.M.B.",                           videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "We're All Mad Here",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Swing and a Miss",                   videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Red Flag",                           videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "What Is Love?",                      videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
         ]
       },
       {
-        season: 2,
+        season: 4,
         episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
-        ]
-      }
-    ]
-  },
-  {
-    id: "Desperate Housewives",
-    title: "Desperate Housewives",
-    description:
-      "Secrets and truths unfold through the lives of female friends in one suburban neighborhood, after the mysterious suicide of a neighbor.",
-    category: "Drama",
-    year: "2004–2012",
-    duration: "45 minutes per episode",
-    posterUrl: "/movies&TvShows/Desperate Housewives.jpg",
-    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
-    country: "United States",
-    production: "Cherry Productions, ABC Studios",
-    casts:
-      "Teri Hatcher, Felicity Huffman, Marcia Cross, Eva Longoria, Nicollette Sheridan, Brenda Strong",
-    type: "TV Show",
-    seasons: [
-      {
-        season: 1,
-        episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+          { title: "Joe Takes a Holiday",                videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Portrait of the Artist",             videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Eat the Rich",                       videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Hampsie",                            videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Fox and the Hound",              videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Best of Friends",                    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Good Man, Cruel World",              videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Where Are You Going, Where Have You Been?", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "She’s Not There",                    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "The Death of Jonathan Moore",        videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
         ]
       },
       {
-        season: 2,
+        season: 5,
         episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+          { title: "Episode 1: TBA",                     videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: TBA",                     videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: TBA",                     videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 4: TBA",                     videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 5: TBA",                     videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 6: TBA",                     videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 7: TBA",                     videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 8: TBA",                     videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 9: TBA",                     videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 10: TBA",                    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
         ]
       }
     ]
   },
+  
+ {
+  id: "Étoile",
+  title: "Étoile",
+  description:
+    "In an ambitious effort to save their storied institutions, two world-renowned ballet companies in New York City and Paris swap their most talented stars. This series delves into the beauty, humor, and unpredictability of a life devoted to the arts, both on stage and off.",
+  category: "Drama",
+  year: "2025",
+  duration: "8 episodes",
+  posterUrl: "/movies&TvShows/Étoile.jpg",
+  videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
+  country: "United States",
+  production:
+    "Sesquipedalian Corporation, Dorothy Parker Drank Here Productions, Big Indie Pictures, Amazon MGM Studios",
+  casts:
+    "Luke Kirby, Charlotte Gainsbourg, Lou de Laâge, Gideon Glick, David Alvarez, Ivan du Pontavice, Taïs Vinolo, David Haig",
+  type: "TV Show",
+  seasons: [
+    {
+      season: 1,
+      episodes: [
+        { title: "Episode 1: The Swap",           videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "Episode 2: TBA",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "Episode 3: TBA",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "Episode 4: TBA",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "Episode 5: TBA",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "Episode 6: TBA",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "Episode 7: TBA",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "Episode 8: TBA",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+      ]
+    },
+    {
+      season: 2,
+      episodes: [
+        { title: "Episode 1: TBA",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "Episode 2: TBA",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "Episode 3: TBA",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "Episode 4: TBA",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "Episode 5: TBA",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "Episode 6: TBA",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "Episode 7: TBA",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "Episode 8: TBA",                 videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+      ]
+    }
+  ]
+},
+{
+  id: "Dying for Sex",
+  title: "Dying for Sex",
+  description:
+    "After being diagnosed with Stage IV metastatic breast cancer, Molly leaves her husband and embarks on a journey to explore her sexual desires, leading to a profound exploration of love, mortality, and self-discovery.",
+  category: "Drama",
+  year: "2025",
+  duration: "8 episodes",
+  posterUrl: "/movies&TvShows/Dying for Sex.jpg",
+  videoUrl: "/movies&TvShows/Dying for Sex _ Official Trailer _ Michelle Williams, Jenny Slate, Rob Delaney _ FX.mp4",
+  country: "United States",
+  production:
+    "Pasta with Sauce, Elizabeth Meriwether Pictures, Wondery, 20th Television",
+  casts:
+    "Michelle Williams, Jenny Slate, Rob Delaney, Jay Duplass, Kelvin Yu, Sissy Spacek",
+  type: "TV Show",
+  seasons: [
+    {
+      season: 1,
+      episodes: [
+        { title: "Good Value Diet Soda",             videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "Masturbation Is Important",         videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "Feelings Can Become Amplified",     videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "Topping Is a Sacred Skill",         videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "My Pet",                            videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "Happy Holidays",                    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "You're Killing Me, Ernie",          videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "It's Not That Serious",             videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+      ]
+    }
+  ]
+},
+{
+  id: "Desperate Housewives",
+  title: "Desperate Housewives",
+  description:
+    "Secrets and truths unfold through the lives of female friends in one suburban neighborhood, after the mysterious suicide of a neighbor.",
+  category: "Drama",
+  year: "2004–2012",
+  duration: "45 minutes per episode",
+  posterUrl: "/movies&TvShows/Desperate Housewives.jpg",
+  videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
+  country: "United States",
+  production: "Cherry Productions, ABC Studios",
+  casts:
+    "Teri Hatcher, Felicity Huffman, Marcia Cross, Eva Longoria, Nicollette Sheridan, Brenda Strong",
+  type: "TV Show",
+  seasons: [
+    {
+      season: 1,
+      episodes: [
+        { title: "Pilot",                          videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "Ah, But Underneath",             videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "Pretty Little Picture",          videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+      ]
+    },
+    {
+      season: 2,
+      episodes: [
+        { title: "Next",                           videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "You Could Drive a Person Crazy", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+        { title: "You'll Never Get Away from Me",  videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+      ]
+    }
+  ]
+},
   {
     id: "Poor Things",
     title: "Poor Things",
