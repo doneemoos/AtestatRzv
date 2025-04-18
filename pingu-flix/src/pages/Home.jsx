@@ -1,14 +1,13 @@
 // src/pages/Home.jsx
 import React, { useState, useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import movies from "../data/movies";
 import Tranding from "../components/trending";
 import Footer from "../components/footer";
 
 function Home() {
-  const location = useLocation();
-  const message = location.state?.message;
-
+  const location= useLocation();
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState(null);
   const featuredMovie = movies[currentIndex];
@@ -35,7 +34,6 @@ function Home() {
 
   /* Preload poster for the next randomly chosen film */
   useEffect(() => {
-    // naïvely pick another random poster to preload (not current or previous)
     let preloadIdx = Math.floor(Math.random() * movies.length);
     while (preloadIdx === currentIndex || preloadIdx === prevIndex) {
       preloadIdx = Math.floor(Math.random() * movies.length);
@@ -73,6 +71,8 @@ function Home() {
       return () => clearTimeout(timer);
     }
   }, [prevIndex]);
+
+ 
 
   return (
     <>
@@ -175,12 +175,6 @@ function Home() {
             </div>
           </div>
         </div>
-
-        {message && (
-          <div className="absolute bottom-4 left-4 bg-green-600 text-white px-3 py-2 rounded z-[30]">
-            {message}
-          </div>
-        )}
       </div>
 
       <Tranding />

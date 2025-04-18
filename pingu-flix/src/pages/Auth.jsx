@@ -8,6 +8,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   onAuthStateChanged,
+  updateProfile,
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
@@ -45,6 +46,12 @@ function Auth() {
           formData.email,
           formData.password
         );
+        // Dacă userul nu are displayName, îl setăm cu numele introdus
+        if (!userCredential.user.displayName && formData.name) {
+          await updateProfile(userCredential.user, {
+            displayName: formData.name,
+          });
+        }
         console.log("Utilizator logat:", userCredential.user);
       } else {
         userCredential = await createUserWithEmailAndPassword(
@@ -52,10 +59,16 @@ function Auth() {
           formData.email,
           formData.password
         );
+        // Setează displayName la sign up
+        await updateProfile(userCredential.user, {
+          displayName: formData.name,
+        });
         console.log("Utilizator înregistrat:", userCredential.user);
       }
       navigate("/", {
-        state: { message: `Bine ai venit, ${formData.name || "utilizator"}!` },
+        state: {
+          message: `Bine ai venit, ${formData.name || userCredential.user.displayName || userCredential.user.email}!`,
+        },
       });
     } catch (error) {
       console.error("Eroare:", error.message);
@@ -90,7 +103,7 @@ function Auth() {
       <div className="flex font-poppins items-center justify-center dark:bg-gray-900 min-w-screen min-h-screen">
         <div className="text-center">
           <h2 className="text-2xl mb-4 dark:text-gray-400">
-            Bine ai venit, {user.displayName || user.email}!
+            Bine ai venit, {user.displayName || "Utilizator"}!
           </h2>
           <button
             onClick={handleLogout}
