@@ -22,7 +22,7 @@ const movies = [
     year: "2023",
     duration: "163 minutes",
     posterUrl: "/movies&TvShows/Mission Impossible – Dead Reckoning Part One.jpg",
-    videoUrl: "/File.mp4",
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4",
     country: "United States",
     production: "Paramount Pictures, Skydance Media, TC Productions, C2 Motion Picture Group",
     casts: "Tom Cruise, Hayley Atwell, Ving Rhames, Simon Pegg, Rebecca Ferguson, Vanessa Kirby, Esai Morales, Pom Klementieff, Mariela Garriga, Henry Czerny",
@@ -31,17 +31,17 @@ const movies = [
       {
         season: 1,
         episodes: [
-          { title: "Episode 1: The Beginning",   videoUrl: "/Frozen.mp4" },
-          { title: "Episode 2: The Journey",     videoUrl: "/videos/mi2.mp4" },
-          { title: "Episode 3: The Climax",      videoUrl: "/videos/mi3.mp4" },
+          { title: "Episode 1: The Beginning",   videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey",     videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax",      videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
         ],
       },
       {
         season: 2,
         episodes: [
-          { title: "Episode 1: Resurgence",      videoUrl: "/videos/mi4.mp4" },
-          { title: "Episode 2: Underground",     videoUrl: "/videos/mi5.mp4" },
-          { title: "Episode 3: Final Showdown",  videoUrl: "/videos/mi6.mp4" },
+          { title: "Episode 1: Resurgence",      videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: Underground",     videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: Final Showdown",  videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
         ],
       },
     ],
@@ -54,7 +54,7 @@ const movies = [
     year: "2022–present",
     duration: "Varies",
     posterUrl: "/movies&TvShows/Reacher.jpg",
-    videoUrl: "/File.mp4",
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4",
     country: "United States",
     production: "Amazon Studios, Skydance Television, Paramount Television Studios",
     casts: "Alan Ritchson, Malcolm Goodwin, Willa Fitzgerald, Chris Webster, Bruce McGill, Maria Sten, Harvey Guillén",
@@ -63,9 +63,9 @@ const movies = [
       {
         season: 1,
         episodes: [
-          { title: "Episode 1: The Beginning", videoUrl: "/videos/re1.mp4" },
-          { title: "Episode 2: The Journey",   videoUrl: "/videos/re2.mp4" },
-          { title: "Episode 3: The Climax",    videoUrl: "/videos/re3.mp4" },
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey",   videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax",    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
         ],
       },
     ],
@@ -79,16 +79,16 @@ const movies = [
     year: "2025",
     duration: "TBA",
     posterUrl: "/movies&TvShows/Daredevil Born Again.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production: "Marvel Studios",
     casts:
       "Charlie Cox, Vincent D'Onofrio, Jon Bernthal, Deborah Ann Woll, Elden Henson, Margarita Levieva, Michael Gandolfini",
     type: "TV Show",
     episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
+      { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+      { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+      { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
     ],
   },
   {
@@ -100,7 +100,7 @@ const movies = [
     year: "2023",
     duration: "116 minutes",
     posterUrl: "/movies&TvShows/Ghosted.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production: "Apple Studios, Skydance Media",
     casts:
@@ -116,7 +116,7 @@ const movies = [
     year: "2020",
     duration: "91 minutes",
     posterUrl: "/movies&TvShows/Greyhound.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production: "Playtone, FilmNation Entertainment, Apple Studios",
     casts:
@@ -132,7 +132,7 @@ const movies = [
     year: "2019",
     duration: "181 minutes",
     posterUrl: "/movies&TvShows/Avengers Endgame.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production: "Marvel Studios",
     casts:
@@ -148,16 +148,16 @@ const movies = [
     year: "2011–2019",
     duration: "44 minutes per episode",
     posterUrl: "/movies&TvShows/Suits.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production: "Universal Cable Productions",
     casts:
       "Gabriel Macht, Patrick J. Adams, Meghan Markle, Sarah Rafferty, Rick Hoffman, Gina Torres",
     type: "TV Show",
     episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
+      { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+      { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+      { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
     ],
   },
   {
@@ -169,16 +169,16 @@ const movies = [
     year: "2005–present",
     duration: "41 minutes per episode",
     posterUrl: "/movies&TvShows/GreyAnatomy.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production: "Shondaland, The Mark Gordon Company, ABC Studios",
     casts:
       "Ellen Pompeo, Chandra Wilson, James Pickens Jr., Justin Chambers, Kevin McKidd, Jesse Williams",
     type: "TV Show",
     episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
+      { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+      { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+      { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
     ],
   },
   {
@@ -190,7 +190,7 @@ const movies = [
     year: "2000–2007",
     duration: "44 minutes per episode",
     posterUrl: "/movies&TvShows/Gilmore Girls.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production:
       "Dorothy Parker Drank Here Productions, Hofflund/Polone, Warner Bros. Television",
@@ -198,9 +198,9 @@ const movies = [
       "Lauren Graham, Alexis Bledel, Scott Patterson, Kelly Bishop, Edward Herrmann, Melissa McCarthy",
     type: "TV Show",
     episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
+      { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+      { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+      { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
     ],
   },
   {
@@ -212,7 +212,7 @@ const movies = [
     year: "2021–present",
     duration: "60 minutes per episode",
     posterUrl: "/movies&TvShows/The White Lotus.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production:
       "HBO Entertainment, Pallogram, The District, Rip Cord Productions",
@@ -220,9 +220,9 @@ const movies = [
       "Jennifer Coolidge, Natasha Rothwell, Jon Gries, Leslie Bibb, Carrie Coon, Michelle Monaghan",
     type: "TV Show",
     episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
+      { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+      { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+      { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
     ],
   },
   {
@@ -234,7 +234,7 @@ const movies = [
     year: "2023–present",
     duration: "60 minutes per episode",
     posterUrl: "/movies&TvShows/The Last of Us.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production:
       "Sony Pictures Television, PlayStation Productions, Naughty Dog, Word Games",
@@ -242,9 +242,9 @@ const movies = [
       "Pedro Pascal, Bella Ramsey, Anna Torv, Gabriel Luna, Merle Dandridge, Nico Parker",
     type: "TV Show",
     episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
+      { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+      { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+      { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
     ],
   },
   {
@@ -256,16 +256,16 @@ const movies = [
     year: "2017–2025",
     duration: "50 minutes per episode",
     posterUrl: "/movies&TvShows/The Handmaids Tale.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production: "MGM Television, Hulu",
     casts:
       "Elisabeth Moss, Joseph Fiennes, Yvonne Strahovski, Alexis Bledel, Madeline Brewer, Ann Dowd, O-T Fagbenle, Max Minghella, Samira Wiley, Amanda Brugel, Bradley Whitford, Sam Jaeger",
     type: "TV Show",
     episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
+      { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+      { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+      { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
     ],
   },
   {
@@ -277,7 +277,7 @@ const movies = [
     year: "2018–present",
     duration: "45 minutes per episode",
     posterUrl: "/movies&TvShows/You.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production:
       "A+E Studios, Alloy Entertainment, Berlanti Productions, Warner Horizon Television",
@@ -285,9 +285,9 @@ const movies = [
       "Penn Badgley, Elizabeth Lail, Victoria Pedretti, Tati Gabrielle, Jenna Ortega, James Scully",
     type: "TV Show",
     episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
+      { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+      { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+      { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
     ],
   },
   {
@@ -299,7 +299,7 @@ const movies = [
     year: "2025",
     duration: "8 episodes",
     posterUrl: "/movies&TvShows/Étoile.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production:
       "Sesquipedalian Corporation, Dorothy Parker Drank Here Productions, Big Indie Pictures, Amazon MGM Studios",
@@ -307,9 +307,9 @@ const movies = [
       "Luke Kirby, Charlotte Gainsbourg, Lou de Laâge, Gideon Glick, David Alvarez, Ivan du Pontavice, Taïs Vinolo, David Haig",
     type: "TV Show",
     episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
+      { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+      { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+      { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
     ],
   },
   {
@@ -355,16 +355,16 @@ const movies = [
     year: "2004–2012",
     duration: "45 minutes per episode",
     posterUrl: "/movies&TvShows/Desperate Housewives.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production: "Cherry Productions, ABC Studios",
     casts:
       "Teri Hatcher, Felicity Huffman, Marcia Cross, Eva Longoria, Nicollette Sheridan, Brenda Strong",
     type: "TV Show",
     episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
+      { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+      { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+      { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
     ],
   },
   {
@@ -376,7 +376,7 @@ const movies = [
     year: "2023",
     duration: "141 minutes",
     posterUrl: "/movies&TvShows/Poor Things.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production:
       "Searchlight Pictures, Element Pictures, Film4 Productions",
@@ -387,13 +387,14 @@ const movies = [
   {
     id: "NCIS",
     title: "NCIS",
+    title: "NCIS",
     description:
       "Follows the Naval Criminal Investigative Service, which conducts criminal investigations involving the U.S. Navy and Marine Corps.",
     category: "Drama",
     year: "2003–present",
     duration: "44 minutes per episode",
     posterUrl: "/movies&TvShows/NCIS.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production: "CBS Studios, Belisarius Productions",
     casts:
@@ -414,7 +415,7 @@ const movies = [
     year: "2021–present",
     duration: "26–40 minutes per episode",
     posterUrl: "/movies&TvShows/Only Murders in the Building.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production:
       "Rhode Island Ave. Productions, Another Hoffman Story Productions, 40 Share Productions, 20th Television",
@@ -436,7 +437,7 @@ const movies = [
     year: "2020–2023",
     duration: "29–78 minutes per episode",
     posterUrl: "/movies&TvShows/Ted Lasso.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production:
       "Ruby's Tuna Inc., Doozer, Universal Television, Warner Bros. Television",
@@ -458,7 +459,7 @@ const movies = [
     year: "2023–present",
     duration: "30 minutes per episode",
     posterUrl: "/movies&TvShows/Shrinking.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production:
       "Dozer Productions, Apple Studios, Warner Bros. Television",
@@ -480,7 +481,7 @@ const movies = [
     year: "2009–2020",
     duration: "22 minutes per episode",
     posterUrl: "/movies&TvShows/Modern Family.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production:
       "Steven Levitan Productions, Picador Productions, 20th Century Fox Television",
@@ -502,7 +503,7 @@ const movies = [
     year: "1994–2004",
     duration: "22 minutes per episode",
     posterUrl: "/movies&TvShows/Friends.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production:
       "Bright/Kauffman/Crane Productions, Warner Bros. Television",
@@ -524,7 +525,7 @@ const movies = [
     year: "2007–2019",
     duration: "22 minutes per episode",
     posterUrl: "/movies&TvShows/The Big Bang Theory.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production: "Chuck Lorre Productions, Warner Bros. Television",
     casts:
@@ -545,7 +546,7 @@ const movies = [
     year: "2021–present",
     duration: "30 minutes per episode",
     posterUrl: "/movies&TvShows/Hacks.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production:
       "Universal Television, Paulilu, First Thought Productions, 3 Arts Entertainment",
@@ -567,7 +568,7 @@ const movies = [
     year: "1994",
     duration: "101 minutes",
     posterUrl: "/movies&TvShows/The Mask.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production: "Dark Horse Entertainment, New Line Cinema",
     casts:
@@ -583,7 +584,7 @@ const movies = [
     year: "2009",
     duration: "100 minutes",
     posterUrl: "/movies&TvShows/The Hangover.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production:
       "Green Hat Films, Legendary Pictures, Warner Bros. Pictures",
@@ -600,7 +601,7 @@ const movies = [
     year: "2025",
     duration: "44 minutes per episode",
     posterUrl: "/movies&TvShows/The Studio.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production:
       "Apple TV+, Point Grey Pictures, Lionsgate Television",
@@ -622,7 +623,7 @@ const movies = [
     year: "2024",
     duration: "44 minutes per episode",
     posterUrl: "/movies&TvShows/High Potential.jpg",
-    videoUrl: "/File.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
     country: "United States",
     production:
       "ABC Signature, Goddard Textiles, Spondoolie Productions",
@@ -638,21 +639,23 @@ const movies = [
   {
     id: "Frozen",
     title: "Frozen",
-    description: "Descriere film exemplu.",
-    category: "Acțiune",
-    year: "2021",
-    duration: "120",
+    description: "When the newly crowned Queen Elsa accidentally unleashes her icy powers...",
+    category: "Animation",
+    year: "2013",
+    duration: "1h 42m",
     posterUrl: "/movies&TvShows/frozen 1.jpg",
     videoUrl: "/Frozen.mp4",
+    country: "USA",
+    production: "Walt Disney Animation Studios",
+    casts: "Kristen Bell, Idina Menzel, Jonathan Groff, Josh Gad",
     type: "Movie",
   },
-  // Blocul al doilea (id 11 - 30) din codul anterior
   {
     id: "11",
     title: "Nomadland",
     description:
-      "Urmărește viața unei femei care, după ce își pierde casa în recesiune, trăiește ca un nomad modern în vestul Americii.",
-    category: "Dramă",
+     "It follows the life of a woman who, after losing her home in the recession, lives as a modern nomad in the American West.",
+    category: "Drama",
     year: "2020",
     duration: "1h 48m",
     posterUrl:
@@ -667,8 +670,8 @@ const movies = [
     id: "12",
     title: "Sound of Metal",
     description:
-      "Un baterist de metal își pierde auzul și, în lupta de a-și accepta noua realitate, descoperă o comunitate de surzi care îi oferă speranță.",
-    category: "Dramă",
+      "A heavy metal drummer loses his hearing and, in his struggle to accept his new reality, discovers a community of deaf people who give him hope.",
+    category: "Drama",
     year: "2020",
     duration: "2h",
     posterUrl:
@@ -683,24 +686,23 @@ const movies = [
     id: "13",
     title: "The Trial of the Chicago 7",
     description:
-      "Dramatizează celebrul proces al Chicago Seven, în care șapte activiști împotriva Războiului din Vietnam sunt judecați sub acuzația de conspirație după protestele violente de la Convenția Democrată din 1968.",
-    category: "Dramă",
+      "Dramatizes the famous Chicago Seven trial, in which seven anti–Vietnam War activists are charged with conspiracy after the violent protests at the 1968 Democratic National Convention.",
+    category: "Drama",
     year: "2020",
     duration: "2h 10m",
     posterUrl: "/movies&TvShows/the trial of the chicago.jpg",
     videoUrl: "https://www.youtube.com/watch?v=FVb6EdKDBfU",
     country: "USA",
     production: "Netflix",
-    casts:
-      "Sacha Baron Cohen, Eddie Redmayne, Joseph Gordon-Levitt",
+    casts: "Sacha Baron Cohen, Eddie Redmayne, Joseph Gordon-Levitt",
     type: "Movie",
   },
   {
     id: "14",
     title: "Minari",
     description:
-      "O familie de imigranți sud-coreeni se mută într-o fermă din Arkansas în anii '80, în speranța unui viitor mai bun, și se confruntă cu provocările adaptării la viața americană rurală.",
-    category: "Dramă",
+      "A South Korean immigrant family moves to a farm in Arkansas in the 1980s in search of a better future, and faces the challenges of adapting to rural American life.",
+    category: "Drama",
     year: "2020",
     duration: "1h 55m",
     posterUrl: "/movies&TvShows/minari.jpg",
@@ -714,8 +716,8 @@ const movies = [
     id: "15",
     title: "Dune",
     description:
-      "Adaptare a romanului SF de Frank Herbert. Tânărul Paul Atreides se luptă să supraviețuiască pe planeta deșertică Arrakis și să protejeze resursa vitală numită mirodenie de forțele rivale.",
-    category: "SF",
+      "An adaptation of Frank Herbert's sci‑fi novel. Young Paul Atreides must survive on the desert planet Arrakis and protect the vital spice resource from rival forces.",
+    category: "Science Fiction",
     year: "2021",
     duration: "2h 35m",
     posterUrl: "/movies&TvShows/dune.jpg",
@@ -729,8 +731,8 @@ const movies = [
     id: "16",
     title: "CODA",
     description:
-      "O adolescentă care este singura persoană auzitoare din familia sa de surzi își descoperă talentul muzical. Ea încearcă să-și urmeze pasiunea pentru cântat, în timp ce familia se bazează pe ea ca legătură cu lumea auzitoare.",
-    category: "Dramă",
+      "A teenage girl who is the only hearing member of her deaf family discovers her musical talent. She strives to pursue her passion for singing while her family relies on her as their connection to the hearing world.",
+    category: "Drama",
     year: "2021",
     duration: "1h 51m",
     posterUrl: "/movies&TvShows/coda.jpg",
@@ -744,8 +746,8 @@ const movies = [
     id: "17",
     title: "Don't Look Up",
     description:
-      "Doi astronomi descoperă că o cometă uriașă va lovi Pământul. Ei încearcă să avertizeze omenirea, însă se lovesc de indiferența și superficialitatea societății moderne.",
-    category: "Comedie",
+      "Two astronomers discover a massive comet is heading for Earth. They try to warn humanity but are met with indifference and superficiality from society.",
+    category: "Comedy",
     year: "2021",
     duration: "2h 18m",
     posterUrl: "/movies&TvShows/dont look up.jpg",
@@ -759,12 +761,11 @@ const movies = [
     id: "18",
     title: "Spider-Man: No Way Home",
     description:
-      "Identitatea lui Peter Parker este dezvăluită, așa că el cere ajutorul lui Doctor Strange pentru a șterge această informație din memoria tuturor. Însă vraja dă greș și aduce în universul lui inamici din alte lumi Spider-Man.",
-    category: "Acțiune",
+      "Peter Parker’s identity is exposed, so he asks Doctor Strange for help to erase it from everyone’s memory. The spell goes wrong and brings villains from other Spider-Man universes into his world.",
+    category: "Action",
     year: "2021",
     duration: "2h 28m",
-    posterUrl:
-      "/movies&TvShows/spider man no way home.jpg",
+    posterUrl: "/movies&TvShows/spider man no way home.jpg",
     videoUrl: "https://www.youtube.com/watch?v=JfVOs4VSpmA",
     country: "USA",
     production: "Marvel Studios",
@@ -775,12 +776,11 @@ const movies = [
     id: "19",
     title: "Encanto",
     description:
-      "Într-o familie columbiană ale cărei membri au puteri magice, Mirabel este singura fără daruri supranaturale. Când magia ce le protejează casa începe să dispară, Mirabel pornește într-o misiune pentru a salva puterile familiei sale.",
-    category: "Animație",
+      "In a Colombian family blessed with magical gifts, Mirabel is the only one without powers. When the magic protecting their home begins to fade, Mirabel sets out on a mission to save her family’s gifts.",
+    category: "Animation",
     year: "2021",
     duration: "1h 42m",
-    posterUrl:
-      "/movies&TvShows/encanto.jpg",
+    posterUrl: "/movies&TvShows/encanto.jpg",
     videoUrl: "https://www.youtube.com/watch?v=CaimKeDcudo",
     country: "USA",
     production: "Walt Disney Pictures",
@@ -791,8 +791,8 @@ const movies = [
     id: "20",
     title: "Everything Everywhere All At Once",
     description:
-      "O femeie copleșită de problemele vieții descoperă că poate accesa universuri paralele cu diferite versiuni ale sale. Ea trebuie să folosească aceste abilități neobișnuite pentru a salva lumea de un pericol iminent și pentru a-și regăsi legătura cu familia.",
-    category: "Aventură",
+      "An overwhelmed woman discovers she can access parallel universes with different versions of herself. She must use these abilities to save the world from imminent danger and reconnect with her family.",
+    category: "Adventure",
     year: "2022",
     duration: "2h 19m",
     posterUrl: "/movies&TvShows/Everything Everywhere All At Once.jpg",
@@ -806,8 +806,8 @@ const movies = [
     id: "21",
     title: "Top Gun: Maverick",
     description:
-      "La peste 30 de ani de la prima sa misiune, asul aviatic Pete 'Maverick' Mitchell se întoarce la Top Gun ca instructor. El trebuie să antreneze un grup de piloți tineri pentru o misiune aproape imposibilă, confruntându-se totodată cu propriul trecut.",
-    category: "Acțiune",
+      "Over 30 years after his first mission, ace pilot Pete 'Maverick' Mitchell returns to Top Gun as an instructor. He must train a group of young pilots for an almost impossible mission while confronting his own past.",
+    category: "Action",
     year: "2022",
     duration: "2h 10m",
     posterUrl: "/movies&TvShows/Top Gun Maverick.jpg",
@@ -821,8 +821,8 @@ const movies = [
     id: "22",
     title: "Avatar: The Way of Water",
     description:
-      "Jake Sully și familia sa trăiesc pașnic pe Pandora până când revin forțele umane care amenință lumea Na'vi. Pentru a-și proteja tribul și copiii, Jake și Neytiri trebuie să lupte din nou, explorând regiunile acvatice sacre ale planetei.",
-    category: "SF",
+      "Jake Sully and his family live peacefully on Pandora until human forces return to threaten the Na'vi world. To protect their tribe and children, Jake and Neytiri must fight again, exploring the planet’s sacred aquatic realms.",
+    category: "Science Fiction",
     year: "2022",
     duration: "3h 12m",
     posterUrl: "/movies&TvShows/Avatar The Way of Water.jpg",
@@ -836,8 +836,8 @@ const movies = [
     id: "23",
     title: "Glass Onion: A Knives Out Mystery",
     description:
-      "Detectivul Benoit Blanc călătorește pe insula privată a unui magnat tech pentru un joc de crimă organizat cu prietenii acestuia. Când un adevărat omor are loc, Blanc trebuie să dezlege învelișurile misterului într-o nouă investigație ingenioasă.",
-    category: "Mister",
+      "Detective Benoit Blanc travels to a tech magnate’s private island for a murder mystery game with his friends. When a real murder occurs, Blanc must peel back the layers of the puzzle in a new, ingenious investigation.",
+    category: "Mystery",
     year: "2022",
     duration: "2h 19m",
     posterUrl: "/movies&TvShows/Glass Onion A Knives Out Mystery.jpg",
@@ -851,8 +851,8 @@ const movies = [
     id: "24",
     title: "The Batman",
     description:
-      "Într-un Gotham întunecat și corupt, un tânăr Batman investighează o serie de crime sadice comise de Riddler. Ancheta îl poartă pe justițiar prin dedesubturile orașului și îl obligă să își testeze limitele în lupta pentru dreptate.",
-    category: "Acțiune",
+      "In a dark and corrupt Gotham, a young Batman investigates a series of sadistic murders committed by the Riddler. The inquiry takes him through the city’s underbelly and forces him to test his limits in the fight for justice.",
+    category: "Action",
     year: "2022",
     duration: "2h 56m",
     posterUrl: "/movies&TvShows/The Batman.jpg",
@@ -866,13 +866,13 @@ const movies = [
     id: "25",
     title: "All Quiet on the Western Front",
     description:
-      "În timpul Primului Război Mondial, un tânăr soldat german experimentează groaza tranșeelor pe frontul de vest. Filmul oferă o perspectivă dură asupra dezumanizării războiului și a pierderii inocenței soldaților.",
-    category: "Război",
+      "During World War I, a young German soldier experiences the horrors of trench warfare on the Western Front. The film offers a stark perspective on the dehumanization of war and the loss of soldiers’ innocence.",
+    category: "War",
     year: "2022",
     duration: "2h 27m",
     posterUrl: "/movies&TvShows/All Quiet on the Western Front.jpg",
     videoUrl: "https://www.youtube.com/watch?v=hf8EYbVxtCY",
-    country: "Germania",
+    country: "Germany",
     production: "Netflix",
     casts: "Felix Kammerer, Albrecht Schuch, Daniel Brühl",
     type: "Movie",
@@ -881,13 +881,13 @@ const movies = [
     id: "26",
     title: "The Banshees of Inisherin",
     description:
-      "Pe o insulă izolată din Irlanda anilor 1920, doi prieteni apropiați ajung la un impas când unul hotărăște brusc să rupă relația. Decizia stârnește consecințe neașteptate și tensionate pentru amândoi, într-o poveste cu umor negru despre prietenie și singurătate.",
-    category: "Dramă",
+      "On an isolated Irish island in the 1920s, two close friends reach an impasse when one suddenly decides to end their relationship. The decision sparks unexpected and tense consequences in a darkly comic tale of friendship and loneliness.",
+    category: "Drama",
     year: "2022",
     duration: "1h 54m",
     posterUrl: "/movies&TvShows/The Banshees of Inisherin.jpg",
     videoUrl: "https://www.youtube.com/watch?v=uRu3zLOJN2c",
-    country: "Irlanda",
+    country: "Ireland",
     production: "Searchlight Pictures",
     casts: "Colin Farrell, Brendan Gleeson, Kerry Condon",
     type: "Movie",
@@ -896,8 +896,8 @@ const movies = [
     id: "27",
     title: "Elvis",
     description:
-      "Un biopic strălucitor despre viața lui Elvis Presley, urmărește ascensiunea regelui rock 'n' roll de la începuturile modeste până la celebritatea mondială. Filmul explorează și relația complexă dintre Elvis și managerul său, colonelul Tom Parker.",
-    category: "Biografic",
+      "A dazzling biopic of Elvis Presley’s life, following the King of Rock ’n’ Roll from modest beginnings to global stardom. The film also explores the complex relationship between Elvis and his manager, Colonel Tom Parker.",
+    category: "Biography",
     year: "2022",
     duration: "2h 39m",
     posterUrl: "/movies&TvShows/Elvis.jpg",
@@ -911,8 +911,8 @@ const movies = [
     id: "28",
     title: "Oppenheimer",
     description:
-      "Portretul fizicianului J. Robert Oppenheimer, supranumit „părintele bombei atomice”. Filmul prezintă rolul său în conducerea Proiectului Manhattan pentru dezvoltarea bombei nucleare și frământările morale care l-au măcinat ulterior, când a realizat puterea devastatoare a creației sale.",
-    category: "Biografic",
+      "A portrait of physicist J. Robert Oppenheimer, nicknamed the 'father of the atomic bomb.' The film details his role leading the Manhattan Project and the moral turmoil he faced upon realizing the devastating power of his creation.",
+    category: "Biography",
     year: "2023",
     duration: "3h",
     posterUrl: "/movies&TvShows/Oppenheimer.jpg",
@@ -926,8 +926,8 @@ const movies = [
     id: "29",
     title: "Barbie",
     description:
-      "Barbie trăiește într-o lume ideală de păpuși, Barbie Land, până când începe să aibă gânduri despre imperfecțiune și moarte. Alături de Ken, ea pășește în lumea reală, unde descoperă ce înseamnă cu adevărat să fii om într-o aventură plină de umor și culoare.",
-    category: "Comedie",
+      "Barbie lives in an idealized doll world, Barbie Land, until she begins to have thoughts of imperfection and death. Alongside Ken, she steps into the real world and discovers what it truly means to be human in a colorful, comedic adventure.",
+    category: "Comedy",
     year: "2023",
     duration: "1h 54m",
     posterUrl: "/movies&TvShows/Barbie.jpg",
@@ -941,8 +941,8 @@ const movies = [
     id: "30",
     title: "Spider-Man: Across the Spider-Verse",
     description:
-      "Adolescentul super-erou Miles Morales călătorește prin Multivers și întâlnește alte versiuni Spider-Man din diferite universuri. Când un nou inamic amenință existența tuturor lumilor, Miles trebuie să învețe ce sacrificii implică să fii un erou pentru a salva atât propria realitate, cât și pe celelalte.",
-    category: "Animație",
+      "Teen superhero Miles Morales travels through the Multiverse and meets other versions of Spider-Man from different universes. When a new enemy threatens all realities, Miles must learn what sacrifices being a hero truly requires to save both his own world and others.",
+    category: "Animation",
     year: "2023",
     duration: "2h 20m",
     posterUrl: "/movies&TvShows/Spider-Man Across the Spider-Verse.jpg",
@@ -952,6 +952,7 @@ const movies = [
     casts: "Shameik Moore, Hailee Steinfeld, Oscar Isaac",
     type: "Movie",
   },
+  
 
   // Filme suplimentare (id "31" până la "70")
   {
@@ -1561,5 +1562,11 @@ const movies = [
     type: "Movie",
   }
 ];
+
+movies.forEach(movie => {
+  if (movie.videoUrl.startsWith('http')) {
+    movie.videoUrl = '/movies&TvShows/Barbie _ Main Trailer.mp4';
+  }
+});
 
 export default movies;
