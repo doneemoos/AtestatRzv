@@ -73,23 +73,34 @@ const movies = [
   {
     id: "Daredevil: Born Again",
     title: "Daredevil: Born Again",
-    description:
-      "Matt Murdock, a blind lawyer with heightened senses, returns to confront new challenges in Hell's Kitchen. As Wilson Fisk rises in political power, Daredevil must navigate a city rife with corruption and face formidable new adversaries.",
+    description: "Matt Murdock, a blind lawyer with heightened senses, returns to confront new challenges in Hell's Kitchen...",
     category: "Action & Adventure",
     year: "2025",
     duration: "TBA",
     posterUrl: "/movies&TvShows/Daredevil Born Again.jpg",
-    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4", // link to trailer
+    videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4",
     country: "United States",
     production: "Marvel Studios",
-    casts:
-      "Charlie Cox, Vincent D'Onofrio, Jon Bernthal, Deborah Ann Woll, Elden Henson, Margarita Levieva, Michael Gandolfini",
+    casts: "Charlie Cox, Vincent D'Onofrio, Jon Bernthal, Deborah Ann Woll, Elden Henson, Margarita Levieva, Michael Gandolfini",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-    ],
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      }
+    ]
   },
   {
     id: "Ghosted",
@@ -154,11 +165,24 @@ const movies = [
     casts:
       "Gabriel Macht, Patrick J. Adams, Meghan Markle, Sarah Rafferty, Rick Hoffman, Gina Torres",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-    ],
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      }
+    ]
   },
   {
     id: "Grey's Anatomy",
@@ -175,11 +199,24 @@ const movies = [
     casts:
       "Ellen Pompeo, Chandra Wilson, James Pickens Jr., Justin Chambers, Kevin McKidd, Jesse Williams",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-    ],
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      }
+    ]
   },
   {
     id: "Gilmore Girls",
@@ -197,11 +234,24 @@ const movies = [
     casts:
       "Lauren Graham, Alexis Bledel, Scott Patterson, Kelly Bishop, Edward Herrmann, Melissa McCarthy",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-    ],
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      }
+    ]
   },
   {
     id: "The White Lotus",
@@ -219,11 +269,24 @@ const movies = [
     casts:
       "Jennifer Coolidge, Natasha Rothwell, Jon Gries, Leslie Bibb, Carrie Coon, Michelle Monaghan",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-    ],
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      }
+    ]
   },
   {
     id: "The Last of Us",
@@ -241,11 +304,24 @@ const movies = [
     casts:
       "Pedro Pascal, Bella Ramsey, Anna Torv, Gabriel Luna, Merle Dandridge, Nico Parker",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-    ],
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      }
+    ]
   },
   {
     id: "The Handmaid's Tale",
@@ -262,11 +338,24 @@ const movies = [
     casts:
       "Elisabeth Moss, Joseph Fiennes, Yvonne Strahovski, Alexis Bledel, Madeline Brewer, Ann Dowd, O-T Fagbenle, Max Minghella, Samira Wiley, Amanda Brugel, Bradley Whitford, Sam Jaeger",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-    ],
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      }
+    ]
   },
   {
     id: "You",
@@ -284,11 +373,24 @@ const movies = [
     casts:
       "Penn Badgley, Elizabeth Lail, Victoria Pedretti, Tati Gabrielle, Jenna Ortega, James Scully",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-    ],
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      }
+    ]
   },
   {
     id: "Étoile",
@@ -306,11 +408,24 @@ const movies = [
     casts:
       "Luke Kirby, Charlotte Gainsbourg, Lou de Laâge, Gideon Glick, David Alvarez, Ivan du Pontavice, Taïs Vinolo, David Haig",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-    ],
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      }
+    ]
   },
   {
     id: "Dying for Sex",
@@ -328,23 +443,24 @@ const movies = [
     casts:
       "Michelle Williams, Jenny Slate, Rob Delaney, Jay Duplass, Kelvin Yu, Sissy Spacek",
     type: "TV Show",
-    episodes: [
+    seasons: [
       {
-        title: "Episode 1: The Beginning",
-        videoUrl:
-          "/movies&TvShows/Dying for Sex _ Official Trailer _ Michelle Williams, Jenny Slate, Rob Delaney _ FX.mp4",
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
       },
       {
-        title: "Episode 2: The Journey",
-        videoUrl:
-          "/movies&TvShows/Dying for Sex _ Official Trailer _ Michelle Williams, Jenny Slate, Rob Delaney _ FX.mp4",
-      },
-      {
-        title: "Episode 3: The Climax",
-        videoUrl:
-          "/movies&TvShows/Dying for Sex _ Official Trailer _ Michelle Williams, Jenny Slate, Rob Delaney _ FX.mp4",
-      },
-    ],
+        season: 2,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      }
+    ]
   },
   {
     id: "Desperate Housewives",
@@ -361,11 +477,24 @@ const movies = [
     casts:
       "Teri Hatcher, Felicity Huffman, Marcia Cross, Eva Longoria, Nicollette Sheridan, Brenda Strong",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
-    ],
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      }
+    ]
   },
   {
     id: "Poor Things",
@@ -400,11 +529,24 @@ const movies = [
     casts:
       "Mark Harmon, Sean Murray, Wilmer Valderrama, Emily Wickersham, Brian Dietzen, David McCallum",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
-    ],
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      }
+    ]
   },
   {
     id: "Only Murders in the Building",
@@ -422,11 +564,24 @@ const movies = [
     casts:
       "Steve Martin, Martin Short, Selena Gomez, Michael Cyril Creighton, Paul Rudd, Meryl Streep",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
-    ],
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      }
+    ]
   },
   {
     id: "Ted Lasso",
@@ -444,11 +599,24 @@ const movies = [
     casts:
       "Jason Sudeikis, Hannah Waddingham, Jeremy Swift, Phil Dunster, Brett Goldstein, Brendan Hunt, Nick Mohammed, Juno Temple",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
-    ],
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      }
+    ]
   },
   {
     id: "Shrinking",
@@ -466,11 +634,24 @@ const movies = [
     casts:
       "Jason Segel, Harrison Ford, Jessica Williams, Christa Miller, Michael Urie, Luke Tennie",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
-    ],
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      }
+    ]
   },
   {
     id: "Modern Family",
@@ -488,11 +669,24 @@ const movies = [
     casts:
       "Ed O'Neill, Sofía Vergara, Julie Bowen, Ty Burrell, Jesse Tyler Ferguson, Eric Stonestreet",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
-    ],
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      }
+    ]
   },
   {
     id: "Friends",
@@ -510,11 +704,24 @@ const movies = [
     casts:
       "Jennifer Aniston, Courteney Cox, Lisa Kudrow, Matt LeBlanc, Matthew Perry, David Schwimmer",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
-    ],
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      }
+    ]
   },
   {
     id: "The Big Bang Theory",
@@ -531,11 +738,24 @@ const movies = [
     casts:
       "Johnny Galecki, Jim Parsons, Kaley Cuoco, Simon Helberg, Kunal Nayyar, Mayim Bialik, Melissa Rauch",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
-    ],
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      }
+    ]
   },
   {
     id: "Hacks",
@@ -553,11 +773,24 @@ const movies = [
     casts:
       "Jean Smart, Hannah Einbinder, Carl Clemons-Hopkins, Paul W. Downs, Megan Stalter",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
-    ],
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      }
+    ]
   },
   {
     id: "The Mask",
@@ -608,11 +841,24 @@ const movies = [
     casts:
       "Seth Rogen, Catherine O'Hara, Ike Barinholtz, Chase Sui Wonders, Kathryn Hahn",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
-    ],
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      }
+    ]
   },
   {
     id: "High Potential",
@@ -630,11 +876,24 @@ const movies = [
     casts:
       "Kaitlin Olson, Daniel Sunjata, Javicia Leslie, Deniz Akdeniz, Judy Reyes",
     type: "TV Show",
-    episodes: [
-      { title: "Episode 1: The Beginning", videoUrl: "/videos/episode1.mp4" },
-      { title: "Episode 2: The Journey", videoUrl: "/videos/episode2.mp4" },
-      { title: "Episode 3: The Climax", videoUrl: "/videos/episode3.mp4" },
-    ],
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { title: "Episode 1: The Beginning", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 2: The Journey", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" },
+          { title: "Episode 3: The Climax", videoUrl: "/movies&TvShows/Barbie _ Main Trailer.mp4" }
+        ]
+      }
+    ]
   },
   {
     id: "Frozen",
