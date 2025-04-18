@@ -6,10 +6,11 @@ import Tranding from "../components/trending";
 import Footer from "../components/footer";
 
 function Home() {
-  const location= useLocation();
+  const location = useLocation();
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State pentru pop-up
   const featuredMovie = movies[currentIndex];
 
   /* ---------------- Helper: preload an image ---------------- */
@@ -71,8 +72,6 @@ function Home() {
       return () => clearTimeout(timer);
     }
   }, [prevIndex]);
-
- 
 
   return (
     <>
@@ -175,10 +174,38 @@ function Home() {
             </div>
           </div>
         </div>
+
+        {/* Easter Egg Button */}
+        <div className="absolute bottom-4 right-4 z-50">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 py-2 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+          >
+            Easter Egg 🐣
+          </button>
+        </div>
+
+        {/* Modal */}
+        {isModalOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="bg-white rounded-lg p-4 relative max-w-[90%] max-h-[90%]">
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="absolute top-2 right-2 text-black text-xl font-bold"
+              >
+                ✖
+              </button>
+              <img
+                src="/razvanjd.jpg"
+                alt="Easter Egg"
+                className="w-[600px] h-auto rounded-lg"
+              />
+            </div>
+          </div>
+        )}
       </div>
 
       <Tranding />
-
     </>
   );
 }
