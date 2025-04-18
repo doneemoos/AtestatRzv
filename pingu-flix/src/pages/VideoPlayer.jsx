@@ -33,7 +33,6 @@ function CustomVideoPlayer({
   const [speed, setSpeed] = useState(1);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
-  // ad1
   useEffect(() => {
     const v = videoRef.current;
     if (v) {
@@ -43,7 +42,6 @@ function CustomVideoPlayer({
     }
   }, []);
 
-  // ad3
   const handleEnded = () => {
     const v = videoRef.current;
     if (!v) return;
@@ -65,7 +63,6 @@ function CustomVideoPlayer({
     }
   };
 
-  // Time update pentru overlay
   const handleTimeUpdate = () => {
     const v = videoRef.current;
     if (!v) return;
@@ -138,7 +135,7 @@ function CustomVideoPlayer({
   };
 
   return (
-    <div className="max-w-screen  bg-[#281564] ">
+    <div className="max-w-screen bg-[#281564]">
       <div className="max-w-[1200px] mx-auto px-4 py-8 bg-[#281564] min-h-screen">
         <h1 className="text-4xl font-bold text-center mb-6 text-white">
           {title}
@@ -274,7 +271,7 @@ export default function VideoPlayer() {
   if (!movie) {
     return (
       <div className="text-center mt-10 text-xl text-red-600">
-        Conținutul nu a fost găsit!
+        Content not found!
       </div>
     );
   }
@@ -288,7 +285,7 @@ export default function VideoPlayer() {
     if (!episode) {
       return (
         <div className="text-center mt-10 text-xl text-red-600">
-          Episodul nu a fost găsit!
+          Episode not found!
         </div>
       );
     }
@@ -301,9 +298,9 @@ export default function VideoPlayer() {
         description={movie.description}
         extraInfo={
           <p className="text-gray-600">
-            <strong>Serial:</strong> {movie.title} &nbsp; | &nbsp;
-            <strong>Sezon:</strong> {sIdx + 1} &nbsp; | &nbsp;
-            <strong>Episod:</strong> {epIdx + 1}
+            <strong>Series:</strong> {movie.title} &nbsp; | &nbsp;
+            <strong>Season:</strong> {sIdx + 1} &nbsp; | &nbsp;
+            <strong>Episode:</strong> {epIdx + 1}
           </p>
         }
       />
@@ -319,13 +316,13 @@ export default function VideoPlayer() {
       extraInfo={
         <div className="flex flex-wrap gap-4 text-gray-600">
           <p>
-            <strong>Categorie:</strong> {movie.category}
+            <strong>Category:</strong> {movie.category}
           </p>
           <p>
-            <strong>Anul:</strong> {movie.year}
+            <strong>Year:</strong> {movie.year}
           </p>
           <p>
-            <strong>Durata:</strong> {movie.duration}
+            <strong>Duration:</strong> {movie.duration}
           </p>
         </div>
       }
