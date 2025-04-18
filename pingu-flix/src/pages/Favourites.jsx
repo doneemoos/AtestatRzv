@@ -24,10 +24,18 @@ function Favorites() {
           <div key={movie.id} className="bg-white p-4 rounded-2xl shadow-md">
             <h2 className="text-xl font-semibold mb-1">{movie.title}</h2>
             {movie.posterUrl && (
-              <img src={movie.posterUrl} alt={movie.title} className="w-full h-64 object-cover rounded mb-2" />
+              <img
+                src={movie.posterUrl}
+                alt={movie.title}
+                className="w-full h-64 object-cover rounded mb-2"
+              />
             )}
-            <p className="text-sm text-gray-600 mb-2">{movie.description || "No description"}</p>
-            <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">{movie.category || "No category"}</span>
+            <p className="text-sm text-gray-600 mb-2">
+              {movie.description || "No description"}
+            </p>
+            <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
+              {movie.category || "No category"}
+            </span>
           </div>
         ))}
       </div>

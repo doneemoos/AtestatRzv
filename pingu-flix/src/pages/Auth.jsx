@@ -108,7 +108,6 @@ function Auth() {
   if (user) {
     return (
       <div className={wrapperClass}>
-        {/* Background image */}
         <img
           src="/abstract-blurred-background-light-leaks.jpg"
           alt="Background"
@@ -125,7 +124,6 @@ function Auth() {
             "
         />
 
-        {/* Content */}
         <div
           className="
               relative z-10 

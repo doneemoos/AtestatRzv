@@ -38,7 +38,10 @@ function Tranding() {
     (async () => {
       try {
         const enriched = await Promise.all(
-          movies.map(async (m) => ({ ...m, popularity: await fetchPopularity(m) }))
+          movies.map(async (m) => ({
+            ...m,
+            popularity: await fetchPopularity(m),
+          }))
         );
         const sorted = enriched.sort((a, b) => b.popularity - a.popularity);
         setTrendingMovies(sorted.slice(0, 20));
@@ -74,11 +77,19 @@ function Tranding() {
 
   const scrollLeft = () =>
     sliderRef.current &&
-    animateScroll(sliderRef.current, sliderRef.current.scrollLeft - SCROLL_DELTA, 600);
+    animateScroll(
+      sliderRef.current,
+      sliderRef.current.scrollLeft - SCROLL_DELTA,
+      600
+    );
 
   const scrollRight = () =>
     sliderRef.current &&
-    animateScroll(sliderRef.current, sliderRef.current.scrollLeft + SCROLL_DELTA, 600);
+    animateScroll(
+      sliderRef.current,
+      sliderRef.current.scrollLeft + SCROLL_DELTA,
+      600
+    );
 
   /* ---------------- Drag / touch handlers ---------------- */
   const onDown = (x) => {
@@ -100,7 +111,6 @@ function Tranding() {
       className="relative w-full py-8 px-4 overflow-hidden"
       style={{ background: "linear-gradient(90deg, #140046 0%, #281564 100%)" }}
     >
-      {/* Reuse gradient button styles */}
       <style>{`
         @property --middle-color {
           syntax: '<color>';
@@ -114,11 +124,11 @@ function Tranding() {
         .signUpButton:hover { --middle-color: rgba(34,120,207,0.66); }
       `}</style>
 
-      {/* Title shifted to the right (ml-32) */}
-      <h2 className="text-white text-3xl font-bold mb-6 ml-[2rem]">Trending Movies</h2>
+      <h2 className="text-white text-3xl font-bold mb-6 ml-[2rem]">
+        Trending Movies
+      </h2>
 
       <div className="relative flex items-center">
-        {/* Scroll left button */}
         <button
           onClick={scrollLeft}
           className="absolute left-2 z-10 bg-white text-black rounded-full p-2 shadow hover:scale-105 transition"
@@ -150,9 +160,7 @@ function Tranding() {
                 }}
                 style={{ cursor: "pointer" }}
               >
-                <div
-                  className="bg-[#190b3d] text-white rounded-xl shadow-lg h-[36rem] flex flex-col transform transition duration-200 ease-out hover:scale-105"
-                >
+                <div className="bg-[#190b3d] text-white rounded-xl shadow-lg h-[36rem] flex flex-col transform transition duration-200 ease-out hover:scale-105">
                   <img
                     src={movie.posterUrl}
                     alt={movie.title}
@@ -203,7 +211,6 @@ function Tranding() {
           )}
         </div>
 
-        {/* Scroll right button */}
         <button
           onClick={scrollRight}
           className="absolute right-2 z-10 bg-white text-black rounded-full p-2 shadow hover:scale-105 transition"

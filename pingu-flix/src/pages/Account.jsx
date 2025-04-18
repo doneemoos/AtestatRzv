@@ -33,7 +33,6 @@ function Account() {
 
   return (
     <>
-      {/* gradient page + card CSS */}
       <style>{`
         @property --middle-color {
           syntax: '<color>';
