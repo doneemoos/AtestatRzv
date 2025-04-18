@@ -1,4 +1,3 @@
-// src/pages/Movies.jsx
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Search from "./search";
@@ -8,7 +7,6 @@ function Movies() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  /* ---------------- Helpers ---------------- */
   const getCategoryFromQuery = () => {
     const params = new URLSearchParams(location.search);
     const type = params.get("type");
@@ -25,7 +23,6 @@ function Movies() {
   const [showGenres, setShowGenres] = useState(false);
   const genresDropdownRef = useRef(null);
 
-  /* ---------------- Sync URL ↔ state ---------------- */
   useEffect(() => {
     const params = new URLSearchParams();
     if (selectedCategory === "Movies") params.set("type", "movies");
@@ -40,10 +37,8 @@ function Movies() {
     setSelectedCategory(getCategoryFromQuery());
   }, [location.search]);
 
-  /* ---------------- Unique genres ---------------- */
   const genres = [...new Set(movies.map((m) => m.category))];
 
-  /* ---------------- Filtered list ---------------- */
   const finalResults = results.filter((m) => {
     const catOk =
       selectedCategory === "All" ||
@@ -52,7 +47,6 @@ function Movies() {
     return catOk && genOk;
   });
 
-  /* ---------------- Dynamic message ---------------- */
   const getDynamicMessage = () => {
     if (selectedGenre === "All") {
       return selectedCategory === "All"
@@ -68,7 +62,6 @@ function Movies() {
       : `All TV shows in ${selectedGenre}`;
   };
 
-  /* ---------------- Close dropdown on outside click ---------------- */
   useEffect(() => {
     function handleClickOutside(event) {
       if (

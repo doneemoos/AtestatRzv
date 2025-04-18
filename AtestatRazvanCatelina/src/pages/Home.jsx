@@ -1,4 +1,3 @@
-// src/pages/Home.jsx
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import movies from "../data/movies";
@@ -10,17 +9,15 @@ function Home() {
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false); // State pentru pop-up
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const featuredMovie = movies[currentIndex];
 
-  /* ---------------- Helper: preload an image ---------------- */
   const preloadImage = (src) => {
     if (!src) return;
     const img = new Image();
     img.src = src;
   };
 
-  /* ---------------- Hero slideshow ---------------- */
   useEffect(() => {
     const interval = setInterval(() => {
       setPrevIndex(currentIndex);
@@ -33,7 +30,6 @@ function Home() {
     return () => clearInterval(interval);
   }, [currentIndex]);
 
-  /* Preload poster for the next randomly chosen film */
   useEffect(() => {
     let preloadIdx = Math.floor(Math.random() * movies.length);
     while (preloadIdx === currentIndex || preloadIdx === prevIndex) {
@@ -42,7 +38,6 @@ function Home() {
     preloadImage(movies[preloadIdx].posterUrl);
   }, [currentIndex, prevIndex]);
 
-  /* Add <link rel="preload"> for current hero poster for highest priority */
   useEffect(() => {
     const link = document.createElement("link");
     link.rel = "preload";
@@ -53,7 +48,6 @@ function Home() {
     return () => document.head.removeChild(link);
   }, [featuredMovie.posterUrl]);
 
-  /* Reset overflow trick */
   useEffect(() => {
     document.body.style.overflowX = "hidden";
     const timer = setTimeout(() => {
@@ -65,7 +59,6 @@ function Home() {
     };
   }, [currentIndex]);
 
-  /* Auto‑clear prev slide animation flag */
   useEffect(() => {
     if (prevIndex !== null) {
       const timer = setTimeout(() => setPrevIndex(null), 1500);
@@ -76,7 +69,6 @@ function Home() {
   return (
     <>
       <div className="relative flex items-center justify-center w-full h-[88vh] text-white bg-[#09091A] overflow-hidden hero-container">
-        {/* Background blur */}
         <img
           src="/abstract-blurred-background-light-leaks.jpg"
           alt="Background"
@@ -85,7 +77,6 @@ function Home() {
           className="absolute top-0 left-0 w-full h-full object-cover opacity-60 transform rotate-180"
         />
 
-        {/* Styles */}
         <style>{`
           @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
           @keyframes slideOut { from { transform: translateX(0); opacity: 1; } to { transform: translateX(-100%); opacity: 0; } }
@@ -103,11 +94,9 @@ function Home() {
           }
         `}</style>
 
-        {/* Dark overlay */}
         <div className="absolute inset-0 bg-[#0F0C25] opacity-50 z-[10]" />
 
         <div className="relative z-[20] w-full max-w-[1400px] mx-auto px-4 md:px-8 h-full flex items-center justify-around mobile-hero">
-          {/* Previous slide */}
           {prevIndex !== null && (
             <div
               key={movies[prevIndex].id}
@@ -142,7 +131,6 @@ function Home() {
             </div>
           )}
 
-          {/* Current slide */}
           <div
             key={featuredMovie.id}
             className="film-slide slide-in flex flex-col md:flex-row items-center justify-around w-full h-full"
