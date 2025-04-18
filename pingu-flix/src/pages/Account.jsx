@@ -22,7 +22,7 @@ function Account() {
   if (!user)
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <h1 className="text-2xl">Trebuie să te autentifici.</h1>
+        <h1 className="text-2xl">You need to log in.</h1>
       </div>
     );
 
@@ -63,10 +63,10 @@ function Account() {
         }}
       >
         <div className="max-w-[1400px] mx-auto px-6 py-10 text-gray-200">
-          <h1 className="text-4xl font-bold mb-10">Salut, {username}! 👋</h1>
+          <h1 className="text-4xl font-bold mb-10">Hello, {username}! 👋</h1>
 
           <Section title="⭐ Favorite Movies" data={favs} />
-          <Section title="❤️ Liked Movies" data={likes} />
+          <Section title="❤️ Liked Movies/Tv Shows" data={likes} />
         </div>
       </div>
     </>
@@ -79,7 +79,7 @@ function Section({ title, data }) {
       <h2 className="text-2xl font-semibold mb-6">{title}</h2>
 
       {data.length === 0 ? (
-        <p className="text-gray-400">Nimic aici încă…</p>
+        <p className="text-gray-400">Nothing here yet…</p>
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-6">
           {data.map((m) => (

@@ -39,7 +39,8 @@ const Search = ({ onSearch }) => {
       )}
       <input
         type="text"
-        placeholder="Caută filme... ex: comedie, SF, acțiune..."
+        placeholder="Search Movies, Series..."
+        autoComplete="on"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         className="w-full max-w-3xl p-5 text-xl rounded-2xl border border-gray-300 shadow-md focus:outline-none focus:ring focus:ring-blue-300 transition-all duration-300 hover:shadow-lg hover:ring hover:ring-blue-400"

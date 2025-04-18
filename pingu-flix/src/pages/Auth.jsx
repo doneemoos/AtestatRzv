@@ -53,28 +53,26 @@ function Auth() {
           formData.email,
           formData.password
         );
-        // Dacă userul nu are displayName, îl setăm cu numele introdus
-        if (!userCredential.user.displayName && formData.name) {
-          await updateProfile(userCredential.user, {
+        if (!cred.user.displayName && formData.name) {
+          await updateProfile(cred.user, {
             displayName: formData.name,
           });
         }
-        console.log("Utilizator logat:", userCredential.user);
+        console.log("Utilizator logat:", cred.user);
       } else {
         cred = await createUserWithEmailAndPassword(
           auth,
           formData.email,
           formData.password
         );
-        // Setează displayName la sign up
-        await updateProfile(userCredential.user, {
+        await updateProfile(cred.user, {
           displayName: formData.name,
         });
-        console.log("Utilizator înregistrat:", userCredential.user);
+        console.log("Utilizator înregistrat:", cred.user);
       }
       navigate("/", {
         state: {
-          message: `Bine ai venit, ${formData.name || userCredential.user.displayName || userCredential.user.email}!`,
+          message: `Bine ai venit, ${formData.name || cred.user.displayName || cred.user.email}!`,
         },
       });
     } catch (err) {
