@@ -9,7 +9,6 @@ function Footer() {
     <footer className="bg-[#190B3D] text-white pt-12 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center">
               <video
@@ -28,11 +27,10 @@ function Footer() {
             <p className="text-gray-400">
               Building innovative solutions for the modern world.
             </p>
-            {/* Social icons remain unchanged */}
+
             <div className="flex space-x-4">{/* ...icons... */}</div>
           </div>
 
-          {/* Quick Links */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Quick Links</h3>
             <ul className="space-y-2">
@@ -71,7 +69,6 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Services</h3>
             <ul className="space-y-2">
@@ -87,7 +84,6 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Contact Us</h3>
             <address className="not-italic text-gray-400 space-y-1">

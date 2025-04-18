@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { db } from "../firebase"; // Assuming you have Firestore initialized in firebase.js
+import { db } from "../firebase";
 import { doc, setDoc, deleteDoc } from "firebase/firestore";
 
 const MovieCard = ({ movie, user }) => {
@@ -10,11 +10,11 @@ const MovieCard = ({ movie, user }) => {
     const movieRef = doc(db, "favorites", user.uid);
 
     if (isFavorite) {
-      // Remove from favorites
+      // Remv favorites
       await deleteDoc(doc(movieRef, movie.id));
       setIsFavorite(false);
     } else {
-      // Add to favorites
+      // Add favorites
       await setDoc(doc(movieRef, movie.id), {
         title: movie.title,
         id: movie.id,

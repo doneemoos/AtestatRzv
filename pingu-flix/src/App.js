@@ -11,7 +11,7 @@ import VideoPlayer from "./pages/VideoPlayer";
 import Trending from "./components/trending";
 import Account from "./pages/Account";
 import Footer from "./components/footer";
-import PrivacyPolicy from './pages/privacypolicy';
+import PrivacyPolicy from "./pages/privacypolicy";
 
 function App() {
   const user = useAuth();
@@ -43,10 +43,16 @@ function App() {
           <Route path="/search" element={<SearchPage />} />
           <Route path="/account" element={<Account />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          {/* Video routes */}
+
           <Route path="/video/:id" element={<VideoPlayer />} />
-          <Route path="/video/:id/episode/:episodeIndex" element={<VideoPlayer />} />
-          <Route path="/video/:id/season/:seasonIndex/episode/:episodeIndex" element={<VideoPlayer />} />
+          <Route
+            path="/video/:id/episode/:episodeIndex"
+            element={<VideoPlayer />}
+          />
+          <Route
+            path="/video/:id/season/:seasonIndex/episode/:episodeIndex"
+            element={<VideoPlayer />}
+          />
 
           <Route path="/trending" element={<Trending />} />
         </Routes>

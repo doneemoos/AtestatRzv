@@ -1,7 +1,4 @@
-// src/context/AuthContext.jsx
-import {
-  createContext, useContext, useEffect, useState,
-} from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase";
 
@@ -13,9 +10,5 @@ export function AuthProvider({ children }) {
 
   useEffect(() => onAuthStateChanged(auth, setUser), []);
 
-  return (
-    <AuthCtx.Provider value={user}>
-      {children}
-    </AuthCtx.Provider>
-  );
+  return <AuthCtx.Provider value={user}>{children}</AuthCtx.Provider>;
 }

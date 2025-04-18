@@ -12,14 +12,12 @@ export default function MovieDetails() {
   const movie = movies.find((m) => m.id === decodedId);
   const user = useAuth();
 
-  // Like & favorite state
   const [liked, setLiked] = useState(false);
   const [favorited, setFavorited] = useState(false);
   const [selectedSeason, setSelectedSeason] = useState(
     movie?.seasons?.length > 0 ? 0 : null
   );
 
-  // Fetch existing like/favorite status
   useEffect(() => {
     if (!user || !movie) return;
     const fetchStatus = async () => {
@@ -35,7 +33,6 @@ export default function MovieDetails() {
     fetchStatus();
   }, [user, movie]);
 
-  // Toggle like/favorite helper
   const toggle = async (list, setter, current) => {
     if (!user) {
       alert("You must be logged in to use this feature!");
@@ -57,7 +54,6 @@ export default function MovieDetails() {
     );
   }
 
-  // Build watch link for TV shows and movies
   const watchLink =
     movie.type === "TV Show"
       ? `/video/${encodeURIComponent(
@@ -67,7 +63,6 @@ export default function MovieDetails() {
 
   return (
     <div className="relative min-h-screen bg-[#11015e]">
-      {/* Gradient button styles reused from Trending component */}
       <style>{`
         @property --middle-color {
           syntax: '<color>';
@@ -81,7 +76,6 @@ export default function MovieDetails() {
         .signUpButton:hover { --middle-color: rgba(34,120,207,0.66); }
       `}</style>
 
-      {/* Background blur */}
       <div
         className="absolute inset-0 h-96 bg-cover bg-center blur-sm brightness-50"
         style={{ backgroundImage: `url(${movie.posterUrl})` }}
@@ -89,7 +83,6 @@ export default function MovieDetails() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-12">
         <div className="bg-[#140046] text-white rounded-xl shadow-lg flex flex-col md:flex-row p-6">
-          {/* Poster */}
           <img
             src={movie.posterUrl}
             alt={movie.title}
@@ -99,7 +92,6 @@ export default function MovieDetails() {
           <div className="text-white flex-1 md:ml-8 mt-6 md:mt-0 flex flex-col">
             <h1 className="text-3xl font-bold mb-2">{movie.title}</h1>
 
-            {/* Trailer & HD badges */}
             <div className="flex items-center gap-2 mb-2">
               <button className="signUpButton text-xs px-2 py-1 rounded">
                 Trailer
@@ -111,7 +103,6 @@ export default function MovieDetails() {
 
             <p className="text-white mb-4 flex-1">{movie.description}</p>
 
-            {/* Metadata */}
             <div className="text-sm text-white space-y-1 mb-4">
               <p>
                 <strong>Released:</strong> {movie.year}
@@ -133,7 +124,6 @@ export default function MovieDetails() {
               </p>
             </div>
 
-            {/* TV Seasons & Episodes */}
             {movie.type === "TV Show" && movie.seasons?.length > 0 && (
               <div className="mt-8">
                 <h2 className="text-2xl font-bold mb-4">Seasons</h2>
@@ -174,7 +164,6 @@ export default function MovieDetails() {
               </div>
             )}
 
-            {/* Like & Favorite Buttons */}
             <div className="flex flex-wrap items-center gap-4 mt-6">
               <button
                 onClick={() => toggle("likes", setLiked, liked)}
@@ -191,7 +180,6 @@ export default function MovieDetails() {
               </button>
             </div>
 
-            {/* Watch Now Button */}
             <div className="mt-4">
               <Link
                 to={watchLink}
